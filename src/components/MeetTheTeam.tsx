@@ -1,5 +1,4 @@
 import { Link } from '@tanstack/react-router';
-import React from 'react';
 
 const people = [
   {
@@ -40,9 +39,9 @@ const people = [
 ];
 export const MeetTheTeam = () => {
   return (
-    <div className="bg-white py-24 sm:py-32 rounded-3xl mb-20">
-      <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
-        <div className="max-w-xl">
+    <div className="bg-white p-12 py-14 rounded-3xl w-full">
+      <div className="mx-auto grid max-w-5/6 gap-20 px-6 lg:px-8 xl:grid-cols-3">
+        <div>
           <h2 className="text-3xl font-semibold tracking-tight text-pretty text-black sm:text-4xl">
             Meet our leadership
           </h2>

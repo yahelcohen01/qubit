@@ -1,14 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import { FiLogIn } from 'react-icons/fi';
 
-// export const ButtonWrapper = ({ children }: PropsWithChildren) => {
-//   return (
-//     <div className="flex min-h-[200px] items-center justify-center bg-neutral-900">
-//       <RoundedSlideButton children={children} />
-//     </div>
-//   );
-// };
-
 export const RoundedSlideButton = ({ children }: PropsWithChildren) => {
   return (
     <button

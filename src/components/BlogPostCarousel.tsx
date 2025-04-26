@@ -39,7 +39,7 @@ export const BlogPostCarousel = () => {
   };
 
   return (
-    <section className="mb-20" ref={ref}>
+    <section className="" ref={ref}>
       <div className="relative overflow-hidden p-4">
         <div className="max-w-full">
           <motion.div
@@ -55,9 +55,9 @@ export const BlogPostCarousel = () => {
               return <Post key={post.id} {...post} />;
             })}
           </motion.div>
-          <div className="flex flex-1 items-center justify-center gap-2">
+          <div className="flex flex-1 items-center justify-center gap-2 pt-4">
             <button
-              className={`rounded-lg border-[1px] border-neutral-400 bg-white p-1.5 text-2xl transition-opacity ${
+              className={`rounded-lg border-[1px] border-neutral-400 bg-white p-1.5 text-2xl transition-opacity cursor-pointer disabled:cursor-default ${
                 CAN_SHIFT_LEFT ? '' : 'opacity-30'
               }`}
               disabled={!CAN_SHIFT_LEFT}
@@ -66,7 +66,7 @@ export const BlogPostCarousel = () => {
               <FiArrowLeft />
             </button>
             <button
-              className={`rounded-lg border-[1px] border-neutral-400 bg-white p-1.5 text-2xl transition-opacity ${
+              className={`rounded-lg border-[1px] border-neutral-400 bg-white p-1.5 text-2xl transition-opacity cursor-pointer disabled:cursor-default ${
                 CAN_SHIFT_RIGHT ? '' : 'opacity-30'
               }`}
               disabled={!CAN_SHIFT_RIGHT}
@@ -81,18 +81,23 @@ export const BlogPostCarousel = () => {
   );
 };
 
-const Post = ({ author, title, description }: PostType) => {
+const Post = ({ author, title, description, date }: PostType) => {
   return (
     <div
-      className="relative shrink-0 cursor-pointer transition-transform hover:-translate-y-1"
+      className="shrink-0 cursor-pointer transition-transform hover:-translate-y-1"
       style={{
         width: CARD_WIDTH,
         marginRight: MARGIN,
       }}
     >
-      <span className="rounded-md border-[1px] border-neutral-500 px-1.5 py-1 text-xs uppercase text-neutral-500">
-        {author}
-      </span>
+      <div className="flex items-center justify-between">
+        <span className="rounded-md border-[1px] border-neutral-500 px-1.5 py-1 text-xs uppercase text-neutral-500 items-center">
+          {author}
+        </span>
+        <span className="text-neutral-500 font-light text-xs">
+          {date.toLocaleDateString()}
+        </span>
+      </div>
       <p className="mt-1.5 text-lg font-medium">{title}</p>
       <p className="text-sm text-neutral-500">{description}</p>
     </div>
@@ -105,6 +110,7 @@ type PostType = {
   author: string;
   title: string;
   description: string;
+  date: Date;
 };
 
 const posts: PostType[] = [
@@ -115,6 +121,7 @@ const posts: PostType[] = [
     title: 'We built an AI chess bot with ChatGPT',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.',
+    date: new Date('2025-04-01'),
   },
   {
     id: 2,
@@ -123,6 +130,7 @@ const posts: PostType[] = [
     title: 'How to grow your personal brand as a web designer',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.',
+    date: new Date('2025-04-20'),
   },
   {
     id: 3,
@@ -131,6 +139,7 @@ const posts: PostType[] = [
     title: 'Calm down, monoliths are totally fine',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.',
+    date: new Date('2025-05-01'),
   },
   {
     id: 4,
@@ -139,6 +148,7 @@ const posts: PostType[] = [
     title: 'A quick guide to Framer Motion (for dummies)',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.',
+    date: new Date('2025-05-15'),
   },
   {
     id: 5,
@@ -147,6 +157,7 @@ const posts: PostType[] = [
     title: "You probably don't need kubernetes",
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.',
+    date: new Date('2025-06-01'),
   },
   {
     id: 6,
@@ -155,6 +166,7 @@ const posts: PostType[] = [
     title: 'State of JavaScript in 2024',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.',
+    date: new Date('2025-06-15'),
   },
   {
     id: 7,
@@ -163,5 +175,6 @@ const posts: PostType[] = [
     title: "What's new in Python?",
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolor.',
+    date: new Date('2025-07-01'),
   },
 ];

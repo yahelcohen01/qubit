@@ -1,10 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { TypingAnimation } from '@/components/magicui/typing-animation';
 import Lottie from 'lottie-react';
-import Waves from '../../public/waves.json';
+import Waves from '@root/public/waves.json';
 import { MeetTheTeam } from '@/components/MeetTheTeam';
 import { About } from '@/components/About';
 import { BlogPostCarousel } from '@/components/BlogPostCarousel';
+import { Partners } from '@/components/Partners';
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -33,24 +34,12 @@ function App() {
           </div>
         </div>
         <BlogPostCarousel />
-        <About />
-        <MeetTheTeam />
+        <div className="flex flex-col items-center justify-center gap-40 pt-20 w-11/12 self-center">
+          <About />
+          <MeetTheTeam />
+          <Partners />
+        </div>
       </div>
     </div>
   );
-}
-{
-  /* <p className="text-5xl font-medium">
-              Welcome to the Israeli{' '}
-              <span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
-                Quantum
-              </span>{' '}
-              Community
-            </p> */
-}
-{
-  /* <p className="text-2xl font-normal mt-2">
-            Empowering Israel's Quantum Frontier: Pioneering Qubits, Powering
-            Israel's Future.
-          </p> */
 }

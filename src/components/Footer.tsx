@@ -1,4 +1,4 @@
-import Logo from '../../public/qubit-logo-no-background.png'
+import Logo from '@root/public/qubit-logo-no-background.png';
 import {
   LogoFacebook,
   LogoTwitter,
@@ -6,38 +6,38 @@ import {
   LogoYoutube,
   LogoLinkedin,
   type CarbonIconType,
-} from '@carbon/icons-react'
+} from '@carbon/icons-react';
 
 type LinkItem = {
-  name: string
-  link: string
-}
+  name: string;
+  link: string;
+};
 
 export const PRODUCTS: LinkItem[] = [
   { name: 'Drag And Drop', link: '#' },
   { name: 'Visual Studio X', link: '#' },
   { name: 'Easy Content', link: '#' },
-]
+];
 export const RESOURCES: LinkItem[] = [
   { name: 'Industries and tools', link: '#' },
   { name: 'Use cases', link: '#' },
   { name: 'Blog', link: '#' },
   { name: 'Online evenet', link: '#' },
   { name: 'Nostrud exercitation', link: '#' },
-]
+];
 export const COMPANY: LinkItem[] = [
   { name: 'Diversity & inclusion', link: '#' },
   { name: 'About us', link: '#' },
   { name: 'Press', link: '#' },
   { name: 'Customer Stories', link: '#' },
   { name: 'Online communities', link: '#' },
-]
+];
 export const SUPPORT: LinkItem[] = [
   { name: 'Documentation', link: '#' },
   { name: 'Tutorials & guides', link: '#' },
   { name: 'Webinars', link: '#' },
   { name: 'Open-source', link: '#' },
-]
+];
 
 export const Icons: (LinkItem & { icon: CarbonIconType })[] = [
   { name: 'logo-facebook', link: '#', icon: LogoFacebook },
@@ -45,7 +45,7 @@ export const Icons: (LinkItem & { icon: CarbonIconType })[] = [
   { name: 'logo-linkedin', link: '#', icon: LogoLinkedin },
   { name: 'logo-instagram', link: '#', icon: LogoInstagram },
   { name: 'logo-youtube', link: '#', icon: LogoYoutube },
-]
+];
 
 export const Footer = () => {
   return (
@@ -62,8 +62,8 @@ export const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 const IconsGroup = () => {
   return (
@@ -74,8 +74,8 @@ const IconsGroup = () => {
         </a>
       ))}
     </div>
-  )
-}
+  );
+};
 
 const Item = ({ Links, title }: { Links: LinkItem[]; title: string }) => {
   return (
@@ -93,8 +93,8 @@ const Item = ({ Links, title }: { Links: LinkItem[]; title: string }) => {
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};
 
 const ItemsContainer = () => {
   return (
@@ -105,5 +105,5 @@ const ItemsContainer = () => {
       <Item Links={COMPANY} title="COMPANY" />
       <Item Links={SUPPORT} title="SUPPORT" />
     </div>
-  )
-}
+  );
+};
