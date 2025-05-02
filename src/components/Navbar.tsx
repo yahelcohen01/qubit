@@ -1,4 +1,4 @@
-import { useState, Fragment, useRef, useEffect } from 'react';
+import { useState, Fragment, useEffect, useRef } from 'react';
 import {
   Dialog,
   Transition,
@@ -8,42 +8,272 @@ import {
   PopoverButton,
   PopoverPanel,
 } from '@headlessui/react';
-import { Menu as MenuIcon, Close as CloseIcon } from '@carbon/icons-react';
+import {
+  Menu as MenuIcon,
+  Close as CloseIcon,
+  ChevronDown,
+} from '@carbon/icons-react';
 import { useMedia } from 'react-use';
-import { RoundedSlideButton } from './RoundedSlideButton';
+import { Button, RoundedSlideButton } from './ui';
+import { FiArrowRight } from 'react-icons/fi';
 
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+// Define your navigation structure with proper typing
+interface NavChild {
+  name: string;
+  href: string;
+}
+
+interface NavItem {
+  name: string;
+  href: string;
+  children?: NavChild[];
+}
+
+const navigation: NavItem[] = [
+  {
+    name: 'Events',
+    href: '#',
+    children: [
+      { name: 'Meetups', href: '#' },
+      { name: 'Videos', href: '#' },
+    ],
+  },
+  { name: 'Podcast', href: '#' },
+  {
+    name: 'Publications',
+    href: '#',
+    children: [
+      { name: 'Blog', href: '#' },
+      { name: 'Academic papers', href: '#' },
+      { name: 'Knowledge', href: '#' },
+      { name: 'Quantum error correction', href: '#' },
+    ],
+  },
+  {
+    name: 'Courses',
+    href: '#',
+    children: [
+      { name: 'External courses', href: '#' },
+      { name: 'General courses', href: '#' },
+    ],
+  },
 ];
 
-export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isWide = useMedia('(min-width: 1024px)');
-
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
-  const timeoutRef = useRef<any | null>(null);
+// Create a PopoverMenu component to handle each dropdown
+const PopoverMenu = ({ item }: { item: NavItem }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setSolutionsOpen(true);
+    setIsOpen(true);
   };
 
   const handleMouseLeave = () => {
     // Small delay to prevent flickering when moving between button and panel
     timeoutRef.current = setTimeout(() => {
-      setSolutionsOpen(false);
+      setIsOpen(false);
     }, 150);
   };
 
-  // Clean up timeout on unmount
+  // Make sure the timeout is cleared when component unmounts
   useEffect(() => {
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
+
+  if (!item.children?.length) {
+    return (
+      <a href={item.href} className="block text-base font-light fancy-link">
+        {item.name}
+      </a>
+    );
+  }
+
+  return (
+    <Popover className="relative">
+      {/* Using a div as a wrapper for proper hover management */}
+      <div
+        className="group"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <PopoverButton className="inline-flex items-center gap-x-1 text-sm/6 font-semibold">
+          <a href={item.href} className="block text-base font-light fancy-link">
+            {item.name}
+          </a>
+        </PopoverButton>
+
+        <Transition
+          show={isOpen}
+          as={Fragment}
+          enter="transition ease-out duration-200"
+          enterFrom="opacity-0 translate-y-1"
+          enterTo="opacity-100 translate-y-0"
+          leave="transition ease-in duration-200"
+          leaveFrom="opacity-100 translate-y-0"
+          leaveTo="opacity-0 translate-y-1"
+        >
+          <PopoverPanel
+            static
+            className="absolute left-1/2 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4"
+          >
+            <div className="w-screen max-w-md flex-auto overflow-hidden bg-primary text-sm/6 shadow-sm ring-1 ring-black/50">
+              <div className="flex-col gap-1 p-4">
+                {item.children.map((child) => (
+                  <div
+                    key={child.name}
+                    className="group relative flex gap-x-6 m-2"
+                  >
+                    <div>
+                      <a
+                        href={child.href}
+                        className="font-semibold text-gray-900"
+                      >
+                        {child.name}
+                        <span className="absolute inset-0" />
+                      </a>
+                      <p className="mt-1 text-gray-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Quisque at erat id ligula facilisis lacinia.
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </PopoverPanel>
+        </Transition>
+      </div>
+    </Popover>
+  );
+};
+
+// Mobile menu accordion item component
+const MobileMenuItem = ({ item }: { item: NavItem }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Only show expand/collapse UI if there are children
+  if (!item.children?.length) {
+    return (
+      <div className="flow-root">
+        <a
+          href={item.href}
+          className="-m-2 block p-2 font-medium text-gray-900"
+        >
+          {item.name}
+        </a>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flow-root">
+      <div
+        className="flex justify-between items-center cursor-pointer"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        <a href={item.href} className="-m-2 block p-2 font-medium">
+          {item.name}
+        </a>
+        <button className="p-2 focus:outline-none">
+          <ChevronDown
+            className={`h-5 w-5 transform transition-transform duration-200 ${
+              isExpanded ? 'rotate-180' : 'rotate-0'
+            }`}
+          />
+        </button>
+      </div>
+
+      <Transition
+        show={isExpanded}
+        enter="transition-all duration-300 ease-out"
+        enterFrom="opacity-0 max-h-0"
+        enterTo="opacity-100 max-h-96"
+        leave="transition-all duration-200 ease-in"
+        leaveFrom="opacity-100 max-h-96"
+        leaveTo="opacity-0 max-h-0"
+      >
+        <div className="ml-4 mt-2 space-y-2">
+          {item.children.map((child) => (
+            <a
+              key={child.name}
+              href={child.href}
+              className="-m-2 block p-2 text-gray-500 hover:text-gray-900"
+            >
+              {child.name}
+            </a>
+          ))}
+        </div>
+      </Transition>
+    </div>
+  );
+};
+
+// SidebarTransition component without the dark overlay
+const SidebarTransition = ({
+  mobileMenuOpen,
+  setMobileMenuOpen,
+}: {
+  mobileMenuOpen: boolean;
+  setMobileMenuOpen: (open: boolean) => void;
+}) => {
+  return (
+    <Transition show={mobileMenuOpen} as={Fragment}>
+      <Dialog as="div" className="relative z-50" onClose={setMobileMenuOpen}>
+        <TransitionChild
+          as={Fragment}
+          enter="transition-opacity duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="transition-opacity duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 backdrop-blur-xs" />
+        </TransitionChild>
+        <div className="fixed inset-0 z-40 flex">
+          <TransitionChild
+            as={Fragment}
+            enter="transition ease-in-out duration-300 transform"
+            enterFrom="translate-x-full"
+            enterTo="translate-x-0"
+            leave="transition ease-in-out duration-300 transform"
+            leaveFrom="translate-x-0"
+            leaveTo="translate-x-full"
+          >
+            <DialogPanel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-primary py-4 pb-12 shadow-xl">
+              <div className="flex items-center justify-between px-4">
+                <a href="#" className="text-xl font-bold michroma-font">
+                  QUBIT
+                </a>
+                <button
+                  type="button"
+                  className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md p-2 text-gray-400"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="sr-only">Close menu</span>
+                  <CloseIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
+              </div>
+
+              <div className="mt-8 space-y-6 px-4">
+                {navigation.map((item) => (
+                  <MobileMenuItem key={item.name} item={item} />
+                ))}
+              </div>
+            </DialogPanel>
+          </TransitionChild>
+        </div>
+      </Dialog>
+    </Transition>
+  );
+};
+
+export function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isWide = useMedia('(min-width: 1024px)');
 
   return (
     <header className="sticky top-0 backdrop-blur-3xl z-10">
@@ -54,7 +284,7 @@ export function Navbar() {
           </a>
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden p-2 text-gray-800"
+            className="lg:hidden p-2 text-gray-800 cursor-pointer"
           >
             <MenuIcon className="w-6 h-6" />
           </button>
@@ -67,136 +297,14 @@ export function Navbar() {
         {isWide ? (
           <nav className="flex gap-6 items-center">
             {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block text-base font-light fancy-link"
-              >
-                {item.name}
-              </a>
+              <PopoverMenu key={item.name} item={item} />
             ))}
-            <Popover className="relative">
-              <div
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <PopoverButton className="inline-flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
-                  <span>Solutions</span>
-                </PopoverButton>
 
-                <Transition
-                  show={solutionsOpen}
-                  as={Fragment}
-                  enter="transition ease-out duration-200"
-                  enterFrom="opacity-0 translate-y-1"
-                  enterTo="opacity-100 translate-y-0"
-                  leave="transition ease-in duration-150"
-                  leaveFrom="opacity-100 translate-y-0"
-                  leaveTo="opacity-0 translate-y-1"
-                >
-                  <PopoverPanel
-                    static
-                    className="absolute left-1/2 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 shadow-lg ring-1 ring-gray-900/5">
-                      <div className="p-4">
-                        {navigation.map((item) => (
-                          <div
-                            key={item.name}
-                            className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50"
-                          >
-                            <div>
-                              <a
-                                href={item.href}
-                                className="font-semibold text-gray-900"
-                              >
-                                {item.name}
-                                <span className="absolute inset-0" />
-                              </a>
-                              <p className="mt-1 text-gray-600">
-                                {'asmskmcksmcsk'}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </PopoverPanel>
-                </Transition>
-              </div>
-            </Popover>
             <RoundedSlideButton>Join Our Newsletter</RoundedSlideButton>
           </nav>
         ) : null}
       </div>
       <div className="bg-black h-[1px] w-auto" />
     </header>
-  );
-}
-
-function SidebarTransition({
-  setMobileMenuOpen,
-  mobileMenuOpen,
-}: {
-  mobileMenuOpen: boolean;
-  setMobileMenuOpen: (open: boolean) => void;
-}) {
-  return (
-    <Transition show={mobileMenuOpen} as={Fragment}>
-      <Dialog
-        as="div"
-        className="relative z-50 lg:hidden"
-        onClose={setMobileMenuOpen}
-      >
-        <TransitionChild
-          as={Fragment}
-          enter="transition-opacity duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="transition-opacity duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 backdrop-blur-xs" />
-        </TransitionChild>
-
-        <div className="fixed inset-0 flex justify-end">
-          <TransitionChild
-            as={Fragment}
-            enter="transition transform duration-300 ease-out"
-            enterFrom="translate-x-full opacity-0"
-            enterTo="translate-x-0 opacity-100"
-            leave="transition transform duration-200 ease-in"
-            leaveFrom="translate-x-0 opacity-100"
-            leaveTo="translate-x-full opacity-0"
-          >
-            <DialogPanel className="w-full max-w-sm p-6 shadow-xl bg-[#f5f5f7]">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-lg font-semibold">Menu</h2>
-                <button onClick={() => setMobileMenuOpen(false)}>
-                  <CloseIcon className="w-6 h-6 text-gray-800" />
-                </button>
-              </div>
-              <nav className="space-y-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="block text-base font-medium"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-                <a href="#" className="block text-indigo-600 font-semibold">
-                  Log in
-                </a>
-              </nav>
-            </DialogPanel>
-          </TransitionChild>
-        </div>
-      </Dialog>
-    </Transition>
   );
 }

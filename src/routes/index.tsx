@@ -22,7 +22,7 @@ function App() {
           className="-z-10 size-120 px-10"
         />
       </div>
-      <div className="row-start-1 col-start-1 row-span-1 col-span-1 flex flex-col w-full">
+      <div className="row-start-1 col-start-1 row-span-1 col-span-1 flex flex-col w-full max-w-11/12 justify-center self-center justify-self-center">
         <div className="flex h-[65vh] w-full items-center justify-center shrink-0">
           <div className="flex-col">
             <TypingAnimation
@@ -34,7 +34,7 @@ function App() {
           </div>
         </div>
         <BlogPostCarousel />
-        <div className="flex flex-col items-center justify-center gap-40 pt-20 w-11/12 self-center">
+        <div className="flex flex-col items-center justify-center gap-40 pt-20 w-full self-center">
           <About />
           <MeetTheTeam />
           <Partners />
