@@ -2,10 +2,10 @@ import { createFileRoute } from '@tanstack/react-router';
 import { TypingAnimation } from '@/components/magicui/typing-animation';
 import Lottie from 'lottie-react';
 import Waves from '@root/public/waves.json';
-import { MeetTheTeam } from '@/components/MeetTheTeam';
-import { About } from '@/components/About';
-import { BlogPostCarousel } from '@/components/BlogPostCarousel';
-import { Partners } from '@/components/Partners';
+import { MeetTheTeam } from '@/components/meet-the-team';
+import { About } from '@/components/about';
+import { BlogPostCarousel } from '@/components/blog-post-carousel';
+import { Partners } from '@/components/partners';
 
 export const Route = createFileRoute('/')({
   component: App,

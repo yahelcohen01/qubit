@@ -1,5 +1,5 @@
-import { Footer } from '@/components/Footer';
-import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/footer';
+import { Navbar } from '@/components/navbar';
 import { Outlet, createRootRoute } from '@tanstack/react-router';
 // import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
