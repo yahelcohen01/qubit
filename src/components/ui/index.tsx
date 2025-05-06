@@ -1,3 +1,3 @@
 export { Button } from './Button';
-export { DotExpandButton } from './DotExpandButton';
-export { RoundedSlideButton } from './RoundedSlideButton';
+export { DotExpandButton } from './dot-expand-button';
+export { RoundedSlideButton } from './rounded-slide-button';
