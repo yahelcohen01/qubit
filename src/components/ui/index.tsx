@@ -6,3 +6,5 @@ export { AddToCalendarButton } from './add-to-calendar-button';
 export { ConditionalWrapper } from './conditional-wrapper';
 export { TypingAnimation } from './typing-animation';
 export { Breadcrumbs } from './breadcrumbs';
+export { BoxReveal } from './box-reveal';
+export { Dialog } from './dialog';
