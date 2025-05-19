@@ -8,5 +8,5 @@
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true
   },
-  "cSpell.words": ["QUBIT"]
+  "cSpell.words": ["headlessui", "QUBIT"]
 }

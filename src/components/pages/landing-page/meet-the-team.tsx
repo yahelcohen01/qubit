@@ -39,8 +39,8 @@ const people = [
 ];
 export const MeetTheTeam = () => {
   return (
-    <div className="bg-white p-12 py-14 rounded-3xl w-full">
-      <div className="mx-auto grid max-w-5/6 gap-20 px-6 lg:px-8 xl:grid-cols-3">
+    <div className="bg-white p-6 py-12 rounded-3xl w-full">
+      <div className="grid max-w-11/12 gap-20 lg:px-8 xl:grid-cols-3">
         <div>
           <h2 className="text-3xl font-semibold tracking-tight text-pretty text-black sm:text-4xl">
             Meet our leadership
@@ -52,12 +52,12 @@ export const MeetTheTeam = () => {
         </div>
         <ul
           role="list"
-          className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2"
+          className="grid gap-x-8 gap-y-12 grid-cols-2 sm:gap-y-16 xl:col-span-2"
         >
           {people.map((person) => (
-            <li key={person.name}>
+            <li key={person.name} className="">
               <Link
-                className="flex items-center gap-x-6 hover:bg-gray-100 cursor-pointer p-1 rounded-sm"
+                className="flex flex-col md:flex-row items-start gap-x-6 hover:bg-gray-100 cursor-pointer py-2 px-4 rounded-sm"
                 to={person.linkedinUrl}
                 href={person.linkedinUrl}
                 target="_blank"
@@ -67,8 +67,8 @@ export const MeetTheTeam = () => {
                   src={person.imageUrl}
                   className="size-16 rounded-full object-cover"
                 />
-                <div>
-                  <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">
+                <div className="">
+                  <h3 className="text-base/7 font-semibold tracking-tight text-gray-900 text-ellipsis whitespace-normal">
                     {person.name}
                   </h3>
                   <p className="text-sm/6 font-semibold text-indigo-600">

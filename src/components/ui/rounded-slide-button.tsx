@@ -1,11 +1,13 @@
-import type { PropsWithChildren } from 'react';
+import type { ButtonHTMLAttributes } from 'react';
 import { FiLogIn } from 'react-icons/fi';
 
-export const RoundedSlideButton = ({ children }: PropsWithChildren) => {
+export const RoundedSlideButton = (
+  props: ButtonHTMLAttributes<HTMLButtonElement>,
+) => {
   return (
     <button
       className={`
-        relative z-0 flex items-center gap-2 overflow-hidden border-[1px] 
+        relative z-0 flex items-center gap-2 overflow-hidden border-[1px] cursor-pointer
         border-black px-2 py-2 font-normal
         uppercase text-black transition-all duration-500 h-8
         
@@ -20,9 +22,10 @@ export const RoundedSlideButton = ({ children }: PropsWithChildren) => {
         hover:before:translate-x-[0%]
         hover:before:translate-y-[0%]
         active:scale-95`}
+      {...props}
     >
       <FiLogIn />
-      <span>{children}</span>
+      <span>{props.children}</span>
     </button>
   );
 };

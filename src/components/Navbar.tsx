@@ -16,11 +16,13 @@ import {
 import { useMedia } from 'react-use';
 import { Button, RoundedSlideButton } from './ui';
 import { FiArrowRight } from 'react-icons/fi';
+import { Link } from '@tanstack/react-router';
 
 // Define your navigation structure with proper typing
 interface NavChild {
   name: string;
   href: string;
+  description?: string;
 }
 
 interface NavItem {
@@ -32,29 +34,45 @@ interface NavItem {
 const navigation: NavItem[] = [
   {
     name: 'Events',
-    href: '#',
-    children: [
-      { name: 'Meetups', href: '#' },
-      { name: 'Videos', href: '#' },
-    ],
+    href: 'events',
   },
   { name: 'Podcast', href: '#' },
   {
     name: 'Publications',
     href: '#',
     children: [
-      { name: 'Blog', href: '#' },
-      { name: 'Academic papers', href: '#' },
-      { name: 'Knowledge', href: '#' },
-      { name: 'Quantum error correction', href: '#' },
+      { name: 'Blog', href: '#', description: 'Latest articles and insights' },
+      {
+        name: 'Academic papers',
+        href: '#',
+        description: 'Research papers and findings',
+      },
+      {
+        name: 'Knowledge',
+        href: '#',
+        description: 'Educational resources and materials',
+      },
+      {
+        name: 'Quantum error correction',
+        href: '#',
+        description: 'Resources on quantum error correction',
+      },
     ],
   },
   {
     name: 'Courses',
     href: '#',
     children: [
-      { name: 'External courses', href: '#' },
-      { name: 'General courses', href: '#' },
+      {
+        name: 'External courses',
+        href: '#',
+        description: 'Courses offered by external institutions',
+      },
+      {
+        name: 'General courses',
+        href: '#',
+        description: 'General courses on quantum computing',
+      },
     ],
   },
 ];
@@ -134,10 +152,7 @@ const PopoverMenu = ({ item }: { item: NavItem }) => {
                         {child.name}
                         <span className="absolute inset-0" />
                       </a>
-                      <p className="mt-1 text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Quisque at erat id ligula facilisis lacinia.
-                      </p>
+                      <p className="mt-1 text-gray-600">{child.description}</p>
                     </div>
                   </div>
                 ))}
@@ -279,9 +294,9 @@ export function Navbar() {
     <header className="sticky top-0 backdrop-blur-3xl z-10">
       <div className="py-6 flex items-center justify-between px-8 w-full justify-self-center-safe">
         <div className="flex justify-between items-center flex-1">
-          <a href="#" className="text-xl font-bold michroma-font">
+          <Link to="/" className="text-xl font-bold michroma-font">
             QUBIT
-          </a>
+          </Link>
           <button
             onClick={() => setMobileMenuOpen(true)}
             className="lg:hidden p-2 text-gray-800 cursor-pointer"
@@ -300,7 +315,13 @@ export function Navbar() {
               <PopoverMenu key={item.name} item={item} />
             ))}
 
-            <RoundedSlideButton>Join Our Newsletter</RoundedSlideButton>
+            <RoundedSlideButton
+              onClick={() => {
+                window.open('https://qubitil.substack.com/', '_blank');
+              }}
+            >
+              Join Our Newsletter
+            </RoundedSlideButton>
           </nav>
         ) : null}
       </div>

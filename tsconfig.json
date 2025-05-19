@@ -32,7 +32,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@root/*": ["./*"],
-      "@assets/*": ["./src/assets/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@types/*": ["./src/types/index.ts"]
     }
   }
 }
