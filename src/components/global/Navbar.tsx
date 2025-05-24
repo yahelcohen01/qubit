@@ -14,8 +14,7 @@ import {
   ChevronDown,
 } from '@carbon/icons-react';
 import { useMedia } from 'react-use';
-import { Button, RoundedSlideButton } from './ui';
-import { FiArrowRight } from 'react-icons/fi';
+import {  RoundedSlideButton } from '../ui';
 import { Link } from '@tanstack/react-router';
 
 // Define your navigation structure with proper typing

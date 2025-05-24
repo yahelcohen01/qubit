@@ -3,10 +3,10 @@ import { type ReactNode } from 'react';
 
 type CardProps = {
   title: string;
-  content: string;
+  content?: string;
   header?: ReactNode;
   footer?: ReactNode;
-  animation?: 'slide' | 'grow';
+  animation?: 'slide' | 'grow' | 'border';
   size:
     | '3xs'
     | '2xs'
@@ -19,7 +19,7 @@ type CardProps = {
     | '3xl'
     | 'full'
     | (string & {});
-  classes?: string;
+  classes?: { card?: string; content?: string; title?: string };
 };
 
 export const Card = ({
@@ -31,25 +31,39 @@ export const Card = ({
   classes,
   size,
 }: CardProps) => {
-  const animationClass =
-    animation === 'slide'
-      ? 'transform hover:-translate-y-1 transition-all'
-      : 'transform duration-300 hover:scale-105';
+  const animationClass = () => {
+    switch (animation) {
+      case 'slide':
+        return 'transform hover:-translate-y-1 transition-all';
+      case 'grow':
+        return 'transform duration-300 hover:scale-105';
+      case 'border':
+        return 'border border-gray-200 hover:border-black transition-colors';
+      default:
+        return '';
+    }
+  };
 
   return (
     <div
       className={cn(
-        `flex-none w-${size} m-4 bg-white rounded-sm cursor-pointer`,
-        animationClass,
-        classes,
+        `flex flex-none flex-col w-${size} m-4 bg-white rounded-sm cursor-pointer justify-between`,
+        animationClass(),
+        classes?.card,
       )}
     >
-      {header && <div className="p-4 border-b border-gray-200">{header}</div>}
+      {header && <>{header}</>}
       <div className="p-4">
-        <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
-        <p className="text-sm text-gray-600">{content}</p>
+        <h2
+          className={cn('text-lg font-semibold text-gray-800', classes?.title)}
+        >
+          {title}
+        </h2>
+        <p className={cn('text-sm text-gray-600', classes?.content)}>
+          {content}
+        </p>
       </div>
-      {footer && <div className="p-4 border-t border-gray-200">{footer}</div>}
+      {footer && <>{footer}</>}
     </div>
   );
 };

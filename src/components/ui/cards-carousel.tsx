@@ -1,15 +1,7 @@
-import { useRef, type ReactNode } from 'react';
+import { useRef } from 'react';
 import { Card } from '@/components/ui/card';
 import { ChevronLeft, ChevronRight } from '@carbon/icons-react'; // icon library (install via: `npm i lucide-react`)
-
-interface CardData {
-  id: number;
-  title: string;
-  content: string;
-  header?: ReactNode;
-  footer?: ReactNode;
-  classes?: string;
-}
+import type { CardData } from '@/types';
 
 interface CardContainerProps {
   cards: CardData[];

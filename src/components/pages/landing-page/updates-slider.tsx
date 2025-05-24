@@ -1,12 +1,14 @@
 import { CardContainer } from '@/components/ui/cards-carousel';
+import type { CardData } from '@/types';
 
 export const UpdatesSlider = () => {
   const cards = cardsData.map((card) => ({
     id: card.id,
     title: card.title,
     content: card.content,
+    classes: { card: 'border border-gray-200' },
     header: (
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between border-b border-gray-200 p-4">
         <span className="rounded-sm border-[1px] border-neutral-500 px-1.5 py-1 text-xs uppercase text-neutral-500 items-center">
           {card.author}
         </span>
@@ -24,7 +26,7 @@ export const UpdatesSlider = () => {
   );
 };
 
-const cardsData = [
+const cardsData: (CardData & { author: string; date: string })[] = [
   {
     id: 1,
     author: 'JOHN ANDERSON',
