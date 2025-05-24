@@ -8,3 +8,4 @@ export { TypingAnimation } from './typing-animation';
 export { Breadcrumbs } from './breadcrumbs';
 export { BoxReveal } from './box-reveal';
 export { Dialog } from './dialog';
+export { Card } from './card';

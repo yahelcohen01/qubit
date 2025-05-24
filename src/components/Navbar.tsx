@@ -36,28 +36,10 @@ const navigation: NavItem[] = [
     name: 'Events',
     href: 'events',
   },
-  { name: 'Podcast', href: '#' },
+  { name: 'Podcast', href: '/podcast' },
   {
     name: 'Publications',
-    href: '#',
-    children: [
-      { name: 'Blog', href: '#', description: 'Latest articles and insights' },
-      {
-        name: 'Academic papers',
-        href: '#',
-        description: 'Research papers and findings',
-      },
-      {
-        name: 'Knowledge',
-        href: '#',
-        description: 'Educational resources and materials',
-      },
-      {
-        name: 'Quantum error correction',
-        href: '#',
-        description: 'Resources on quantum error correction',
-      },
-    ],
+    href: '/knowledge-base',
   },
   {
     name: 'Courses',

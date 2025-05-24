@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as PodcastImport } from './routes/podcast'
+import { Route as KnowledgeBaseImport } from './routes/knowledge-base'
 import { Route as IndexImport } from './routes/index'
 import { Route as EventsIndexImport } from './routes/events/index'
 import { Route as EventsEventIdImport } from './routes/events/$eventId'
@@ -21,6 +22,12 @@ import { Route as EventsEventIdImport } from './routes/events/$eventId'
 const PodcastRoute = PodcastImport.update({
   id: '/podcast',
   path: '/podcast',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const KnowledgeBaseRoute = KnowledgeBaseImport.update({
+  id: '/knowledge-base',
+  path: '/knowledge-base',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -53,6 +60,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/knowledge-base': {
+      id: '/knowledge-base'
+      path: '/knowledge-base'
+      fullPath: '/knowledge-base'
+      preLoaderRoute: typeof KnowledgeBaseImport
+      parentRoute: typeof rootRoute
+    }
     '/podcast': {
       id: '/podcast'
       path: '/podcast'
@@ -81,6 +95,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/knowledge-base': typeof KnowledgeBaseRoute
   '/podcast': typeof PodcastRoute
   '/events/$eventId': typeof EventsEventIdRoute
   '/events': typeof EventsIndexRoute
@@ -88,6 +103,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/knowledge-base': typeof KnowledgeBaseRoute
   '/podcast': typeof PodcastRoute
   '/events/$eventId': typeof EventsEventIdRoute
   '/events': typeof EventsIndexRoute
@@ -96,6 +112,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/knowledge-base': typeof KnowledgeBaseRoute
   '/podcast': typeof PodcastRoute
   '/events/$eventId': typeof EventsEventIdRoute
   '/events/': typeof EventsIndexRoute
@@ -103,15 +120,27 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/podcast' | '/events/$eventId' | '/events'
+  fullPaths:
+    | '/'
+    | '/knowledge-base'
+    | '/podcast'
+    | '/events/$eventId'
+    | '/events'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/podcast' | '/events/$eventId' | '/events'
-  id: '__root__' | '/' | '/podcast' | '/events/$eventId' | '/events/'
+  to: '/' | '/knowledge-base' | '/podcast' | '/events/$eventId' | '/events'
+  id:
+    | '__root__'
+    | '/'
+    | '/knowledge-base'
+    | '/podcast'
+    | '/events/$eventId'
+    | '/events/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KnowledgeBaseRoute: typeof KnowledgeBaseRoute
   PodcastRoute: typeof PodcastRoute
   EventsEventIdRoute: typeof EventsEventIdRoute
   EventsIndexRoute: typeof EventsIndexRoute
@@ -119,6 +148,7 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KnowledgeBaseRoute: KnowledgeBaseRoute,
   PodcastRoute: PodcastRoute,
   EventsEventIdRoute: EventsEventIdRoute,
   EventsIndexRoute: EventsIndexRoute,
@@ -135,6 +165,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/knowledge-base",
         "/podcast",
         "/events/$eventId",
         "/events/"
@@ -142,6 +173,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/knowledge-base": {
+      "filePath": "knowledge-base.tsx"
     },
     "/podcast": {
       "filePath": "podcast.tsx"

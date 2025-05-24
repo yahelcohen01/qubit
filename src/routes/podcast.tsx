@@ -20,7 +20,6 @@ function RouteComponent() {
           computing and quantum information science.{' '}
           <a
             href="https://qubitil.substack.com/"
-            target="_blank"
             rel="noopener noreferrer"
             className="text-secondary hover:underline"
           >
@@ -34,7 +33,7 @@ function RouteComponent() {
           </p>
           <button
             onClick={() => setIsOpen(true)}
-            className="bg-secondary text-white hover:opacity-80 whitespace-nowrap px-2 h-10"
+            className="bg-secondary text-white rounded hover:opacity-80 whitespace-nowrap px-2 h-10"
           >
             Share your ideas!
           </button>
