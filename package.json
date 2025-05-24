@@ -10,6 +10,7 @@
     "test": "vitest run",
     "lint": "eslint",
     "format": "prettier",
+    "preinstall": "npx only-allow pnpm",
     "check": "prettier --write . && eslint --fix"
   },
   "dependencies": {
