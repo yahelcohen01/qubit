@@ -1,4 +1,4 @@
-export { Button } from './Button';
+export { Button } from './button';
 export { DotExpandButton } from './dot-expand-button';
 export { RoundedSlideButton } from './rounded-slide-button';
 export { Tooltip } from './tooltip';
