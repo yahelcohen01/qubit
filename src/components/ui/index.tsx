@@ -1,4 +1,4 @@
-export { Button } from './button';
+export { Button } from './Button';
 export { DotExpandButton } from './dot-expand-button';
 export { RoundedSlideButton } from './rounded-slide-button';
 export { Tooltip } from './tooltip';
@@ -9,3 +9,6 @@ export { Breadcrumbs } from './breadcrumbs';
 export { BoxReveal } from './box-reveal';
 export { Dialog } from './dialog';
 export { Card } from './card';
+export { Accordion, AccordionButton, AccordionPanel } from './accordion';
+export { CardContainer } from './cards-carousel';
+export { Checkbox } from './checkbox';

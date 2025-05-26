@@ -1,4 +1,4 @@
-import { CardContainer } from '@/components/ui/cards-carousel';
+import { CardContainer } from '@/components/ui';
 import type { CardData } from '@/types';
 
 export const UpdatesSlider = () => {

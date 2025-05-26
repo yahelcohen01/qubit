@@ -2,6 +2,7 @@ import { ChevronDown, ChevronUp, Close } from '@carbon/icons-react';
 import type { FilterGroup } from './knowledge-base';
 import type { Asset, SetStateAction } from '@/types';
 import { Checkbox } from '@/components/ui/checkbox';
+import { Accordion, AccordionButton, AccordionPanel } from '@/components/ui';
 
 export const FilterSidebar = ({
   filterGroups,
@@ -63,7 +64,34 @@ export const FilterSidebar = ({
         </div>
       )}
 
-      {filterGroups.map((group) => (
+      {filterGroups.map((group) => {
+        return (
+          <Accordion key={group.id} defaultOpen={group.isOpen} className="mb-4">
+            <AccordionButton className="flex justify-between items-center w-full text-left font-medium">
+              {group.name}
+            </AccordionButton>
+            <AccordionPanel className="space-y-2">
+              {group.options.map((option) => (
+                <div key={option.id} className="flex items-center">
+                  <Checkbox
+                    id={`${group.id}-${option.id}`}
+                    checked={option.checked}
+                    onChange={() => toggleFilterOption(group.id, option.id)}
+                    className="mr-2"
+                    label={`${option.label} (${getAssetFilterCount({
+                      assets,
+                      filterId: group.id,
+                      filterValue: option.id,
+                    })})`}
+                  />
+                </div>
+              ))}
+            </AccordionPanel>
+          </Accordion>
+        );
+      })}
+
+      {/* {filterGroups.map((group) => (
         <div key={group.id} className="mb-6">
           <button
             onClick={() => toggleFilterGroup(group.id)}
@@ -95,7 +123,7 @@ export const FilterSidebar = ({
             </div>
           )}
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };

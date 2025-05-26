@@ -258,6 +258,7 @@ export const KnowledgeBase = () => {
     <div className="max-w-screen mx-auto p-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-4">KNOWLEDGE BASE</h1>
+
         <SearchBar query={searchQuery} setQuery={setSearchQuery} />
       </div>
 
