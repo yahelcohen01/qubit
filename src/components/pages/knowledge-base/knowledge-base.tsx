@@ -4,7 +4,6 @@ import { FilterSidebar } from './filter-sidebar';
 import type { Asset } from '@/types';
 import { AssestsGrid } from './assets-grid';
 import ScrodingersCat from '@root/public/schrodinger-cat.png';
-
 export interface FilterOption {
   id: string;
   label: string;
@@ -258,7 +257,6 @@ export const KnowledgeBase = () => {
     <div className="max-w-screen mx-auto p-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-4">KNOWLEDGE BASE</h1>
-
         <SearchBar query={searchQuery} setQuery={setSearchQuery} />
       </div>
 
@@ -330,7 +328,7 @@ const SearchBar = ({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search..."
-          className="w-full pl-10 pr-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full pl-10 pr-10 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-secondary"
         />
         {query && (
           <button

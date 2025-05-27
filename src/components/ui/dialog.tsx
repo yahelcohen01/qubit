@@ -21,6 +21,7 @@ export interface DialogProps {
   size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
   position?: 'center' | 'top';
   footer?: ReactNode;
+  fullscreen?: boolean;
 }
 
 export const Dialog = ({
@@ -35,6 +36,7 @@ export const Dialog = ({
   size = 'md',
   position = 'center',
   footer,
+  fullscreen = false,
 }: DialogProps) => {
   // Define size classes
   const sizeClasses = {
@@ -51,6 +53,15 @@ export const Dialog = ({
     top: 'items-start pt-16',
   };
 
+  // Fullscreen classes override size and position
+  const dialogClasses = fullscreen
+    ? 'fixed inset-0 w-full h-full max-w-none mx-0 rounded-none'
+    : `w-full ${sizeClasses[size]} transform overflow-hidden rounded-lg`;
+
+  const containerClasses = fullscreen
+    ? 'flex h-full'
+    : `flex min-h-full justify-center ${positionClasses[position]}`;
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <HeadlessDialog
@@ -58,35 +69,41 @@ export const Dialog = ({
         className="relative z-50"
         onClose={closeOnOverlayClick ? onClose : () => {}}
       >
-        {/* Overlay */}
-        <TransitionChild
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-70"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-70"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-black opacity-70 backdrop-blur-sm" />
-        </TransitionChild>
+        {/* Overlay - hidden in fullscreen mode */}
+        {!fullscreen && (
+          <TransitionChild
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-70"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-70"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black opacity-70 backdrop-blur-sm" />
+          </TransitionChild>
+        )}
 
         {/* Dialog positioning */}
-        <div className="fixed inset-0 overflow-y-auto">
-          <div
-            className={`flex min-h-full justify-center ${positionClasses[position]}`}
-          >
+        <div
+          className={
+            fullscreen ? 'fixed inset-0' : 'fixed inset-0 overflow-y-auto'
+          }
+        >
+          <div className={containerClasses}>
             <TransitionChild
               as={Fragment}
               enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
+              enterFrom={fullscreen ? 'opacity-0' : 'opacity-0 scale-95'}
+              enterTo={fullscreen ? 'opacity-100' : 'opacity-100 scale-100'}
               leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
+              leaveFrom={fullscreen ? 'opacity-100' : 'opacity-100 scale-100'}
+              leaveTo={fullscreen ? 'opacity-0' : 'opacity-0 scale-95'}
             >
               <HeadlessDialogPanel
-                className={`w-full ${sizeClasses[size]} transform overflow-hidden rounded-lg bg-white p-6 shadow-xl transition-all ${className}`}
+                className={`${dialogClasses} bg-white p-6 shadow-xl transition-all ${
+                  fullscreen ? 'overflow-y-auto' : ''
+                } ${className}`}
               >
                 {/* Header */}
                 {(title || showCloseButton) && (
@@ -120,7 +137,9 @@ export const Dialog = ({
                 )}
 
                 {/* Content */}
-                <div className="mt-2">{children}</div>
+                <div className={`mt-2 ${fullscreen ? 'flex-1' : ''}`}>
+                  {children}
+                </div>
 
                 {/* Footer */}
                 {footer && <div className="mt-6">{footer}</div>}

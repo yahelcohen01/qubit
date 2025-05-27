@@ -10,7 +10,7 @@ export const AssetCard = ({ asset }: { asset: Asset }) => {
       size="md"
       animation="border"
       classes={{
-        card: 'rounded-none h-auto min-h-[18rem] justify-normal w-full',
+        card: 'rounded-none h-auto min-h-[18rem] justify-normal w-full m-0',
       }}
       header={
         <div className="text-sm text-gray-600 px-4 pt-4 flex items-center justify-between">
