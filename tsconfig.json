@@ -5,6 +5,15 @@
   "references": [
     {
       "path": "./apps/qubit"
+    },
+    {
+      "path": "./libs/ui"
+    },
+    {
+      "path": "./libs/utils"
+    },
+    {
+      "path": "./libs/types"
     }
   ]
 }
