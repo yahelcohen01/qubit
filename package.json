@@ -10,6 +10,7 @@
     "@tanstack/react-router": "^1.120.11",
     "ajv": "^8.17.1",
     "motion": "^12.15.0",
+    "pnpm": "^10.11.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-icons": "^5.5.0",
