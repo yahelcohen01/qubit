@@ -5,8 +5,8 @@
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts",
-      "vite/client"
+      "@nx/react/typings/image.d.ts"
+      // "vite/client"
     ],
     "rootDir": "src",
     "jsx": "react-jsx",
@@ -15,10 +15,10 @@
   },
   "references": [
     {
-      "path": "../../libs/utils/tsconfig.json"
+      "path": "../types/tsconfig.lib.json"
     },
     {
-      "path": "../../libs/types/tsconfig.json"
+      "path": "../utils/tsconfig.lib.json"
     }
   ],
   "exclude": [

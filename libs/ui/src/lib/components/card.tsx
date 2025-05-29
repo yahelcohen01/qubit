@@ -52,7 +52,7 @@ export const Card = ({
         classes?.card
       )}
     >
-      {header && <>{header}</>}
+      {header && header}
       <div className="p-4">
         <h2
           className={cn('text-lg font-semibold text-gray-800', classes?.title)}
@@ -63,7 +63,7 @@ export const Card = ({
           {content}
         </p>
       </div>
-      {footer && <>{footer}</>}
+      {footer && footer}
     </div>
   );
 };

@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Michroma';
+  src: url('./assets/fonts/Michroma-Regular.ttf');
+  font-display: swap;
+}
+
+/* Add a direct CSS class */
+.michroma-font {
+  font-family: 'Michroma', sans-serif !important;
+}

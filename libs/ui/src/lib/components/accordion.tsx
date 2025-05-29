@@ -70,7 +70,7 @@ const AccordionButton = ({
       <span>{children}</span>
       <svg
         className={cn(
-          'size-4 transition-transform duration-300 ',
+          'h-4 transition-transform duration-300 ',
           isOpen ? 'rotate-180' : ''
         )}
         fill="none"
