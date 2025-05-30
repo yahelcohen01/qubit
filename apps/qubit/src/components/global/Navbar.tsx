@@ -241,7 +241,11 @@ const SidebarTransition = ({
           >
             <DialogPanel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-primary py-4 pb-12 shadow-xl">
               <div className="flex items-center justify-between px-4">
-                <a href="#" className="text-xl font-bold michroma-font">
+                <a
+                  href="/"
+                  className="text-xl font-bold michroma-font"
+                  aria-label="Qubit"
+                >
                   QUBIT
                 </a>
                 <button

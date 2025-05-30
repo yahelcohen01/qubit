@@ -46,12 +46,13 @@ export const MeetTheTeam = () => {
             Meet our leadership
           </h2>
           <p className="mt-6 text-lg/8 text-gray-700">
-            We’re a dynamic group of individuals who are passionate about what
+            We're a dynamic group of individuals who are passionate about what
             we do and dedicated to delivering the best results for our clients.
           </p>
         </div>
         <ul
-          role="list"
+          aria-label="Meet the team"
+          aria-roledescription="List of team members"
           className="grid gap-x-8 gap-y-12 grid-cols-2 sm:gap-y-16 xl:col-span-2"
         >
           {people.map((person) => (
