@@ -1,21 +1,22 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
 import express from 'express';
-import * as path from 'path';
+import { appConfig } from './config/app.config';
+import { setupCommonMiddleware } from './middleware/common.middleware';
+import { apiRouter } from './routes';
 
 const app = express();
 
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+// Setup common middleware
+setupCommonMiddleware(app);
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to api!' });
+// Mount API routes
+app.use(appConfig.api.prefix, apiRouter);
+
+// Start server
+const server = app.listen(appConfig.port, () => {
+  console.log(`Server is running at http://localhost:${appConfig.port}`);
+  console.log(
+    `API is available at http://localhost:${appConfig.port}${appConfig.api.prefix}`
+  );
 });
 
-const port = process.env.PORT || 3333;
-const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
-});
 server.on('error', console.error);
