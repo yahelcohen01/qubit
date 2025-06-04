@@ -1,23 +1,47 @@
 import { CardContainer } from '@ui';
 import type { CardData } from '@types';
+import { useGetUpdates } from './hooks';
+import { useMemo } from 'react';
 
 export const UpdatesSlider = () => {
-  const cards = cardsData.map((card) => ({
-    id: card.id,
-    title: card.title,
-    content: card.content,
-    classes: { card: 'border border-gray-200' },
-    header: (
-      <div className="flex items-center justify-between border-b border-gray-200 p-4">
-        <span className="rounded-sm border-[1px] border-neutral-500 px-1.5 py-1 text-xs uppercase text-neutral-500 items-center">
-          {card.author}
-        </span>
-        <span className="text-neutral-500 font-light text-xs">
-          {new Date(card.date).toLocaleDateString()}
-        </span>
+  const { data, isLoading, error } = useGetUpdates();
+  console.log('🚀 ~ UpdatesSlider ~ isLoading:', isLoading);
+  const cards = useMemo(
+    () =>
+      cardsData.map((card) => ({
+        id: card.id,
+        title: card.title,
+        content: card.content,
+        classes: { card: 'border border-gray-200' },
+        header: (
+          <div className="flex items-center justify-between border-b border-gray-200 p-4">
+            <span className="rounded-sm border-[1px] border-neutral-500 px-1.5 py-1 text-xs uppercase text-neutral-500 items-center">
+              {card.author}
+            </span>
+            <span className="text-neutral-500 font-light text-xs">
+              {new Date(card.date).toLocaleDateString()}
+            </span>
+          </div>
+        ),
+      })),
+    [data, isLoading]
+  );
+
+  if (isLoading) {
+    return (
+      <div className="py-8">
+        <CardContainer
+          skeleton
+          cards={Array.from({ length: 5 }, () => ({
+            id: Math.random(),
+            title: '',
+            content: '',
+          }))}
+        />
       </div>
-    ),
-  }));
+    );
+  }
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className="py-8">

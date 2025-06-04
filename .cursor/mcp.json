@@ -2,6 +2,10 @@
   "mcpServers": {
     "nx-mcp": {
       "url": "http://localhost:9260/sse"
+    },
+    "Prisma": {
+      "command": "npx",
+      "args": ["-y", "prisma", "mcp"]
     }
   }
 }

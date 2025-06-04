@@ -5,11 +5,12 @@ import type { CardData } from '@types';
 
 interface CardContainerProps {
   cards: CardData[];
+  skeleton?: boolean;
 }
 
 const SCROLL_AMOUNT = 300;
 
-export const CardContainer = ({ cards }: CardContainerProps) => {
+export const CardContainer = ({ cards, skeleton }: CardContainerProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -49,6 +50,7 @@ export const CardContainer = ({ cards }: CardContainerProps) => {
             footer={card.footer}
             classes={card.classes}
             size={'3xs'}
+            skeleton={skeleton}
           />
         ))}
       </div>

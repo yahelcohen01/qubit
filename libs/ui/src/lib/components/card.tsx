@@ -1,5 +1,6 @@
 import { cn } from '@utils';
 import { type ReactNode } from 'react';
+import { Skeleton } from './skeleton';
 
 type CardProps = {
   title: string;
@@ -20,6 +21,7 @@ type CardProps = {
     | 'full'
     | (string & {});
   classes?: { card?: string; content?: string; title?: string };
+  skeleton?: boolean;
 };
 
 export const Card = ({
@@ -30,6 +32,7 @@ export const Card = ({
   animation,
   classes,
   size,
+  skeleton,
 }: CardProps) => {
   const animationClass = () => {
     switch (animation) {
@@ -43,6 +46,17 @@ export const Card = ({
         return '';
     }
   };
+
+  if (skeleton) {
+    return (
+      <Skeleton
+        className={cn(
+          `flex flex-none flex-col w-3xs h-40 m-4 rounded-sm justify-between`,
+          classes?.card
+        )}
+      />
+    );
+  }
 
   return (
     <div

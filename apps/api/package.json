@@ -1,0 +1,29 @@
+{
+  "name": "@qubit/api",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "targets": {
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@qubit/api:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@qubit/api:build:development"
+          },
+          "production": {
+            "buildTarget": "@qubit/api:build:production"
+          }
+        }
+      }
+    }
+  }
+}

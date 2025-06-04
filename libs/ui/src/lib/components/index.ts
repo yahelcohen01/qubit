@@ -12,3 +12,4 @@ export { Card } from './card';
 export { Accordion, AccordionButton, AccordionPanel } from './accordion';
 export { CardContainer } from './cards-carousel';
 export { Checkbox } from './checkbox';
+export { Skeleton } from './skeleton';
