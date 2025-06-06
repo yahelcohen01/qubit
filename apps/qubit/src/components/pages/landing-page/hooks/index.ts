@@ -6,7 +6,7 @@ export const useGetUpdates = (
   params?: UpdatesRequest
 ): UseQueryResult<UpdatesResponse, Error> => {
   return useFetch<UpdatesRequest, UpdatesResponse>({
-    queryKey: (p) => ['updates', p],
+    queryKey: (p) => ['/updates', p],
     endpoint: '/updates',
     params,
   });

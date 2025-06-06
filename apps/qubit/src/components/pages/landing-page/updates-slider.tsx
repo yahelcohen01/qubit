@@ -5,7 +5,7 @@ import { useMemo } from 'react';
 
 export const UpdatesSlider = () => {
   const { data, isLoading, error } = useGetUpdates();
-  console.log('🚀 ~ UpdatesSlider ~ isLoading:', isLoading);
+
   const cards = useMemo(
     () =>
       cardsData.map((card) => ({
@@ -29,7 +29,7 @@ export const UpdatesSlider = () => {
 
   if (isLoading) {
     return (
-      <div className="py-8">
+      <div className="gap-2">
         <CardContainer
           skeleton
           cards={Array.from({ length: 5 }, () => ({

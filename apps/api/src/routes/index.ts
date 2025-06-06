@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { usersRouter } from './users.routes';
+import { updatesRouter } from './updates.routes';
 
 const router = Router();
 
@@ -8,7 +9,7 @@ router.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-// Mount routes
 router.use('/users', usersRouter);
+router.use('/updates', updatesRouter);
 
 export const apiRouter: Router = router;

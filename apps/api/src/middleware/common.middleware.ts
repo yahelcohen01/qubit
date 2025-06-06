@@ -8,7 +8,10 @@ export const setupCommonMiddleware = (app: express.Application) => {
   // Enable Cross Origin Resource Sharing
   app.use(
     cors({
-      origin: appConfig.cors.origin,
+      origin: appConfig.cors.origins,
+      methods: appConfig.cors.methods,
+      allowedHeaders: appConfig.cors.allowedHeaders,
+      credentials: appConfig.cors.credentials,
     })
   );
 
