@@ -72,22 +72,3 @@ export interface CardData {
   footer?: ReactNode;
   classes?: { card?: string; content?: string; title?: string };
 }
-
-export interface Update {
-  id: string;
-  title: string;
-  description: string;
-  createdAt: string;
-}
-
-export interface UpdatesRequest {
-  page?: number;
-  limit?: number;
-  status?: string;
-}
-
-export interface UpdatesResponse {
-  updates: Update[];
-  total: number;
-  page: number;
-}

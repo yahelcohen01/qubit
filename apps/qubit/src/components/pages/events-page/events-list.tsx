@@ -28,7 +28,7 @@ export const EventsList = ({ events }: EventsListProps) => {
 
   return (
     <div className="">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-8">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-8">
         <div className="flex justify-between items-center mb-4 md:mb-8">
           <div className="flex items-center">
             <h1 className="text-xl font-bold text-gray-900 mr-2 md:text-2xl">

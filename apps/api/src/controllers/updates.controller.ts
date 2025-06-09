@@ -1,9 +1,15 @@
-// import { z } from 'zod';
+import { validateEndpoint } from '@utils';
+import type { RequestHandler } from 'express';
+import { getUpdatesSchema } from '@types';
 
-// const getUpdatesQuerySchema = z.object({
-//   page: z.coerce.number().min(1).optional().default(1),
-//   limit: z.coerce.number().min(1).max(100).optional().default(10),
-//   status: z.string().optional(),
-// });
-
-// export const getUpdates =
+export const getUpdates: RequestHandler = validateEndpoint(
+  { query: getUpdatesSchema },
+  async (req, res) => {
+    const { page, limit, status } = req.query;
+    return res.json({
+      page,
+      limit,
+      status,
+    });
+  }
+);

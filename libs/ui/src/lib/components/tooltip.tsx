@@ -131,6 +131,7 @@ const Tooltip: React.FC<TooltipProps> = ({
         window.removeEventListener('scroll', updatePosition, true);
       };
     }
+    return;
   }, [isVisible, position, content]);
 
   // Cleanup timeouts on unmount

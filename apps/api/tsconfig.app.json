@@ -4,7 +4,6 @@
     "outDir": "dist",
     "module": "nodenext",
     "types": ["node", "express"],
-    "rootDir": "src",
     "target": "esnext",
     "moduleResolution": "nodenext",
     "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo"
@@ -17,6 +16,6 @@
       "path": "../../libs/types/tsconfig.lib.json"
     }
   ],
-  "include": ["src/**/*.ts", "../../libs/utils/src/lib/validate-endpoint.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["eslint.config.js", "eslint.config.cjs", "eslint.config.mjs"]
 }

@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, RequestHandler } from 'express';
+import { Request, Response, NextFunction, type RequestHandler } from 'express';
 import { z, ZodTypeAny } from 'zod';
 
 type SchemaObject = {
