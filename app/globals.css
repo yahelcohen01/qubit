@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #000;
+  --text-primary: var(--color-white);
+  --color-foreground: var(--foreground);
+  --breakpoint-navbar: 1110px;
+}
+
+:root {
+  background-color: var(--color-primary);
+  color: var(--text-primary);
+}
+
+.fancy-link {
+  @apply no-underline transition-all duration-[300ms] ease-linear relative;
+
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#fff, #fff);
+  background-size: 100% 1px, 0 1px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+}
+
+.fancy-link:hover {
+  background-size: 0 1px, 100% 1px;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
