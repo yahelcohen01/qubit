@@ -2,13 +2,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FillingAnimatedButton } from "./filling-animated-button";
-import {
-  Menu as MenuIcon,
-  X as XIcon,
-  Headset as HeadsetIcon,
-} from "lucide-react";
 import { useMedia } from "react-use";
 import { ConditionalDiv } from "./conditional-div";
+import { Sidebar } from "./mobile/sidebar";
+import Image from "next/image";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -34,34 +31,79 @@ export const Navbar = () => {
               className="p-2 cursor-pointer"
             >
               {isMobileMenuOpen ? (
-                <XIcon className="h-6 w-6" />
+                // Close icon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill="#fff"
+                    d="M7.995 6.35 13.77.577l1.65 1.65-5.775 5.775 5.775 5.775-1.65 1.65L7.995 9.65 2.22 15.425l-1.65-1.65 5.775-5.774L.57 2.226 2.22.576z"
+                  ></path>
+                </svg>
               ) : (
-                <MenuIcon className="h-6 w-6" />
+                // Hamburger icon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  viewBox="0 0 28 28"
+                >
+                  <path
+                    fill="#fff"
+                    d="M24.5 4.668h-21v2.333h21zm-7 8.167h-14v2.333h14zm7 8.166h-21v2.334h21z"
+                  ></path>
+                </svg>
               )}
             </button>
           </ConditionalDiv>
 
-          {isMobile ? (
-            <Link href="/" className="flex items-center space-x-2">
-              <img
-                src="/assets/navbar-logo-mobile.png"
-                alt="Logo"
-                className="size-max object-contain"
-              />
-            </Link>
-          ) : (
-            <Link href="/" className="flex items-center space-x-2">
-              <img
-                src="/assets/navbar-logo.png"
-                alt="Logo"
-                className="size-max object-contain"
-              />
-            </Link>
-          )}
+          <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src="/assets/navbar-logo.png"
+              alt="Logo"
+              width={150}
+              height={50}
+              className="hidden navbar:block object-contain"
+            />
+            <Image
+              src="/assets/navbar-logo-mobile.png"
+              alt="Logo"
+              width={100}
+              height={40}
+              className="block navbar:hidden object-contain"
+            />
+          </Link>
 
           <ConditionalDiv condition={isMobile}>
             <button className="p-2 cursor-pointer">
-              <HeadsetIcon className="h-6 w-6" />
+              {/* support icon */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                fill="none"
+                viewBox="0 0 28 28"
+              >
+                <g clipPath="url(#clip0_247_2659)">
+                  <path
+                    stroke="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.75"
+                    d="M5.544 11.363v-.291c0-4.35 3.787-7.875 8.459-7.875s8.458 3.525 8.458 7.875v.291m-8.458 11.542v.708c0 .645.522 1.167 1.166 1.167h2.334c2.9 0 5.25-2.35 5.25-5.25M4.96 11.363h1.75v7.584H4.96a1.75 1.75 0 0 1-1.75-1.75v-4.084c0-.966.783-1.75 1.75-1.75m16.333 0h1.75c.967 0 1.75.784 1.75 1.75v4.084a1.75 1.75 0 0 1-1.75 1.75h-1.75z"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_247_2659">
+                    <path fill="#fff" d="M0 0h28v28H0z"></path>
+                  </clipPath>
+                </defs>
+              </svg>
             </button>
           </ConditionalDiv>
 
@@ -88,29 +130,11 @@ export const Navbar = () => {
           </div>
         </div>
 
-        <ConditionalDiv
-          condition={isMobileMenuOpen}
-          className="border-t border-gray-200 bg-white/95 backdrop-blur-md"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`
-                    block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200
-                    
-                  `}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="pt-4 pb-2">
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                Get Started
-              </button>
-            </div>
-          </div>
+        <ConditionalDiv condition={isMobileMenuOpen}>
+          <Sidebar
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+            navItems={navItems}
+          />
         </ConditionalDiv>
       </div>
     </nav>
