@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppProviders } from "./providers/AppProviders";
 import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "./components/navbar";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Qubit IL",
@@ -67,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`font-inter-tight antialiased`} lang="en">
         <Analytics />
         <AppProviders>
           <Navbar />

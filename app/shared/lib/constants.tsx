@@ -37,3 +37,37 @@ export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Content hub", href: "#content-hub" },
 ] as const;
+
+export const stats = [
+  {
+    label: "Events",
+    value: "30+",
+    className: "col-span-1",
+    content: "Events with global thought leaders.",
+  },
+  {
+    label: "Members",
+    value: "1000+",
+    className: "col-span-1",
+    content: "members in our super-active WhatsApp community.",
+  },
+  {
+    label: "Companies",
+    value: "100+",
+    className: "col-span-1",
+    content: "Participants taking part in Israel’s first quantum hackathon.",
+  },
+  {
+    label: "Leadership",
+    value: "Leadership",
+    className: "col-span-1",
+    content: "C-suite leaders across finance, energy, healthcare, etc.",
+  },
+  {
+    label: "Synergy",
+    value: "Synergy",
+    className: "col-span-2 navbar:col-span-1",
+    content:
+      "Collaboration with the Israel Innovation Authority and national quantum leadership.",
+  },
+] as const;

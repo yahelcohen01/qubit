@@ -42,7 +42,7 @@ function columnsToClasses(columns?: ColumnsProp) {
 }
 
 export function ResponsiveLayout({
-  columns = { sm: 1, md: 2, lg: 4 },
+  columns,
   gap = "gap-4",
   className,
   children,

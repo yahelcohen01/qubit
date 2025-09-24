@@ -5,3 +5,5 @@ export * from "./youtube";
 export * from "./close";
 export * from "./facebook";
 export * from "./whatsapp";
+export * from "./card-divider";
+export * from "./dot";
