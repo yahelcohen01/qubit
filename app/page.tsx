@@ -1,7 +1,10 @@
 "use client";
+import { HeroSection } from "@/app/components/hero-section/hero-section";
 
 export default function MinimalistPortfolio() {
   return (
-    <main className="min-h-screen md:h-screen flex flex-col pb-16 sm:pb-0"></main>
+    <main className="h-[calc(100vh-110px)] flex flex-col mt-[110px]">
+      <HeroSection />
+    </main>
   );
 }

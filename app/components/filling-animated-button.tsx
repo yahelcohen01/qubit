@@ -1,3 +1,4 @@
+import { cn } from "@shared/lib";
 interface FillingAnimatedButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
@@ -26,7 +27,8 @@ export const FillingAnimatedButton = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`
+      className={cn(
+        `
         relative overflow-hidden
         ${sizeClasses[size]}
         bg-neutral-800 backdrop-blur-lg
@@ -35,8 +37,9 @@ export const FillingAnimatedButton = ({
         transition-all duration-200 ease-out
         disabled:opacity-50 disabled:cursor-not-allowed
         group
-        ${className}
-      `}
+      `,
+        className
+      )}
     >
       <span
         className="
