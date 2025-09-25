@@ -11,13 +11,13 @@ export const Card = ({ title, content, className }: CardProps) => {
   return (
     <div
       className={cn(
-        "grid gap-2 items-start bg-card-bg rounded-lg p-6 font-poppins",
+        "grid gap-2 items-start bg-card-bg rounded-lg p-4 md:p-6 font-poppins",
         className
       )}
     >
-      <h2 className="text-2xl text-black font-medium">{title}</h2>
+      <h2 className="text-base md:text-2xl text-black font-medium">{title}</h2>
       <CardDividerIcon />
-      <p className="font-normal text-black">{content}</p>
+      <p className="font-normal text-black text-md md:text-base">{content}</p>
     </div>
   );
 };
