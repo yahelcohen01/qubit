@@ -1,7 +1,7 @@
 "use client";
 import React, { JSX } from "react";
 
-type Breakpoint = "sm" | "md" | "lg" | "xl" | "2xl";
+type Breakpoint = "sm" | "md" | "lg" | "xl" | "2xl" | "base";
 export type ColumnsProp = Partial<Record<Breakpoint, number>> | number;
 
 interface ResponsiveLayoutProps {
@@ -12,7 +12,7 @@ interface ResponsiveLayoutProps {
   as?: keyof JSX.IntrinsicElements;
 }
 
-const BREAKPOINTS: Breakpoint[] = ["sm", "md", "lg", "xl", "2xl"];
+const BREAKPOINTS: Breakpoint[] = ["sm", "md", "lg", "xl", "2xl", "base"];
 
 function cn(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -33,6 +33,11 @@ function columnsToClasses(columns?: ColumnsProp) {
   for (const bp of BREAKPOINTS) {
     const val = columns[bp];
     if (val != null) {
+      if (bp === "base") {
+        const n = Math.min(Math.max(1, val), 12);
+        classes.push(`grid-cols-${n}`);
+        continue;
+      }
       const n = Math.min(Math.max(1, val), 12);
       classes.push(`${bp}:grid-cols-${n}`);
     }

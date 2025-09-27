@@ -1,10 +1,14 @@
 import { DotIcon } from "@shared/icons";
 import { Card } from "../card";
 import { ResponsiveLayout } from "../responsive-layout";
-import { stats } from "@shared/lib";
+import { startups, stats } from "@shared/lib";
 import Image from "next/image";
+import { CardsCarousel } from "./carousel";
+import { useMedia } from "react-use";
 
 export const AboutSection = () => {
+  const isMobile = useMedia("(max-width: 1110px)");
+
   return (
     <section className="bg-gray-bg h-auto relative rounded-b-3xl" id="about">
       {/* stats */}
@@ -39,7 +43,7 @@ export const AboutSection = () => {
       </div> */}
 
       {/* about */}
-      <div className="max-w-5xl mx-auto px-6 lg:px-4 py-16 text-center z-10">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-4 py-16 text-center">
         <h2 className="text-sm font-normal mb-4 text-black flex items-center justify-center gap-x-2">
           <DotIcon /> ABOUT US
         </h2>
@@ -56,6 +60,52 @@ export const AboutSection = () => {
           Our vision is bold yet clear: to make Israel a top-10 quantum nation
           and ensure it plays a central role in the coming quantum revolution.
         </p>
+      </div>
+
+      {/* startups */}
+      <div className="min-w-[90vw] max-w-[90vw] mx-auto px-6 lg:px-4 py-16 text-center">
+        <h2 className="text-sm font-normal mb-4 text-black flex items-center justify-center gap-x-2">
+          <DotIcon /> STARTUPS
+        </h2>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-normal text-black mb-6 z-10">
+          <span className="text-black/20">The Heart of</span> Quantum Startups
+          in Israel
+        </h1>
+        <p className="text-base sm:text-lg md:text-xl text-black/50 max-w-4xl mx-auto font-poppins">
+          The Israeli startups driving progress in the world of quantum
+          computing.
+        </p>
+
+        {isMobile ? (
+          <CardsCarousel cards={startups} cardsPerPage={6} autoplay />
+        ) : (
+          <ResponsiveLayout
+            className="py-8"
+            columns={{
+              base: 3,
+              sm: 5,
+              md: 6,
+              lg: 7,
+            }}
+            gap="gap-6"
+            as="div"
+          >
+            {startups.map((startup) => (
+              <div
+                key={startup.name}
+                className="border-t border-t-white hover:bg-white transition-colors duration-500"
+              >
+                <Image
+                  src={startup.img}
+                  alt={startup.name}
+                  width={224}
+                  height={224}
+                  className="max-h-full object-contain"
+                />
+              </div>
+            ))}
+          </ResponsiveLayout>
+        )}
       </div>
     </section>
   );

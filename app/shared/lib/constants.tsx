@@ -33,7 +33,6 @@ export const navItems: NavItem[] = [
   { label: "Israel in Quantum Tech", href: "#" },
   { label: "Who's Who", href: "#who" },
   { label: "Activities", href: "#activities" },
-  { label: "Career", href: "#career" },
   { label: "About", href: "#about" },
   { label: "Content hub", href: "#content-hub" },
 ] as const;
@@ -71,3 +70,82 @@ export const stats = [
       "Collaboration with the Israel Innovation Authority and national quantum leadership.",
   },
 ] as const;
+
+export const startups = [
+  {
+    name: "LightSolver",
+    img: "/assets/light-solver.png",
+  },
+  {
+    name: "IQCC",
+    img: "/assets/iqcc.png",
+  },
+  {
+    name: "Qarakal",
+    img: "/assets/qarakal.png",
+  },
+  {
+    name: "Quantum Source",
+    img: "/assets/quantum-source.png",
+  },
+  {
+    name: "TQS",
+    img: "/assets/tqs.png",
+  },
+  {
+    name: "Quantum Pulse",
+    img: "/assets/quantum-pulse.png",
+  },
+  {
+    name: "Qedma",
+    img: "/assets/qedma.png",
+  },
+  {
+    name: "QuamCore",
+    img: "/assets/quamcore.png",
+  },
+  {
+    name: "Raicol Crystals",
+    img: "/assets/raicol-crystals.png",
+  },
+  {
+    name: "Classiq",
+    img: "/assets/classiq.png",
+  },
+  {
+    name: "Quantum Art",
+    img: "/assets/quantum-art.png",
+  },
+  {
+    name: "Quantum Transistors",
+    img: "/assets/quantum-transistors.png",
+  },
+  {
+    name: "HEQA",
+    img: "/assets/heqa.png",
+  },
+  {
+    name: "Quantum Machines",
+    img: "/assets/quantum-machines.png",
+  },
+  {
+    name: "Wiz",
+    img: "/assets/wiz.png",
+  },
+  {
+    name: "Triarii",
+    img: "/assets/triarii.png",
+  },
+  {
+    name: "Accubeat",
+    img: "/assets/accubeat.png",
+  },
+  {
+    name: "Quantimize",
+    img: "/assets/quantimize.png",
+  },
+  {
+    name: "Spinflex",
+    img: "/assets/spinflex.png",
+  },
+];
