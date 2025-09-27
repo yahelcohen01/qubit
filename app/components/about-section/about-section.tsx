@@ -1,7 +1,7 @@
 import { DotIcon } from "@shared/icons";
 import { Card } from "../card";
 import { ResponsiveLayout } from "../responsive-layout";
-import { startups, stats } from "@shared/lib";
+import { cn, startups, stats } from "@shared/lib";
 import Image from "next/image";
 import { CardsCarousel } from "./carousel";
 import { useMedia } from "react-use";
@@ -23,24 +23,37 @@ export const AboutSection = () => {
         ))}
       </ResponsiveLayout>
 
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none z-0 h-full">
+      {/* left side illustration */}
+      <div
+        className={cn(
+          "absolute left-0 -translate-y-1/2 pointer-events-none z-0 h-max",
+          isMobile ? "top-2/3" : "top-1/3"
+        )}
+      >
         <Image
           src="/assets/left-side-illustration.png"
           alt="bg"
-          width={220}
-          height={220}
+          width={isMobile ? 150 : 220}
+          height={isMobile ? 120 : 220}
           className="w-auto h-auto max-h-full object-contain"
         />
       </div>
-      {/* <div className="absolute right-0 top-1/3 -translate-y-1/2 pointer-events-none z-0 h-max">
+
+      {/* right side illustration */}
+      <div
+        className={cn(
+          "absolute right-0 -translate-y-1/2 pointer-events-none z-0 h-max",
+          isMobile ? "top-2/3" : "top-1/3"
+        )}
+      >
         <Image
-          src="/assets/right-side-illustration-3.png"
+          src="/assets/right-side-illustration.png"
           alt="bg-2"
-          width={350}
-          height={350}
+          width={isMobile ? 100 : 150}
+          height={isMobile ? 100 : 150}
           className="w-auto h-auto max-h-full object-contain"
         />
-      </div> */}
+      </div>
 
       {/* about */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-4 py-16 text-center">
@@ -63,7 +76,7 @@ export const AboutSection = () => {
       </div>
 
       {/* startups */}
-      <div className="min-w-[90vw] max-w-[90vw] mx-auto px-6 lg:px-4 py-16 text-center">
+      <div className="min-w-[90vw] max-w-[90vw] mx-auto px-6 lg:px-4 py-16 text-center relative z-10">
         <h2 className="text-sm font-normal mb-4 text-black flex items-center justify-center gap-x-2">
           <DotIcon /> STARTUPS
         </h2>
