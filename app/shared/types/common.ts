@@ -10,3 +10,8 @@ export type NavItem = {
   readonly label: string;
   readonly href: string;
 };
+
+export interface Card {
+  readonly name: string;
+  readonly img: string;
+}

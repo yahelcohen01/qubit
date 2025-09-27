@@ -3,6 +3,7 @@ import { FillingAnimatedButton } from "../filling-animated-button";
 import Link from "next/link";
 import { socials } from "@shared/lib";
 import { useMedia } from "react-use";
+import { FadingText } from "../fading-text";
 
 export const HeroSection = () => {
   const isMobile = useMedia(`(max-width: 1110px)`);
@@ -11,15 +12,9 @@ export const HeroSection = () => {
       id="hero"
       className="min-h-full flex flex-col justify-start items-center text-center relative overflow-hidden"
     >
-      <h1
-        className="mt-16 md:mt-36 font-normal tracking-tight 
-             bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent 
-             text-4xl sm:text-5xl md:text-7xl 
-             line-clamp-3 md:line-clamp-2 
-             max-w-xl sm:max-w-3xl md:max-w-5xl"
-      >
+      <FadingText className="mt-16 md:mt-36 tracking-tight text-4xl sm:text-5xl md:text-7xl line-clamp-3 md:line-clamp-2 max-w-xl sm:max-w-3xl md:max-w-5xl">
         Shaping the Global Quantum Revolution from Israel
-      </h1>
+      </FadingText>
 
       <p className="mt-4 text-base sm:text-lg md:text-2xl text-white/80">
         Israel&apos;s Quantum Tech Association

@@ -4,7 +4,7 @@ import {
   WhatsappIcon,
   YoutubeIcon,
 } from "../icons";
-import { NavItem } from "../types";
+import { Card, NavItem } from "../types";
 
 export const socials = [
   {
@@ -71,7 +71,7 @@ export const stats = [
   },
 ] as const;
 
-export const startups = [
+export const startups: Card[] = [
   {
     name: "LightSolver",
     img: "/assets/light-solver.png",
@@ -148,4 +148,35 @@ export const startups = [
     name: "Spinflex",
     img: "/assets/spinflex.png",
   },
-];
+] as const;
+
+export const institutes = [
+  {
+    name: "Hebrew University",
+    img: "/assets/hebrew-university.png",
+  },
+  {
+    name: "Weizmann Institute",
+    img: "/assets/weizmann-institute-of-science.png",
+  },
+  {
+    name: "Tel Aviv University",
+    img: "/assets/tel-aviv-university.png",
+  },
+  {
+    name: "Technion",
+    img: "/assets/technion-university.png",
+  },
+  {
+    name: "Ben Gurion University",
+    img: "/assets/ben-gurion-university.png",
+  },
+  {
+    name: "Bar Ilan University",
+    img: "/assets/bar-ilan-university.png",
+  },
+  {
+    name: "Ariel University",
+    img: "/assets/ariel-university.png",
+  },
+] as const;

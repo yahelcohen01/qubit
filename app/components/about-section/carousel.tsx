@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { cn } from "@/app/shared/lib";
-
-interface Card {
-  name: string;
-  img: string;
-}
+import { cn } from "@shared/lib";
+import { Card } from "@shared/types";
 
 interface CarouselProps {
   cards: Card[];
