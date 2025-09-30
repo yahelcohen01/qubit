@@ -91,7 +91,12 @@ export const AboutSection = () => {
         </p>
 
         {isMobile ? (
-          <CardsCarousel cards={startups} cardsPerPage={6} autoplay />
+          <CardsCarousel
+            cards={startups}
+            cardsPerPage={6}
+            autoplay
+            navigation="dots"
+          />
         ) : (
           <ResponsiveLayout
             className="py-8"
