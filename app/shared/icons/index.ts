@@ -7,3 +7,5 @@ export * from "./facebook";
 export * from "./whatsapp";
 export * from "./card-divider";
 export * from "./dot";
+export * from "./chevron-left";
+export * from "./chevron-right";

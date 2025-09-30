@@ -1,9 +1,10 @@
+"use client";
 import { DotIcon } from "@shared/icons";
 import { Card } from "../card";
 import { ResponsiveLayout } from "../responsive-layout";
 import { cn, startups, stats } from "@shared/lib";
 import Image from "next/image";
-import { CardsCarousel } from "./carousel";
+import { CardsCarousel } from "../carousel";
 import { useMedia } from "react-use";
 
 export const AboutSection = () => {
@@ -100,20 +101,20 @@ export const AboutSection = () => {
               md: 6,
               lg: 7,
             }}
-            gap="gap-6"
+            gap="gap-4"
             as="div"
           >
             {startups.map((startup) => (
               <div
                 key={startup.name}
-                className="border-t border-t-white hover:bg-white transition-colors duration-500"
+                className="border-t border-t-white hover:bg-white transition-colors duration-500 items-center flex justify-center"
               >
                 <Image
                   src={startup.img}
                   alt={startup.name}
                   width={224}
                   height={224}
-                  className="max-h-full object-contain"
+                  className="max-h-full object-contain w-full"
                 />
               </div>
             ))}

@@ -1,7 +1,7 @@
 "use client";
 import React, { JSX } from "react";
 
-type Breakpoint = "sm" | "md" | "lg" | "xl" | "2xl" | "base" | "navbar";
+type Breakpoint = "base" | "navbar" | "sm" | "md" | "lg" | "xl" | "2xl";
 export type ColumnsProp = Partial<Record<Breakpoint, number>> | number;
 
 interface ResponsiveLayoutProps {
@@ -13,12 +13,12 @@ interface ResponsiveLayoutProps {
 }
 
 const BREAKPOINTS: Breakpoint[] = [
+  "base",
   "sm",
   "md",
   "lg",
   "xl",
   "2xl",
-  "base",
   "navbar",
 ];
 

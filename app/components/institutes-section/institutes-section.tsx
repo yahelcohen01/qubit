@@ -1,3 +1,4 @@
+"use client";
 import { DotIcon } from "@shared/icons";
 import { ResponsiveLayout } from "../responsive-layout";
 import { FadingText } from "../fading-text";
