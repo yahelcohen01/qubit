@@ -4,6 +4,7 @@ import { AboutSection } from "./components/about-section/about-section";
 import { InstitutesSection } from "./components/institutes-section/institutes-section";
 import { EventHighlightsSection } from "./components/events-highlights-section/events-highlights-section";
 import { WhosWhoSection } from "./components/whos-who-section/whos-who-section";
+import { ContactSection } from "./components/contact-section/contact-section";
 
 export default function MinimalistPortfolio() {
   return (
@@ -13,6 +14,7 @@ export default function MinimalistPortfolio() {
       <InstitutesSection />
       <EventHighlightsSection />
       <WhosWhoSection />
+      <ContactSection />
     </main>
   );
 }

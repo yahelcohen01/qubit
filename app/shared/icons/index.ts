@@ -9,3 +9,4 @@ export * from "./card-divider";
 export * from "./dot";
 export * from "./chevron-left";
 export * from "./chevron-right";
+export * from "./external-link";
