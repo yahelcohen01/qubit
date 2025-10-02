@@ -197,3 +197,49 @@ export const eventsHighlights: CarouselItem[] = [
     title: "Cvent Connect 2024 — exploring the future of event technology",
   },
 ] as const;
+
+export const people = [
+  {
+    name: "Idan Keynan",
+    role: "Qubit Community Manager",
+    img: "/assets/idan-keynan.png",
+    linkedin: "https://www.linkedin.com/in/idan-keynan/",
+  },
+  {
+    name: "Dror Pezo",
+    role: "Qubit Community Manager",
+    img: "/assets/dror-pezo.png",
+    linkedin: "https://www.linkedin.com/in/dror-pezo-b82b31138/",
+  },
+  {
+    name: "Roy Ben Avraham",
+    role: "Software Engineer",
+    img: "/assets/roy-ben-avraham.png",
+    linkedin: "https://www.linkedin.com/in/roybenavraham/",
+  },
+  {
+    name: "Paz Shakroka",
+    role: "Quantum Technology Enthusiast | Qubit Community Manager",
+    img: "/assets/paz-shakroka.png",
+    linkedin: "https://www.linkedin.com/in/paz-shakroka-216283224/",
+  },
+
+  {
+    name: "Amit Mizrahi",
+    role: "Qubit Community Manager",
+    img: "/assets/amit-mizrahi.png",
+    linkedin: "https://www.linkedin.com/in/amizrahiz/",
+  },
+  {
+    name: "Shir",
+    role: "Qubit Community Manager",
+    img: "/assets/shir.png",
+    linkedin: "/",
+  },
+  {
+    name: "Yahel Cohen",
+    role: "Software Engineer | Quantum Technology Enthusiast",
+    img: "/assets/yahel-cohen.jpeg",
+    linkedin: "https://www.linkedin.com/in/yahelcohen/",
+  },
+] as const;

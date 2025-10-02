@@ -27,7 +27,7 @@ export const EventHighlightsSection = () => {
                 className="w-full h-full object-cover rounded-2xl"
               />
             </div>
-            <h3 className="text-base sm:text-lg font-normal font-poppins text-white/80">
+            <h3 className="text-base sm:text-lg font-normal font-poppins text-white/80 line-clamp-3">
               {item.title}
             </h3>
           </div>

@@ -294,14 +294,14 @@ function NavigationControls({
         className="z-10 bg-white/20 rounded-full p-4 cursor-pointer"
         aria-label="Previous"
       >
-        <ChevronLeftIcon className="w-5 h-5" />
+        <ChevronLeftIcon className="size-5" />
       </button>
       <button
         onClick={nextPage}
         className="z-10 bg-white/20 rounded-full p-4 cursor-pointer"
         aria-label="Next"
       >
-        <ChevronRightIcon className="w-5 h-5" />
+        <ChevronRightIcon className="size-5" />
       </button>
     </div>
   );
