@@ -4,7 +4,7 @@ import {
   WhatsappIcon,
   YoutubeIcon,
 } from "../icons";
-import { Card, NavItem } from "../types";
+import { CarouselItem, NavItem } from "../types";
 
 export const socials = [
   {
@@ -71,81 +71,81 @@ export const stats = [
   },
 ] as const;
 
-export const startups: Card[] = [
+export const startups: CarouselItem[] = [
   {
-    name: "LightSolver",
+    title: "LightSolver",
     img: "/assets/light-solver.png",
   },
   {
-    name: "IQCC",
+    title: "IQCC",
     img: "/assets/iqcc.png",
   },
   {
-    name: "Qarakal",
+    title: "Qarakal",
     img: "/assets/qarakal.png",
   },
   {
-    name: "Quantum Source",
+    title: "Quantum Source",
     img: "/assets/quantum-source.png",
   },
   {
-    name: "TQS",
+    title: "TQS",
     img: "/assets/tqs.png",
   },
   {
-    name: "Quantum Pulse",
+    title: "Quantum Pulse",
     img: "/assets/quantum-pulse.png",
   },
   {
-    name: "Qedma",
+    title: "Qedma",
     img: "/assets/qedma.png",
   },
   {
-    name: "QuamCore",
+    title: "QuamCore",
     img: "/assets/quamcore.png",
   },
   {
-    name: "Raicol Crystals",
+    title: "Raicol Crystals",
     img: "/assets/raicol-crystals.png",
   },
   {
-    name: "Classiq",
+    title: "Classiq",
     img: "/assets/classiq.png",
   },
   {
-    name: "Quantum Art",
+    title: "Quantum Art",
     img: "/assets/quantum-art.png",
   },
   {
-    name: "Quantum Transistors",
+    title: "Quantum Transistors",
     img: "/assets/quantum-transistors.png",
   },
   {
-    name: "HEQA",
+    title: "HEQA",
     img: "/assets/heqa.png",
   },
   {
-    name: "Quantum Machines",
+    title: "Quantum Machines",
     img: "/assets/quantum-machines.png",
   },
   {
-    name: "Wiz",
+    title: "Wiz",
     img: "/assets/wiz.png",
   },
   {
-    name: "Triarii",
+    title: "Triarii",
     img: "/assets/triarii.png",
   },
   {
-    name: "Accubeat",
+    title: "Accubeat",
     img: "/assets/accubeat.png",
   },
   {
-    name: "Quantimize",
+    title: "Quantimize",
     img: "/assets/quantimize.png",
   },
   {
-    name: "Spinflex",
+    title: "Spinflex",
     img: "/assets/spinflex.png",
   },
 ] as const;
@@ -178,5 +178,22 @@ export const institutes = [
   {
     name: "Ariel University",
     img: "/assets/ariel-university.png",
+  },
+] as const;
+
+export const eventsHighlights: CarouselItem[] = [
+  {
+    img: "/assets/meetup-tlv-2025.png",
+    title:
+      "Meetup 2025 Tel Aviv — talking about everything shaping the world of quantum",
+  },
+  {
+    img: "/assets/quantum-meetup-tlv-2025.png",
+    title:
+      "Quantum Meetup Tel Aviv 2025 — conversations at the frontier of innovation",
+  },
+  {
+    img: "/assets/cvent-connect.png",
+    title: "Cvent Connect 2024 — exploring the future of event technology",
   },
 ] as const;

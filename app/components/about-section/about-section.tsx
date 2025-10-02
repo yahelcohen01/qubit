@@ -4,7 +4,7 @@ import { Card } from "../card";
 import { ResponsiveLayout } from "../responsive-layout";
 import { cn, startups, stats } from "@shared/lib";
 import Image from "next/image";
-import { CardsCarousel } from "../carousel";
+import { Carousel } from "../carousel";
 import { useMedia } from "react-use";
 
 export const AboutSection = () => {
@@ -91,8 +91,8 @@ export const AboutSection = () => {
         </p>
 
         {isMobile ? (
-          <CardsCarousel
-            cards={startups}
+          <Carousel
+            items={startups}
             cardsPerPage={6}
             autoplay
             navigation="dots"
@@ -111,12 +111,12 @@ export const AboutSection = () => {
           >
             {startups.map((startup) => (
               <div
-                key={startup.name}
+                key={startup.title}
                 className="border-t border-t-white hover:bg-white transition-colors duration-500 items-center flex justify-center"
               >
                 <Image
                   src={startup.img}
-                  alt={startup.name}
+                  alt={startup.title}
                   width={224}
                   height={224}
                   className="max-h-full object-contain w-full"

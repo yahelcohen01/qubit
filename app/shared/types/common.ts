@@ -11,7 +11,8 @@ export type NavItem = {
   readonly href: string;
 };
 
-export interface Card {
-  readonly name: string;
+export interface CarouselItem {
+  readonly title: string;
   readonly img: string;
+  readonly [key: string]: any;
 }
