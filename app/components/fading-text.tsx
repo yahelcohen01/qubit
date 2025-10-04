@@ -8,7 +8,7 @@ export const FadingText = ({
   return (
     <h1
       className={cn(
-        "font-normal bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent ",
+        "font-normal bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent",
         className
       )}
     >
