@@ -19,19 +19,19 @@ export const socials = [
   },
   {
     label: "YouTube",
-    icon: <YoutubeIcon />,
+    icon: <YoutubeIcon className="m-auto" />,
     href: "https://www.youtube.com/@QubitQuantum",
   },
   {
     label: "Whatsapp",
-    icon: <WhatsappIcon />,
+    icon: <WhatsappIcon className="w-5 h-5" />,
     href: "https://wa.me/972546666888",
   },
 ] as const;
 
 export const navItems: NavItem[] = [
   { label: "Israel in Quantum Tech", href: "#" },
-  { label: "Who's Who", href: "#who" },
+  { label: "Who's Who", href: "#whos-who" },
   { label: "Activities", href: "#activities" },
   { label: "About", href: "#about" },
   { label: "Content hub", href: "#content-hub" },

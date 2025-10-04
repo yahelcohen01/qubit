@@ -67,7 +67,11 @@ export const Navbar = () => {
           </div>
 
           <div className="hidden navbar:flex items-center space-x-4">
-            <FillingAnimatedButton className="font-normal" size="lg">
+            <FillingAnimatedButton
+              className="font-normal"
+              size="lg"
+              onClick={() => (window.location.href = "#contact")}
+            >
               Contact Us
             </FillingAnimatedButton>
           </div>

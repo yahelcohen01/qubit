@@ -8,7 +8,7 @@ import { ResponsiveLayout } from "../responsive-layout";
 import { FadingText } from "../fading-text";
 import { AnyFieldApi, formOptions, useForm } from "@tanstack/react-form";
 import { Select } from "../select";
-import { cn } from "@/app/shared/lib";
+import { cn } from "@shared/lib";
 
 export const ContactSection = () => {
   return (

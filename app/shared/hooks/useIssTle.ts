@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as satellite from "satellite.js";
-import axiosInstance from "@/app/shared/lib/axios";
+import axiosInstance from "@shared/lib/axios";
 
 interface UseIssTleResult {
   tleLoaded: boolean;
