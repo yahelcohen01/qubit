@@ -44,8 +44,8 @@ export const HeroSection = () => {
       )}
 
       <Image
-        src="/assets/test-bg-test.png"
-        alt="bg"
+        src="/assets/home-background-crop.png"
+        alt="home-background-crop"
         width={1000}
         height={800}
         className="absolute bottom-0 -z-10 w-full object-cover h-2/3 md:h-full md:scale-110"

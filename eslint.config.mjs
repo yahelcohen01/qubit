@@ -17,6 +17,7 @@ const eslintConfig = [
       "no-unused-vars": "warn",
       "@typescript-eslint/no-unused-vars": "warn",
       "@next/next/no-img-element": "off",
+      "react/no-children-prop": "off",
     },
   },
 ];
