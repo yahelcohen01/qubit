@@ -48,8 +48,8 @@ export const InstitutesSection = () => {
         />
       )}
       <ResponsiveLayout
-        columns={{ base: 1, md: 5 }}
-        className="text-center md:text-left relative mt-72 md:my-0"
+        // columns={{ base: 1, md: 5 }}
+        className="text-center md:text-left relative mt-72 md:my-0 grid grid-cols-1 md:grid-cols-5"
       >
         <div className="md:col-span-3 z-10">
           <h2 className="text-xs navbar:text-sm font-normal mb-4 text-white flex items-center justify-center gap-x-2">

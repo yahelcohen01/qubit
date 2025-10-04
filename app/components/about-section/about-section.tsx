@@ -99,13 +99,13 @@ export const AboutSection = () => {
           />
         ) : (
           <ResponsiveLayout
-            className="py-8"
-            columns={{
-              base: 3,
-              sm: 5,
-              md: 6,
-              lg: 7,
-            }}
+            className="py-8 grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7"
+            // columns={{
+            //   base: 3,
+            //   sm: 5,
+            //   md: 6,
+            //   lg: 7,
+            // }}
             gap="gap-4"
             as="div"
           >
