@@ -22,7 +22,7 @@ export default function AdminEditorClient() {
     setLoading(true);
     setMessage(null);
     try {
-      const resp = await fetch("/api/admin/get-activities", {
+      const resp = await fetch("/api/admin/get-activities?branch=admin-page", {
         method: "GET",
         credentials: "same-origin",
         headers: { Accept: "application/json" },
