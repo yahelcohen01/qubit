@@ -5,7 +5,7 @@ import { navItems, socials } from "@shared/lib";
 
 export const Footer = () => {
   return (
-    <footer className="w-full flex flex-col px-4 md:px-16 lg:px-24 xl:px-32 py-16">
+    <footer className="w-full flex flex-col px-6 md:px-16 lg:px-24 xl:px-32 py-16">
       <div className="w-full py-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="flex flex-col space-y-2 justify-start md:justify-center items-center md:items-start text-center md:text-left">
           <h3 className="text-lg font-medium">Who we are</h3>
@@ -29,7 +29,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="flex gap-4 justify-between px-8 md:justify-center">
+        <div className="flex gap-4 justify-around md:justify-center">
           <div className="flex flex-col space-y-2">
             <h3 className="text-lg font-medium">General</h3>
             {navItems.map((item) => (

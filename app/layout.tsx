@@ -23,19 +23,18 @@ export const metadata: Metadata = {
     "Yahel Cohen",
   ],
   authors: [{ name: "Yahel Cohen" }],
-  creator: "Yahel Cohen",
   openGraph: {
-    title: "Yahel Cohen",
+    title: "Qubit IL",
     description:
-      "Passionate developer creating simple and effective solutions. Explore my projects and development approach.",
-    url: "https://your-domain.com",
-    siteName: "Yahel Cohen ",
+      "Qubit IL is Israel’s quantum community, connecting researchers, industry, and policymakers to advance quantum technologies.",
+    url: "https://qubit-tau.vercel.app",
+    siteName: "Qubit IL",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/navbar-logo.jpg",
         width: 1200,
         height: 630,
-        alt: "Yahel Cohen",
+        alt: "Qubit IL",
       },
     ],
     locale: "en_US",
