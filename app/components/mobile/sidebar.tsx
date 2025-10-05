@@ -22,6 +22,7 @@ export const Sidebar = ({ setIsMobileMenuOpen, navItems }: SidebarProps) => {
         <Link
           key={item.href}
           href={item.href}
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           className="block py-2 rounded-md text-base sm:text-xl md:text-2xl font-normal "
         >
           {item.label}

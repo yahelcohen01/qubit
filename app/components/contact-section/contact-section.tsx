@@ -14,7 +14,7 @@ export const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative w-full py-16 px-4 md:px-16 lg:px-24 xl:px-56"
+      className="relative w-full py-16 px-4 md:px-16 lg:px-24 xl:px-56 scroll-mt-30"
     >
       <div
         className={cn(
@@ -58,30 +58,30 @@ export const ContactSection = () => {
           </h3>
           <div className="flex gap-12">
             <div className="flex font-poppins items-center gap-2">
-              <div className="my-auto justify-self-end bg-[#0277B5] p-3 rounded-full">
-                <LinkedinIcon className="size-4" />
-              </div>
               <a
                 href="https://www.linkedin.com/company/qubit-community"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex underline items-center gap-1"
               >
+                <div className="my-auto justify-self-end bg-[#0277B5] p-3 rounded-full shadow-[0_0_15px_#0277B5]">
+                  <LinkedinIcon className="size-4" />
+                </div>
                 LinkedIn
                 <ExternalLinkIcon className="size-3" />
               </a>
             </div>
 
             <div className="flex font-poppins items-center gap-2">
-              <div className="my-auto justify-self-end bg-[#57F573] p-3 rounded-full">
-                <WhatsappIcon className="size-4" />
-              </div>
               <a
                 href="https://wa.me/1234567890"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex underline items-center gap-1"
               >
+                <div className="my-auto justify-self-end bg-[#57F573] p-3 rounded-full relative shadow-[0_0_15px_#57F573]">
+                  <WhatsappIcon className="size-4 text-black" />
+                </div>
                 WhatsApp
                 <ExternalLinkIcon className="size-3" />
               </a>

@@ -11,7 +11,7 @@ export const AboutSection = () => {
   const isMobile = useMedia("(max-width: 1110px)");
 
   return (
-    <section className="bg-gray-bg h-auto relative rounded-b-3xl" id="about">
+    <section className="bg-gray-bg h-auto relative rounded-b-3xl">
       {/* stats */}
       <ResponsiveLayout className="p-8 sm:p-12 md:p-16 gap-6 grid-cols-2 navbar:grid-cols-5 z-10">
         {stats.map((stat) => (
@@ -57,7 +57,10 @@ export const AboutSection = () => {
       </div>
 
       {/* about */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-4 py-16 text-center">
+      <div
+        className="relative z-10 max-w-5xl mx-auto px-6 lg:px-4 py-16 text-center scroll-mt-30"
+        id="about"
+      >
         <h2 className="text-sm font-normal mb-4 text-black flex items-center justify-center gap-x-2">
           <DotIcon /> ABOUT US
         </h2>

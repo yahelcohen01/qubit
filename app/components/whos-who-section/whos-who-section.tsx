@@ -9,7 +9,7 @@ export const WhosWhoSection = () => {
   return (
     <section
       className={cn(
-        "grid py-16 items-center gap-8 px-4",
+        "grid py-16 items-center gap-8 px-4 scroll-mt-30",
         isMobile ? "" : "justify-center"
       )}
       id="whos-who"
