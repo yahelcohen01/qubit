@@ -45,7 +45,10 @@ export const Navbar = () => {
           </Link>
 
           <ConditionalDiv condition={isMobile}>
-            <button className="p-2 cursor-pointer">
+            <button
+              className="p-2 cursor-pointer"
+              onClick={() => (window.location.href = "#contact")}
+            >
               <HeadsetIcon />
             </button>
           </ConditionalDiv>

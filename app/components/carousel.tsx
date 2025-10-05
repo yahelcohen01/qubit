@@ -313,10 +313,10 @@ function NavigationControls({
           key={i}
           onClick={() => goToPage(i)}
           className={cn(
-            "size-2 rounded-full transition-all duration-200 cursor-pointer",
+            "size-1 rounded-full transition-all duration-200 cursor-pointer",
             i === currentPage
               ? "bg-black scale-110"
-              : "bg-black hover:scale-110"
+              : "bg-black/20 hover:scale-110"
           )}
           aria-label={`Go to page ${i + 1}`}
         />
