@@ -41,7 +41,7 @@ export async function GET(req: NextRequest) {
         headers: {
           Authorization: `Bearer ${TOKEN}`,
           Accept: "application/vnd.github+json",
-          "User-Agent": "qubit-admin",
+          //   "User-Agent": "qubit-admin",
         },
       }
     );
