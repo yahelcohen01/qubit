@@ -1,4 +1,3 @@
-// app/api/contact/controllers/contact.ts
 import nodemailer from "nodemailer";
 
 export type ContactFormFields = {
