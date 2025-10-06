@@ -22,7 +22,7 @@ export default function AdminEditorClient() {
     setLoading(true);
     setMessage(null);
     try {
-      const resp = await fetch("/api/admin/get-activities?branch=admin-page", {
+      const resp = await fetch("/api/admin/get-activities", {
         method: "GET",
         credentials: "same-origin",
         headers: { Accept: "application/json" },
@@ -78,37 +78,32 @@ export default function AdminEditorClient() {
 
   return (
     <>
-      <div style={{ marginBottom: 12 }}>
-        <button
-          onClick={() => void fetchActivities()}
-          disabled={loading || saving}
-          style={{ marginRight: 8 }}
-        >
-          Reload
-        </button>
-        <button onClick={() => void handleSave()} disabled={loading || saving}>
-          {saving ? "Saving..." : "Save Changes"}
-        </button>
-      </div>
-
-      {message && (
-        <div style={{ marginBottom: 12, color: "#b22" }}>{message}</div>
-      )}
-
       <textarea
         value={jsonText}
         onChange={(e) => setJsonText(e.target.value)}
         spellCheck={false}
-        style={{
-          width: "100%",
-          height: 420,
-          fontFamily: "monospace",
-          fontSize: 13,
-          padding: 12,
-        }}
+        className="w-full h-96 font-normal p-12 mt-[110px]"
       />
+      <div className="mb-12">
+        <button
+          onClick={() => void fetchActivities()}
+          disabled={loading || saving}
+          className="cursor-pointer mr-8"
+        >
+          Reload
+        </button>
+        <button
+          onClick={() => void handleSave()}
+          disabled={loading || saving}
+          className="cursor-pointer"
+        >
+          {saving ? "Saving..." : "Save Changes"}
+        </button>
+      </div>
 
-      <div style={{ marginTop: 12, color: "#666", fontSize: 13 }}>
+      {message && <div className="mb-12 text-red-600">{message}</div>}
+
+      <div className="mt-12 text-gray-600 text-sm">
         <strong>Tip:</strong> keep valid JSON and ensure each activity has a
         unique `id`.
       </div>
