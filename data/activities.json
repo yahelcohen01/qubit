@@ -1,6 +1,6 @@
 [
   {
-    "id": "act-001",
+    "id": "178dfdd1-11f9-41c6-a577-68c1f1b1a13a",
     "title": "Community Meetup: Intro to Quantum Computing",
     "date": "2025-10-20",
     "startTime": "18:30",
@@ -20,7 +20,7 @@
     "imageUrl": "https://example.com/images/quantum-meetup.jpg"
   },
   {
-    "id": "act-002",
+    "id": "9cc4621f-5f39-45f3-8f96-c2dec0200b4b",
     "title": "Women in Tech Panel",
     "date": "2025-11-05",
     "startTime": "17:00",
@@ -40,7 +40,7 @@
     "imageUrl": "https://example.com/images/women-in-tech.jpg"
   },
   {
-    "id": "act-003",
+    "id": "d79d813d-2b37-4dfb-b3a5-ffc2e401269a",
     "title": "Hands-on Workshop: Quantum Circuits",
     "date": "2025-11-15",
     "startTime": "09:30",
@@ -60,7 +60,7 @@
     "imageUrl": "https://example.com/images/quantum-circuits.jpg"
   },
   {
-    "id": "act-004",
+    "id": "808a9b56-1a16-4d98-b3ef-585a23ceeb16",
     "title": "Online Webinar: Quantum Algorithms Overview",
     "date": "2025-12-01",
     "startTime": "20:00",
@@ -80,7 +80,7 @@
     "imageUrl": "https://example.com/images/quantum-algorithms.jpg"
   },
   {
-    "id": "act-005",
+    "id": "62748929-6f17-41ea-8a6f-644397a393a0",
     "title": "Networking Night — Startups & Founders",
     "date": "2025-10-28",
     "startTime": "19:00",
@@ -100,7 +100,7 @@
     "imageUrl": "https://example.com/images/networking-night.jpg"
   },
   {
-    "id": "act-006",
+    "id": "008035d7-5c83-4554-96d2-3ab064c12dae",
     "title": "Student Poster Session",
     "date": "2025-10-12",
     "startTime": "14:00",
@@ -120,7 +120,7 @@
     "imageUrl": "https://example.com/images/poster-session.jpg"
   },
   {
-    "id": "act-007",
+    "id": "68802219-bd26-4554-8db0-471f9c8eb88d",
     "title": "Hackathon: Quantum Challenge (48h)",
     "date": "2026-01-09",
     "startTime": "09:00",
@@ -140,7 +140,7 @@
     "imageUrl": "https://example.com/images/quantum-hackathon.jpg"
   },
   {
-    "id": "act-008",
+    "id": "6f150f43-078c-4b6e-8395-cc0be360dd44",
     "title": "Coffee & Code — Study Group",
     "date": "2025-10-08",
     "startTime": "10:00",
@@ -160,7 +160,7 @@
     "imageUrl": "https://example.com/images/coffee-and-code.jpg"
   },
   {
-    "id": "act-009",
+    "id": "1bce2f20-23ae-463b-a22c-c4a61feda179",
     "title": "Lecture: Quantum Error Correction",
     "date": "2025-11-22",
     "startTime": "16:00",
@@ -180,7 +180,7 @@
     "imageUrl": "https://example.com/images/quantum-error-correction.jpg"
   },
   {
-    "id": "act-010",
+    "id": "f8d45b9b-e6e1-450c-915c-cc070b0ed048",
     "title": "Community Volunteer Day",
     "date": "2025-10-18",
     "startTime": "08:30",
@@ -200,7 +200,7 @@
     "imageUrl": "https://example.com/images/volunteer-day.jpg"
   },
   {
-    "id": "act-011",
+    "id": "98105716-1946-44e2-8673-aef772a77e0b",
     "title": "Mentorship Office Hours",
     "date": "2025-10-25",
     "startTime": "15:00",
@@ -220,7 +220,7 @@
     "imageUrl": "https://example.com/images/mentorship-office-hours.jpg"
   },
   {
-    "id": "act-012",
+    "id": "91035a61-4ce0-484d-b233-87e9853d339e",
     "title": "End-of-Year Social",
     "date": "2025-12-20",
     "startTime": "18:00",

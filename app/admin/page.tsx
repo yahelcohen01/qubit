@@ -22,7 +22,7 @@ export default async function AdminPage() {
 
   // authorized: render client editor
   return (
-    <div style={{ maxWidth: 980, margin: "32px auto", padding: 20 }}>
+    <div className="p-6 max-w-full mt-[110px]">
       {/* Show a server-side welcome message */}
       <h1>Admin — Activities (signed in as {session.user?.email})</h1>
       <AdminEditorClient />
