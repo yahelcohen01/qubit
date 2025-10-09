@@ -8,15 +8,22 @@ import { Sidebar } from "./mobile/sidebar";
 import Image from "next/image";
 import { navItems } from "@shared/lib";
 import { HeadsetIcon, MenuIcon } from "@shared/icons";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const isMobile = useMedia(`(max-width: 1110px)`);
+  const pathname = usePathname();
+  const isAdminRoute = pathname.startsWith("/admin");
+
+  if (isAdminRoute) {
+    return null; // Do not render the navbar on admin routes
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black ">
-      <div className="max-w-[1624px] mx-auto px-4 sm:px-6 lg:px-4">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-4">
         <div className="flex justify-between items-center h-[110px]">
           <ConditionalDiv condition={isMobile}>
             <button

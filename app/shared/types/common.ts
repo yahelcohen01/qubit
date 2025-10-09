@@ -16,3 +16,19 @@ export interface CarouselItem {
   readonly img: string;
   readonly [key: string]: any;
 }
+
+export type Activity = {
+  id: string;
+  title: string;
+  date?: string;
+  startTime?: string;
+  endTime?: string;
+  description?: string;
+  location?: { name?: string; address?: string };
+  tags?: string[];
+  organizer?: { name?: string; email?: string };
+  url?: string;
+  capacity?: number;
+  imageUrl?: string;
+  [k: string]: any;
+};
