@@ -1,27 +1,11 @@
 "use client";
-
 import React, { useEffect, useMemo, useState } from "react";
 import { isEqual } from "lodash";
 import { cn } from "@shared/lib";
 import { ConditionalWrapper } from "../components/conditional-wrapper";
 import { Tooltip } from "../components/tooltip";
 import { DeleteIcon, DuplicateIcon } from "@shared/icons";
-
-type Activity = {
-  id: string;
-  title: string;
-  date?: string;
-  startTime?: string;
-  endTime?: string;
-  description?: string;
-  location?: { name?: string; address?: string };
-  tags?: string[];
-  organizer?: { name?: string; email?: string };
-  url?: string;
-  capacity?: number;
-  imageUrl?: string;
-  [k: string]: any;
-};
+import { Activity } from "@shared/types";
 
 export default function AdminEditorClient() {
   const [activities, setActivities] = useState<Activity[]>([]);

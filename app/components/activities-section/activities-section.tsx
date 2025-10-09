@@ -1,6 +1,9 @@
 import { ResponsiveLayout } from "../responsive-layout";
+import Activities from "../../../data/activities.json";
+import { Activity } from "@shared/types";
 
 export const ActivitiesSection = () => {
+  const activities: Activity[] = Activities;
   return (
     <section className="" id="activities">
       <ResponsiveLayout columns={{ base: 1, md: 2 }}>
