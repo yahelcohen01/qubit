@@ -17,7 +17,6 @@ const PayloadSchema = z.object({
 type GithubFileMeta = {
   content?: string;
   sha?: string;
-  // other fields omitted
 };
 
 async function readFileFromBranch({
@@ -51,7 +50,6 @@ async function readFileFromBranch({
   });
 
   if (!res.ok) {
-    // return the raw response info to caller so caller can decide what to do (404 -> create)
     const text = await res.text();
     const err: any = new Error(`GitHub GET failed: ${res.status} — ${text}`);
     err.status = res.status;
@@ -105,14 +103,11 @@ export async function PUT(req: NextRequest) {
       );
     }
 
-    // Read optional branch from query param ?branch=feature/x
     const urlObj = new URL(req.url);
     const branchParam = urlObj.searchParams.get("branch") ?? undefined;
-    // Fallback to ACTIVITIES_BRANCH env var if set
     const branchToUse =
       branchParam ?? process.env.ACTIVITIES_BRANCH ?? undefined;
 
-    // Try to fetch current file metadata (sha) from that branch (if present).
     let sha: string | undefined = undefined;
     try {
       const fileJson = await readFileFromBranch({
@@ -124,10 +119,8 @@ export async function PUT(req: NextRequest) {
       });
       sha = fileJson.sha;
     } catch (err: any) {
-      // If GET returns 404 it means the file doesn't exist on that branch.
-      // We'll treat that as a create (omit sha). If it's another error, surface it.
       if (err?.status === 404) {
-        sha = undefined; // create new file on the branch (branch must exist)
+        sha = undefined;
       } else {
         console.error("failed to read file before update:", err);
         return NextResponse.json(
@@ -145,7 +138,6 @@ export async function PUT(req: NextRequest) {
       token.email ?? "unknown"
     } on ${new Date().toISOString()}`;
 
-    // Build PUT body — include branch to ensure we commit to the intended branch.
     const putBody: Record<string, unknown> = {
       message,
       content: contentBase64,
@@ -155,9 +147,7 @@ export async function PUT(req: NextRequest) {
       },
     };
 
-    // include sha only when updating an existing file
     if (sha) putBody.sha = sha;
-    // include branch if we want to target a non-default branch (or to be explicit)
     if (branchToUse) putBody.branch = branchToUse;
 
     const putResp = await fetch(
@@ -178,7 +168,6 @@ export async function PUT(req: NextRequest) {
 
     if (!putResp.ok) {
       const text = await putResp.text();
-      // If the sha changed between fetch and put, GitHub will reject — surface it
       return NextResponse.json(
         { error: "failed_update_file", detail: text },
         { status: 500 }

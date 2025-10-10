@@ -13,6 +13,7 @@ interface BaseProps<T extends CarouselItem> {
   autoplay?: boolean;
   pageInterval?: number;
   renderItem?: ({ item, index }: { item: T; index: number }) => React.ReactNode;
+  navigationClassName?: string;
 }
 
 interface CardsOptions {
@@ -37,6 +38,7 @@ export function Carousel<T extends CarouselItem>({
   cardsPerPage = 3,
   visiblePercentage = 60,
   gapPx = 24,
+  navigationClassName,
 }: CarouselProps<T>) {
   const defaultNavigation =
     navigation ?? (variant === "cards" ? "dots" : "arrows");
@@ -49,6 +51,7 @@ export function Carousel<T extends CarouselItem>({
       navigation={defaultNavigation}
       pageInterval={pageInterval}
       renderItem={renderItem}
+      navigationClassName={navigationClassName}
     />
   ) : (
     <SlidesVariant
@@ -59,6 +62,7 @@ export function Carousel<T extends CarouselItem>({
       navigation={defaultNavigation}
       pageInterval={pageInterval}
       renderItem={renderItem}
+      navigationClassName={navigationClassName}
     />
   );
 }
@@ -70,6 +74,7 @@ function CardsVariant<T extends CarouselItem>({
   navigation = "dots",
   pageInterval = 3000,
   renderItem,
+  navigationClassName,
 }: CarouselProps<T>) {
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = Math.max(1, Math.ceil(items.length / cardsPerPage));
@@ -150,6 +155,7 @@ function CardsVariant<T extends CarouselItem>({
           currentPage,
           totalPages,
           setCurrentPage,
+          navigationClassName,
         })}
     </div>
   );
@@ -163,6 +169,7 @@ function SlidesVariant<T extends CarouselItem>({
   navigation = "arrows",
   pageInterval = 3000,
   renderItem,
+  navigationClassName,
 }: CarouselProps<T> & { visiblePercentage?: number; gapPx?: number }) {
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const firstItemRef = useRef<HTMLDivElement | null>(null);
@@ -265,6 +272,7 @@ function SlidesVariant<T extends CarouselItem>({
             currentPage: index,
             totalPages: items.length,
             setCurrentPage: setIndex,
+            navigationClassName,
           })}
       </div>
     </div>
@@ -276,11 +284,13 @@ function NavigationControls({
   currentPage,
   totalPages,
   setCurrentPage,
+  navigationClassName,
 }: {
   navigation: Navigation;
   currentPage: number;
   totalPages: number;
   setCurrentPage: SetState<number>;
+  navigationClassName?: string;
 }) {
   const goToPage = (page: number) => setCurrentPage(page);
   const nextPage = () => setCurrentPage((p) => (p + 1) % totalPages);
@@ -316,7 +326,8 @@ function NavigationControls({
             "size-1 rounded-full transition-all duration-200 cursor-pointer",
             i === currentPage
               ? "bg-black scale-110"
-              : "bg-black/20 hover:scale-110"
+              : "bg-black/20 hover:scale-110",
+            navigationClassName
           )}
           aria-label={`Go to page ${i + 1}`}
         />

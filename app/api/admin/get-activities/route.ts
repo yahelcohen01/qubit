@@ -1,11 +1,9 @@
-// app/api/admin/get-activities/route.ts
 import { NextResponse, NextRequest } from "next/server";
 import { getToken } from "next-auth/jwt";
 
 type GithubFileMeta = {
   content?: string;
   sha?: string;
-  // other fields omitted
 };
 
 async function readFileFromBranch({
@@ -21,7 +19,6 @@ async function readFileFromBranch({
   branch?: string | null;
   token: string;
 }) {
-  // build URL; include ?ref=branch only when branch is provided
   const encodedPath = encodeURIComponent(path);
   const url =
     branch && branch.length > 0
@@ -35,7 +32,6 @@ async function readFileFromBranch({
     headers: {
       Authorization: `Bearer ${token}`,
       Accept: "application/vnd.github+json",
-      //   "User-Agent": "qubit-admin", // GitHub recommends a user-agent
     },
   });
 
@@ -57,7 +53,6 @@ export async function GET(req: NextRequest) {
         { status: 500 }
       );
 
-    // getToken reads the next-auth cookie in App Router route handlers
     const token = await getToken({ req, secret });
     if (!token?.email)
       return NextResponse.json({ error: "unauthenticated" }, { status: 401 });
@@ -82,14 +77,11 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    // Read optional branch from query param ?branch=feature/x
     const url = new URL(req.url);
     const branchParam = url.searchParams.get("branch") ?? undefined;
-    // Fallback to ACTIVITIES_BRANCH env var if set
     const branchToUse =
       branchParam ?? process.env.ACTIVITIES_BRANCH ?? undefined;
 
-    // fetch file metadata & content from GitHub
     const fileJson = await readFileFromBranch({
       owner: OWNER,
       repo: REPO,
@@ -99,13 +91,11 @@ export async function GET(req: NextRequest) {
     });
 
     const contentBase64: string = fileJson.content ?? "";
-    // decode base64 (file may include newlines)
     const raw = Buffer.from(contentBase64, "base64").toString("utf8");
     let parsed: unknown;
     try {
       parsed = JSON.parse(raw);
     } catch (err) {
-      // If file is not valid JSON, surface error
       return NextResponse.json(
         { error: "invalid_json_in_repo_file", detail: (err as Error).message },
         { status: 500 }

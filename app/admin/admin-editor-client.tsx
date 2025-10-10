@@ -128,6 +128,7 @@ export default function AdminEditorClient() {
       date: undefined,
       description: "",
       tags: [],
+      img: "",
       location: { name: "", address: "" },
       organizer: { name: "", email: "" },
     };

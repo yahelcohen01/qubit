@@ -29,6 +29,6 @@ export type Activity = {
   organizer?: { name?: string; email?: string };
   url?: string;
   capacity?: number;
-  imageUrl?: string;
+  img: string;
   [k: string]: any;
 };

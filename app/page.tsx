@@ -7,12 +7,14 @@ import { WhosWhoSection } from "./components/whos-who-section/whos-who-section";
 import { ContactSection } from "./components/contact-section/contact-section";
 import { InnovationSection } from "./components/innovation-section/innovation-section";
 import { Footer } from "./components/footer";
+import { ActivitiesSection } from "./components/activities-section/activities-section";
 
 export default function MinimalistPortfolio() {
   return (
     <main className="h-[calc(100vh-110px)] flex flex-col mt-[110px]">
       <HeroSection />
       <AboutSection />
+      <ActivitiesSection />
       <InstitutesSection />
       <EventHighlightsSection />
       <WhosWhoSection />

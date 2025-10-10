@@ -17,7 +17,7 @@
     },
     "url": "https://example.com/events/quantum-meetup",
     "capacity": 80,
-    "imageUrl": "https://example.com/images/quantum-meetup.jpg"
+    "img": "https://example.com/images/quantum-meetup.jpg"
   },
   {
     "id": "9cc4621f-5f39-45f3-8f96-c2dec0200b4b",
@@ -37,7 +37,7 @@
     },
     "url": "https://example.com/events/women-in-tech",
     "capacity": 150,
-    "imageUrl": "https://example.com/images/women-in-tech.jpg"
+    "img": "https://example.com/images/women-in-tech.jpg"
   },
   {
     "id": "d79d813d-2b37-4dfb-b3a5-ffc2e401269a",
@@ -57,7 +57,7 @@
     },
     "url": "",
     "capacity": 24,
-    "imageUrl": "https://example.com/images/quantum-circuits.jpg"
+    "img": "https://example.com/images/quantum-circuits.jpg"
   },
   {
     "id": "808a9b56-1a16-4d98-b3ef-585a23ceeb16",
@@ -77,7 +77,7 @@
     },
     "url": "https://zoom.us/j/123456789",
     "capacity": 1000,
-    "imageUrl": "https://example.com/images/quantum-algorithms.jpg"
+    "img": "https://example.com/images/quantum-algorithms.jpg"
   },
   {
     "id": "62748929-6f17-41ea-8a6f-644397a393a0",
@@ -97,7 +97,7 @@
     },
     "url": "https://example.com/events/networking-night",
     "capacity": 200,
-    "imageUrl": "https://example.com/images/networking-night.jpg"
+    "img": "https://example.com/images/networking-night.jpg"
   },
   {
     "id": "008035d7-5c83-4554-96d2-3ab064c12dae",
@@ -117,7 +117,7 @@
     },
     "url": "",
     "capacity": 300,
-    "imageUrl": "https://example.com/images/poster-session.jpg"
+    "img": "https://example.com/images/poster-session.jpg"
   },
   {
     "id": "68802219-bd26-4554-8db0-471f9c8eb88d",
@@ -137,7 +137,7 @@
     },
     "url": "https://example.com/events/hackathon-quantum",
     "capacity": 120,
-    "imageUrl": "https://example.com/images/quantum-hackathon.jpg"
+    "img": "https://example.com/images/quantum-hackathon.jpg"
   },
   {
     "id": "6f150f43-078c-4b6e-8395-cc0be360dd44",
@@ -157,7 +157,7 @@
     },
     "url": "",
     "capacity": 30,
-    "imageUrl": "https://example.com/images/coffee-and-code.jpg"
+    "img": "https://example.com/images/coffee-and-code.jpg"
   },
   {
     "id": "1bce2f20-23ae-463b-a22c-c4a61feda179",
@@ -177,7 +177,7 @@
     },
     "url": "https://example.com/events/qec-lecture",
     "capacity": 120,
-    "imageUrl": "https://example.com/images/quantum-error-correction.jpg"
+    "img": "https://example.com/images/quantum-error-correction.jpg"
   },
   {
     "id": "f8d45b9b-e6e1-450c-915c-cc070b0ed048",
@@ -197,7 +197,7 @@
     },
     "url": "",
     "capacity": 50,
-    "imageUrl": "https://example.com/images/volunteer-day.jpg"
+    "img": "https://example.com/images/volunteer-day.jpg"
   },
   {
     "id": "98105716-1946-44e2-8673-aef772a77e0b",
@@ -217,7 +217,7 @@
     },
     "url": "https://example.com/mentorship",
     "capacity": 40,
-    "imageUrl": "https://example.com/images/mentorship-office-hours.jpg"
+    "img": "https://example.com/images/mentorship-office-hours.jpg"
   },
   {
     "id": "91035a61-4ce0-484d-b233-87e9853d339e",
@@ -237,6 +237,6 @@
     },
     "url": "https://example.com/events/eoy-social",
     "capacity": 400,
-    "imageUrl": "https://example.com/images/end-of-year-social.jpg"
+    "img": "https://example.com/images/end-of-year-social.jpg"
   }
 ]
