@@ -2,7 +2,7 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { NextRequest, NextResponse } from "next/server";
 import { ZodSchema, ZodError } from "zod";
-import { getToken } from "next-auth/jwt";
+import { getToken, JWT } from "next-auth/jwt";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -38,7 +38,8 @@ type ValidatedData = {
 };
 
 type EndpointHandler<T extends ValidationSchema = ValidationSchema> = (
-  request: NextRequest & InferValidatedData<T>
+  request: NextRequest & InferValidatedData<T>,
+  token?: JWT | null
 ) => Promise<NextResponse>;
 
 export function validateEndpoint<T extends ValidationSchema>({
