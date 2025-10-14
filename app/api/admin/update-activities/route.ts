@@ -1,8 +1,7 @@
-// app/api/admin/update-activities/route.ts
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getToken } from "next-auth/jwt";
-import { validateEndpoint } from "@/app/shared/lib/utils";
+import { validateEndpoint } from "@shared/lib";
 import { uploadActivities } from "../handlers";
 
 const PayloadSchema = z.object({
@@ -12,6 +11,24 @@ const PayloadSchema = z.object({
       title: z.string().min(1),
       date: z.string().optional(),
       description: z.string().optional(),
+      startTime: z.string().optional(),
+      endTime: z.string().optional(),
+      location: z
+        .object({
+          name: z.string().optional(),
+          address: z.string().optional(),
+        })
+        .optional(),
+      tags: z.array(z.string()).optional(),
+      organizer: z
+        .object({
+          name: z.string().optional(),
+          email: z.string().optional(),
+        })
+        .optional(),
+      url: z.string().optional(),
+      capacity: z.number().int().positive().optional(),
+      img: z.string().min(1),
     })
   ),
 });
@@ -37,5 +54,4 @@ export const PUT = validateEndpoint({
       email: token.email,
     });
   },
-  options: { authenticate: true, requireAdmin: true },
 });

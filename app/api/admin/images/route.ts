@@ -1,4 +1,4 @@
-import { validateEndpoint } from "@/app/shared/lib/utils";
+import { validateEndpoint } from "@shared/lib";
 import { z } from "zod";
 import { getImages, uploadImage } from "../handlers";
 
@@ -37,17 +37,14 @@ export const POST = validateEndpoint({
     const { file, folder, filename } = request.validatedBody;
     return await uploadImage({ file, folder, filename });
   },
-  options: { authenticate: true, requireAdmin: true },
 });
 
 export const GET = validateEndpoint({
   schema: {
     query: getImagesQuerySchema,
-    params: z.object({ test: z.string().min(2).max(100) }),
   },
   handler: async (request) => {
     const { folder } = request.query;
     return await getImages({ folder });
   },
-  options: { authenticate: true, requireAdmin: true },
 });

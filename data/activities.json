@@ -10,11 +10,7 @@
       "name": "Tel Aviv Makerspace",
       "address": "123 Innovation St, Tel Aviv"
     },
-    "tags": [
-      "meetup",
-      "quantum",
-      "beginners"
-    ],
+    "tags": ["meetup", "quantum", "beginners"],
     "organizer": {
       "name": "Qubit Community",
       "email": "info@qubit.community"
@@ -34,11 +30,7 @@
       "name": "University Hall, Room 42",
       "address": "1 University Ave, Haifa"
     },
-    "tags": [
-      "panel",
-      "career",
-      "diversity"
-    ],
+    "tags": ["panel", "career", "diversity"],
     "organizer": {
       "name": "Qubit Community",
       "email": "events@qubit.community"
@@ -58,11 +50,7 @@
       "name": "Lab X",
       "address": "45 Science Park, Jerusalem"
     },
-    "tags": [
-      "workshop",
-      "hands-on",
-      "quantum"
-    ],
+    "tags": ["workshop", "hands-on", "quantum"],
     "organizer": {
       "name": "Lab X",
       "email": "labx@university.edu"
@@ -82,11 +70,7 @@
       "name": "Online",
       "address": ""
     },
-    "tags": [
-      "webinar",
-      "algorithms",
-      "online"
-    ],
+    "tags": ["webinar", "algorithms", "online"],
     "organizer": {
       "name": "Qubit Online",
       "email": "webinars@qubit.community"
@@ -106,10 +90,7 @@
       "name": "Rooftop Hub",
       "address": "7 Startup Blvd, Tel Aviv"
     },
-    "tags": [
-      "networking",
-      "startups"
-    ],
+    "tags": ["networking", "startups"],
     "organizer": {
       "name": "Founders Hub",
       "email": "hello@foundershub.co"
@@ -129,10 +110,7 @@
       "name": "Campus Atrium",
       "address": "Main St, Beer Sheva"
     },
-    "tags": [
-      "students",
-      "poster-session"
-    ],
+    "tags": ["students", "poster-session"],
     "organizer": {
       "name": "Physics Dept.",
       "email": "physics@university.edu"
@@ -152,11 +130,7 @@
       "name": "Innovation Campus",
       "address": "99 Maker Road, Haifa"
     },
-    "tags": [
-      "hackathon",
-      "competition",
-      "quantum"
-    ],
+    "tags": ["hackathon", "competition", "quantum"],
     "organizer": {
       "name": "HackQ",
       "email": "hackq@events.org"
@@ -176,10 +150,7 @@
       "name": "Cafe Central",
       "address": "2 Market St, Tel Aviv"
     },
-    "tags": [
-      "study-group",
-      "casual"
-    ],
+    "tags": ["study-group", "casual"],
     "organizer": {
       "name": "Community Volunteers",
       "email": "volunteers@qubit.community"
@@ -199,10 +170,7 @@
       "name": "Lecture Hall B",
       "address": "10 Science Way, Rehovot"
     },
-    "tags": [
-      "lecture",
-      "advanced"
-    ],
+    "tags": ["lecture", "advanced"],
     "organizer": {
       "name": "Institute for Quantum Studies",
       "email": "iqs@institute.org"
@@ -222,10 +190,7 @@
       "name": "Event Warehouse",
       "address": "8 Logistics Rd, Ashdod"
     },
-    "tags": [
-      "volunteer",
-      "community"
-    ],
+    "tags": ["volunteer", "community"],
     "organizer": {
       "name": "Qubit Community",
       "email": "volunteers@qubit.community"
@@ -245,10 +210,7 @@
       "name": "Startup Lounge",
       "address": "3 Founder Ave, Tel Aviv"
     },
-    "tags": [
-      "mentorship",
-      "career"
-    ],
+    "tags": ["mentorship", "career"],
     "organizer": {
       "name": "MentorMatch",
       "email": "mentors@mentormatch.org"
@@ -268,10 +230,7 @@
       "name": "Grand Hall",
       "address": "1 Celebration Pl, Tel Aviv"
     },
-    "tags": [
-      "social",
-      "party"
-    ],
+    "tags": ["social", "party"],
     "organizer": {
       "name": "Qubit Community",
       "email": "events@qubit.community"

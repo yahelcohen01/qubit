@@ -45,11 +45,11 @@ type EndpointHandler<T extends ValidationSchema = ValidationSchema> = (
 export function validateEndpoint<T extends ValidationSchema>({
   schema,
   handler,
-  options = { authenticate: true, requireAdmin: false },
+  options = { authenticate: true, requireAdmin: true },
 }: {
   schema: T;
   handler: EndpointHandler<T>;
-  options: ValidateEndpointOptions;
+  options?: ValidateEndpointOptions;
 }) {
   return async (request: NextRequest) => {
     try {

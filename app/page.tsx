@@ -14,8 +14,8 @@ export default function MinimalistPortfolio() {
     <main className="h-[calc(100vh-110px)] flex flex-col mt-[110px]">
       <HeroSection />
       <AboutSection />
-      <ActivitiesSection />
       <InstitutesSection />
+      <ActivitiesSection />
       <EventHighlightsSection />
       <WhosWhoSection />
       <ContactSection />

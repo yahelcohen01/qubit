@@ -1,4 +1,4 @@
-import { validateEndpoint } from "@/app/shared/lib/utils";
+import { validateEndpoint } from "@shared/lib";
 import { getActivities } from "../handlers/activities";
 import z from "zod";
 
@@ -14,5 +14,4 @@ export const GET = validateEndpoint({
     const { branch } = req.query;
     return await getActivities(branch);
   },
-  options: { authenticate: true, requireAdmin: true },
 });
