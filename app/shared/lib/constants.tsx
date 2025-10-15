@@ -31,10 +31,10 @@ export const socials = [
 
 export const navItems: NavItem[] = [
   { label: "Israel in Quantum Tech", href: "#" },
-  { label: "Who's Who", href: "#whos-who" },
-  { label: "Activities", href: "#activities" },
   { label: "About", href: "#about" },
-  { label: "Content hub", href: "#content-hub" },
+  { label: "Activities", href: "#activities" },
+  { label: "Who's Who", href: "#whos-who" },
+  // { label: "Content hub", href: "#content-hub" },
 ] as const;
 
 export const stats = [
