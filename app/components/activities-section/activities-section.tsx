@@ -28,7 +28,7 @@ const ActivityCard = ({
             backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.6) 100%), url(${activity.img})`,
           }}
         />
-        <div className="relative h-fit flex flex-col justify-end p-8 md:p-12 backdrop-blur-xs">
+        <div className="relative h-fit flex flex-col justify-end p-8 backdrop-blur-xs">
           <div className="text-sm mb-3 flex items-center gap-2">
             {DateUtils.formatDate(activity.date)} • {getLocationText(activity)}
           </div>
@@ -82,7 +82,10 @@ export const ActivitiesSection = () => {
   );
 
   return (
-    <section className="bg-black text-white py-16 scroll-mt-30" id="activities">
+    <section
+      className="bg-black text-white px-8 py-16 scroll-mt-30"
+      id="activities"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="md:hidden relative">
           <div className="mb-8 md:mb-12 justify-self-center">
@@ -97,6 +100,8 @@ export const ActivitiesSection = () => {
             items={activities}
             variant="slides"
             navigation="dots"
+            autoplay
+            pageInterval={5000}
             navigationClassName="bg-white hover:bg-white/20"
             renderItem={({ item, index }) => {
               return (
@@ -133,7 +138,7 @@ export const ActivitiesSection = () => {
           )}
         </div>
 
-        <div className="hidden md:grid md:grid-cols-2 gap-8 max-h-[80vh]">
+        <div className="hidden md:grid md:grid-cols-2 gap-8 h-[80vh]">
           <ActivityCard activity={activities[0]} featured />
 
           <div className="flex flex-col max-h-[80vh]">
