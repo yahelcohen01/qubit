@@ -1,242 +1,35 @@
 [
   {
-    "id": "178dfdd1-11f9-41c6-a577-68c1f1b1a13a",
-    "title": "Community Meetup: Intro to Quantum Computing",
-    "date": "2025-10-20",
-    "description": "A friendly meetup introducing the basics of quantum computing. Beginners welcome — light refreshments provided.",
-    "startTime": "18:30",
-    "endTime": "20:30",
+    "id": "1",
+    "title": "Energy Quantum Meetup",
+    "date": "2025-09-16",
+    "description": "Join us for an engaging meetup exploring the latest developments in quantum computing and energy solutions. Network with innovators, researchers, and enthusiasts working at the intersection of quantum technology and sustainable energy.",
     "location": {
-      "name": "Tel Aviv Makerspace",
-      "address": "123 Innovation St, Tel Aviv"
-    },
-    "tags": ["meetup", "quantum", "beginners"],
-    "organizer": {
-      "name": "Qubit Community",
-      "email": "info@qubit.community"
-    },
-    "url": "https://example.com/events/quantum-meetup",
-    "capacity": 80,
-    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-meetup-tlv-2025.png"
-  },
-  {
-    "id": "9cc4621f-5f39-45f3-8f96-c2dec0200b4b",
-    "title": "Women in Tech Panel",
-    "date": "2025-11-05",
-    "description": "Panel discussion with women leaders from academia and industry about careers, mentorship, and inclusion.",
-    "startTime": "17:00",
-    "endTime": "19:00",
-    "location": {
-      "name": "University Hall, Room 42",
-      "address": "1 University Ave, Haifa"
-    },
-    "tags": ["panel", "career", "diversity"],
-    "organizer": {
-      "name": "Qubit Community",
-      "email": "events@qubit.community"
-    },
-    "url": "https://example.com/events/women-in-tech",
-    "capacity": 150,
-    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-meetup-tlv-2025.png"
-  },
-  {
-    "id": "d79d813d-2b37-4dfb-b3a5-ffc2e401269a",
-    "title": "Hands-on Workshop: Quantum Circuits",
-    "date": "2025-11-15",
-    "description": "Practical lab where attendees will build and simulate simple quantum circuits on cloud providers.",
-    "startTime": "09:30",
-    "endTime": "13:00",
-    "location": {
-      "name": "Lab X",
-      "address": "45 Science Park, Jerusalem"
-    },
-    "tags": ["workshop", "hands-on", "quantum"],
-    "organizer": {
-      "name": "Lab X",
-      "email": "labx@university.edu"
-    },
-    "url": "",
-    "capacity": 24,
-    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-meetup-tlv-2025.png"
-  },
-  {
-    "id": "808a9b56-1a16-4d98-b3ef-585a23ceeb16",
-    "title": "Online Webinar: Quantum Algorithms Overview",
-    "date": "2025-12-01",
-    "description": "Join us online for an accessible overview of quantum algorithms and their potential applications.",
-    "startTime": "20:00",
-    "endTime": "21:30",
-    "location": {
-      "name": "Online",
+      "name": "Tel Aviv",
       "address": ""
     },
-    "tags": ["webinar", "algorithms", "online"],
-    "organizer": {
-      "name": "Qubit Online",
-      "email": "webinars@qubit.community"
-    },
-    "url": "https://zoom.us/j/123456789",
-    "capacity": 1000,
-    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-meetup-tlv-2025.png"
+    "img": ""
   },
   {
-    "id": "62748929-6f17-41ea-8a6f-644397a393a0",
-    "title": "Networking Night — Startups & Founders",
-    "date": "2025-10-28",
-    "description": "An evening for founders, investors and startup enthusiasts to connect and share opportunities.",
-    "startTime": "19:00",
-    "endTime": "22:00",
+    "id": "2",
+    "title": "Hakathon 2024",
+    "date": "",
+    "description": "A collaborative hackathon bringing together developers, designers, and innovators to build creative solutions and breakthrough projects. Compete, learn, and connect with the tech community in an intensive coding event.",
     "location": {
-      "name": "Rooftop Hub",
-      "address": "7 Startup Blvd, Tel Aviv"
+      "name": "Tel Aviv",
+      "address": "Virtual"
     },
-    "tags": ["networking", "startups"],
-    "organizer": {
-      "name": "Founders Hub",
-      "email": "hello@foundershub.co"
-    },
-    "url": "https://example.com/events/networking-night",
-    "capacity": 200,
-    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-meetup-tlv-2025.png"
+    "img": ""
   },
   {
-    "id": "008035d7-5c83-4554-96d2-3ab064c12dae",
-    "title": "Student Poster Session",
-    "date": "2025-10-12",
-    "description": "Undergraduate and graduate students present research posters. Open to the public.",
-    "startTime": "14:00",
-    "endTime": "16:00",
+    "id": "3",
+    "title": "Road2 Meetup",
+    "date": "2025-09-24",
+    "description": "Connect with startups at the forefront of quantum computing innovation. This meetup brings together founders, investors, and tech enthusiasts to explore groundbreaking quantum technologies and discuss the future of the industry.",
     "location": {
-      "name": "Campus Atrium",
-      "address": "Main St, Beer Sheva"
+      "name": "Haifa",
+      "address": ""
     },
-    "tags": ["students", "poster-session"],
-    "organizer": {
-      "name": "Physics Dept.",
-      "email": "physics@university.edu"
-    },
-    "url": "",
-    "capacity": 300,
-    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-meetup-tlv-2025.png"
-  },
-  {
-    "id": "68802219-bd26-4554-8db0-471f9c8eb88d",
-    "title": "Hackathon: Quantum Challenge (48h)",
-    "date": "2026-01-09",
-    "description": "A 48-hour hackathon focused on building useful tools and demos for quantum software. Teams of up to 4.",
-    "startTime": "09:00",
-    "endTime": "09:00",
-    "location": {
-      "name": "Innovation Campus",
-      "address": "99 Maker Road, Haifa"
-    },
-    "tags": ["hackathon", "competition", "quantum"],
-    "organizer": {
-      "name": "HackQ",
-      "email": "hackq@events.org"
-    },
-    "url": "https://example.com/events/hackathon-quantum",
-    "capacity": 120,
-    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-meetup-tlv-2025.png"
-  },
-  {
-    "id": "6f150f43-078c-4b6e-8395-cc0be360dd44",
-    "title": "Coffee & Code — Study Group",
-    "date": "2025-10-08",
-    "description": "Casual study group for people learning quantum programming. Bring your laptop and questions.",
-    "startTime": "10:00",
-    "endTime": "12:00",
-    "location": {
-      "name": "Cafe Central",
-      "address": "2 Market St, Tel Aviv"
-    },
-    "tags": ["study-group", "casual"],
-    "organizer": {
-      "name": "Community Volunteers",
-      "email": "volunteers@qubit.community"
-    },
-    "url": "",
-    "capacity": 30,
-    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-meetup-tlv-2025.png"
-  },
-  {
-    "id": "1bce2f20-23ae-463b-a22c-c4a61feda179",
-    "title": "Lecture: Quantum Error Correction",
-    "date": "2025-11-22",
-    "description": "An advanced lecture on quantum error correction techniques and their implementations.",
-    "startTime": "16:00",
-    "endTime": "17:30",
-    "location": {
-      "name": "Lecture Hall B",
-      "address": "10 Science Way, Rehovot"
-    },
-    "tags": ["lecture", "advanced"],
-    "organizer": {
-      "name": "Institute for Quantum Studies",
-      "email": "iqs@institute.org"
-    },
-    "url": "https://example.com/events/qec-lecture",
-    "capacity": 120,
-    "img": "https://example.com/images/quantum-error-correction.jpg"
-  },
-  {
-    "id": "f8d45b9b-e6e1-450c-915c-cc070b0ed048",
-    "title": "Community Volunteer Day",
-    "date": "2025-10-18",
-    "description": "Help us prepare event spaces and materials. No experience required — coffee provided.",
-    "startTime": "08:30",
-    "endTime": "12:30",
-    "location": {
-      "name": "Event Warehouse",
-      "address": "8 Logistics Rd, Ashdod"
-    },
-    "tags": ["volunteer", "community"],
-    "organizer": {
-      "name": "Qubit Community",
-      "email": "volunteers@qubit.community"
-    },
-    "url": "",
-    "capacity": 50,
-    "img": "https://example.com/images/volunteer-day.jpg"
-  },
-  {
-    "id": "98105716-1946-44e2-8673-aef772a77e0b",
-    "title": "Mentorship Office Hours",
-    "date": "2025-10-25",
-    "description": "Sign up for 20-minute mentorship slots with experienced industry professionals.",
-    "startTime": "15:00",
-    "endTime": "17:00",
-    "location": {
-      "name": "Startup Lounge",
-      "address": "3 Founder Ave, Tel Aviv"
-    },
-    "tags": ["mentorship", "career"],
-    "organizer": {
-      "name": "MentorMatch",
-      "email": "mentors@mentormatch.org"
-    },
-    "url": "https://example.com/mentorship",
-    "capacity": 40,
-    "img": "https://example.com/images/mentorship-office-hours.jpg"
-  },
-  {
-    "id": "91035a61-4ce0-484d-b233-87e9853d339e",
-    "title": "End-of-Year Social",
-    "date": "2025-12-20",
-    "description": "Celebrate the year's achievements with drinks, awards, and music. Tickets required.",
-    "startTime": "18:00",
-    "endTime": "23:00",
-    "location": {
-      "name": "Grand Hall",
-      "address": "1 Celebration Pl, Tel Aviv"
-    },
-    "tags": ["social", "party"],
-    "organizer": {
-      "name": "Qubit Community",
-      "email": "events@qubit.community"
-    },
-    "url": "https://example.com/events/eoy-social",
-    "capacity": 400,
-    "img": "https://example.com/images/end-of-year-social.jpg"
+    "img": ""
   }
 ]
