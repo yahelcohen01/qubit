@@ -28,7 +28,7 @@ const PayloadSchema = z.object({
         .optional(),
       url: z.string().optional(),
       capacity: z.number().int().positive().optional(),
-      img: z.string().min(1),
+      img: z.string(),
     })
   ),
 });

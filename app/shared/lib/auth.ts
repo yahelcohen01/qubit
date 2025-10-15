@@ -2,7 +2,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import NextAuth, { NextAuthOptions, DefaultSession } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 import { getServerSession as nextGetServerSession } from "next-auth/next";
-import type { Session } from "next-auth";
 
 // --- Module augmentation so we can add `role` to the session user ---
 declare module "next-auth" {
@@ -77,6 +76,7 @@ export const authOptions: NextAuthOptions = {
   // Recommended security settings
   session: {
     strategy: "jwt", // jwt is simple for Vercel; you may switch to database sessions later
+    maxAge: 3 * 24 * 60 * 60, // 3 days
   },
 
   // Pages can be customized (leave default or change to your routes)
