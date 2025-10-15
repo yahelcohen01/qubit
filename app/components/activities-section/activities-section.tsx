@@ -86,7 +86,6 @@ export const ActivitiesSection = () => {
           <Carousel
             items={activities}
             variant="slides"
-            // autoplay
             navigation="dots"
             navigationClassName="bg-white hover:bg-white/20"
             renderItem={({ item, index }) => {
@@ -117,9 +116,11 @@ export const ActivitiesSection = () => {
               );
             }}
           />
-          <FillingAnimatedButton className="flex mt-6 justify-self-center justify-center text-center w-1/2 min-w-fit">
-            Explore all activities
-          </FillingAnimatedButton>
+          {activities.length > 3 && (
+            <FillingAnimatedButton className="flex mt-6 justify-self-center justify-center text-center w-1/2 min-w-fit">
+              Explore all activities
+            </FillingAnimatedButton>
+          )}
         </div>
 
         <div className="hidden md:grid md:grid-cols-2 gap-8 max-h-[80vh]">
@@ -144,9 +145,11 @@ export const ActivitiesSection = () => {
                 );
               })}
             </div>
-            <FillingAnimatedButton className="mt-6">
-              Explore all activities
-            </FillingAnimatedButton>
+            {activities.length > 3 && (
+              <FillingAnimatedButton className="mt-6">
+                Explore all activities
+              </FillingAnimatedButton>
+            )}
           </div>
         </div>
       </div>
