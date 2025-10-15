@@ -62,28 +62,29 @@ export const Footer = () => {
         <div className="relative">
           <Divider />
         </div>
-        <div className="flex items-center py-8 justify-center">
-          <p className="text-xs text-white/50">
-            © {new Date().getFullYear()} all rights reserved QUBIT IL
-          </p>
-          <DotIcon color="white" className="size-1 my-auto mx-4" />
-          <p className="text-xs text-white/50">Privacy Policy</p>
-          <DotIcon color="white" className="size-1 my-auto mx-4" />
-          <p className="text-xs text-white/50">Terms of Use</p>
-          {/* <div className="flex items-start gap-4">
+        <div className="flex items-center py-8 justify-between ">
+          <div className="flex items-start">
+            <p className="text-xs text-white/50">
+              © {new Date().getFullYear()} all rights reserved QUBIT IL
+            </p>
+            <DotIcon color="white" className="size-1 my-auto mx-4" />
+            <p className="text-xs text-white/50">Privacy Policy</p>
+            <DotIcon color="white" className="size-1 my-auto mx-4" />
+            <p className="text-xs text-white/50">Terms of Use</p>
+          </div>
+          <div className="flex items-start gap-4">
             <p className="text-xs text-white/50">
               Developed by{" "}
-              <a href="https://www.yahelcohen.com" className="underline">
+              <a
+                href="https://www.yahelcohen.com"
+                className="underline"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Yahel Cohen
               </a>
             </p>
-            <p className="text-xs text-white/50">
-              Designed by{" "}
-              <a href="https://www.talmelamed.com/" className="underline">
-                Tal Melamed
-              </a>
-            </p>
-          </div> */}
+          </div>
         </div>
       </div>
     </footer>

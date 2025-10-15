@@ -5,7 +5,7 @@ import { FadingText } from "../fading-text";
 export const EventHighlightsSection = () => {
   return (
     <section id="highlights">
-      <div className="grid items-center justify-center text-center scroll-mt-30">
+      <div className="grid items-center justify-center text-center scroll-mt-30 py-16">
         <FadingText className="text-3xl sm:text-3xl md:text-5xl xl:text-6xl font-normal leading-relaxed">
           Highlights from our events
         </FadingText>

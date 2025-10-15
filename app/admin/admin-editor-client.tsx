@@ -128,6 +128,7 @@ export default function AdminEditorClient() {
       date: undefined,
       description: "",
       tags: [],
+      img: "",
       location: { name: "", address: "" },
       organizer: { name: "", email: "" },
     };
@@ -585,6 +586,18 @@ function ActivityForm({
           className="w-full px-3 py-2 rounded bg-neutral-800"
         />
       </div>
+      <div>
+        <label className="block text-xs">Image (URL)</label>
+        <input
+          value={activity.img ?? ""}
+          onChange={(e) =>
+            onChange({
+              img: e.target.value,
+            })
+          }
+          className="w-full px-3 py-2 rounded bg-neutral-800"
+        />
+      </div>
 
       <div className="flex gap-2 justify-end">
         <Button
@@ -605,9 +618,9 @@ function ActivityPreview({ activity }: { activity: Activity }) {
     <div className="p-4 border rounded">
       <div className="flex items-start gap-4">
         <div className="w-24 h-24 flex items-center justify-center text-xs rounded overflow-hidden">
-          {activity.imageUrl ? (
+          {activity.img ? (
             <img
-              src={activity.imageUrl}
+              src={activity.img}
               alt={activity.title}
               className="object-cover w-full h-full"
             />
