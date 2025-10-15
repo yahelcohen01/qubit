@@ -6,6 +6,7 @@ import { FadingText } from "../fading-text";
 import { FillingAnimatedButton } from "../filling-animated-button";
 import { Divider } from "../divider";
 import { DateUtils } from "@shared/lib";
+import { useMemo } from "react";
 
 const getLocationText = (activity: Activity) => {
   if (activity.location?.name === "Online") return "Online";
@@ -69,7 +70,16 @@ const ActivityCard = ({
 };
 
 export const ActivitiesSection = () => {
-  const activities: Activity[] = Activities;
+  const activities: Activity[] = useMemo(
+    () =>
+      Activities.map((activity) => ({
+        ...activity,
+        date: activity.date || "TBA",
+        img:
+          activity.img.length === 0 ? "assets/activities-bg.jpg" : activity.img,
+      })),
+    []
+  );
 
   return (
     <section className="bg-black text-white py-16 scroll-mt-30" id="activities">
