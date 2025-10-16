@@ -118,22 +118,27 @@ const ContactForm = () => {
   const form = useForm({
     ...formOpts,
     onSubmit: async ({ value }) => {
-      try {
-        const res = await fetch("/api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(value),
-        });
+      // TODO: connect to backend
+      // try {
+      //   const res = await fetch("/api/contact", {
+      //     method: "POST",
+      //     headers: { "Content-Type": "application/json" },
+      //     body: JSON.stringify(value),
+      //   });
 
-        if (!res.ok) {
-          const body = await res.json().catch(() => null);
-          throw new Error(body?.error ?? `Server error ${res.status}`);
-        }
-        form.reset();
-      } catch (err) {
-        console.error("Failed to send contact message", err);
-        throw err;
-      }
+      //   if (!res.ok) {
+      //     const body = await res.json().catch(() => null);
+      //     throw new Error(body?.error ?? `Server error ${res.status}`);
+      //   }
+      //   form.reset();
+      // } catch (err) {
+      //   console.error("Failed to send contact message", err);
+      //   throw err;
+      // }
+
+      // Mock submission
+      await new Promise((r) => setTimeout(r, 1500));
+      form.reset();
     },
   });
 
