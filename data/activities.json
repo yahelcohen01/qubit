@@ -4,7 +4,7 @@
     "title": "Energy Quantum Meetup",
     "description": "Join us for an engaging meetup exploring the latest developments in quantum computing and energy solutions. Network with innovators, researchers, and enthusiasts working at the intersection of quantum technology and sustainable energy.",
     "img": "https://tr5zhbseiuht4ssi.public.blob.vercel-storage.com/qubit_il/energy_2025.jpg",
-    "date": "16/09/2025",
+    "date": "2025-06-19",
     "location": {
       "name": "Tel Aviv",
       "address": ""
@@ -26,7 +26,7 @@
     "title": "Road2 Meetup",
     "description": "Connect with startups at the forefront of quantum computing innovation. This meetup brings together founders, investors, and tech enthusiasts to explore groundbreaking quantum technologies and discuss the future of the industry.",
     "img": "https://tr5zhbseiuht4ssi.public.blob.vercel-storage.com/qubit_il/room2.jfif",
-    "date": "24/09/2025",
+    "date": "2025-09-24",
     "location": {
       "name": "Haifa",
       "address": ""
