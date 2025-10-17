@@ -74,172 +74,225 @@ export const stats = [
 export const startups: CarouselItem[] = [
   {
     title: "LightSolver",
-    img: "/assets/light-solver.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/light-solver.png",
   },
   {
     title: "IQCC",
-    img: "/assets/iqcc.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/iqcc.png",
   },
   {
     title: "Qarakal",
-    img: "/assets/qarakal.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/qarakal.png",
   },
   {
     title: "Quantum Source",
-    img: "/assets/quantum-source.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-source.png",
   },
   {
     title: "TQS",
-    img: "/assets/tqs.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/tqs.png",
   },
   {
     title: "Quantum Pulse",
-    img: "/assets/quantum-pulse.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-pulse.png",
   },
   {
     title: "Qedma",
-    img: "/assets/qedma.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/qedma.png",
   },
   {
     title: "QuamCore",
-    img: "/assets/quamcore.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quamcore.png",
   },
   {
     title: "Raicol Crystals",
-    img: "/assets/raicol-crystals.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/raicol-crystals.png",
   },
   {
     title: "Classiq",
-    img: "/assets/classiq.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/classiq.png",
   },
   {
     title: "Quantum Art",
-    img: "/assets/quantum-art.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-art.png",
   },
   {
     title: "Quantum Transistors",
-    img: "/assets/quantum-transistors.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-transistors.png",
   },
   {
     title: "HEQA",
-    img: "/assets/heqa.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/heqa.png",
   },
   {
     title: "Quantum Machines",
-    img: "/assets/quantum-machines.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-machines.png",
   },
   {
     title: "Wiz",
-    img: "/assets/wiz.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/wiz.png",
   },
   {
     title: "Triarii",
-    img: "/assets/triarii.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/triarii.png",
   },
   {
     title: "Accubeat",
-    img: "/assets/accubeat.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/accubeat.png",
   },
   {
     title: "Quantimize",
-    img: "/assets/quantimize.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantimize.png",
   },
   {
     title: "Spinflex",
-    img: "/assets/spinflex.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/spinflex.png",
   },
 ] as const;
 
 export const institutes = [
   {
     name: "Hebrew University",
-    img: "/assets/hebrew-university.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/hebrew-university.png",
   },
   {
     name: "Weizmann Institute",
-    img: "/assets/weizmann-institute-of-science.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/weizmann-institute-of-science.png",
   },
   {
     name: "Tel Aviv University",
-    img: "/assets/tel-aviv-university.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/tel-aviv-university.png",
   },
   {
     name: "Technion",
-    img: "/assets/technion-university.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/technion-university.png",
   },
   {
     name: "Ben Gurion University",
-    img: "/assets/ben-gurion-university.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/ben-gurion-university.png",
   },
   {
     name: "Bar Ilan University",
-    img: "/assets/bar-ilan-university.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/bar-ilan-university.png",
   },
   {
     name: "Ariel University",
-    img: "/assets/ariel-university.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/ariel-university.png",
   },
 ] as const;
 
 export const eventsHighlights: CarouselItem[] = [
   {
-    img: "/assets/meetup-tlv-2025.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/meetup-tlv-2025.png",
     title:
       "Meetup 2025 Tel Aviv — talking about everything shaping the world of quantum",
   },
   {
-    img: "/assets/quantum-meetup-tlv-2025.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-meetup-tlv-2025.png",
     title:
       "Quantum Meetup Tel Aviv 2025 — conversations at the frontier of innovation",
   },
   {
-    img: "/assets/cvent-connect.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/cvent-connect.png",
     title: "Cvent Connect 2024 — exploring the future of event technology",
   },
 ] as const;
 
 export const people = [
   {
+    name: "Shir Peri Lichtig",
+    role: "Qubit Management",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/shir.png",
+    linkedin: "/",
+  },
+  {
+    name: "Gal Bar Dea",
+    role: "Qubit Management",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/gal-bar-dea.png",
+    linkedin: "https://www.linkedin.com/in/galbardea/",
+  },
+  {
+    name: "Miriam Shtilman Lavsovski",
+    role: "Qubit Management",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/miriam-shtilman-lavsovski .jpeg",
+    linkedin: "https://www.linkedin.com/in/miriamshtilman/",
+  },
+  {
+    name: "Tomer Diari",
+    role: "Qubit Management",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/tomer-diari.jpeg",
+    linkedin: "https://www.linkedin.com/in/diari/",
+  },
+  {
+    name: "Ayal Itzkovitz",
+    role: "Qubit Management",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/ayal-itzkovitz.jpeg",
+    linkedin: "https://www.linkedin.com/in/ayali/",
+  },
+  {
+    name: "Dorit Dor",
+    role: "Qubit Management",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/dorit-dor.jpeg",
+    linkedin: "https://www.linkedin.com/in/dorit-dor-b1149/",
+  },
+  {
+    name: "Nadav Katz",
+    role: "Qubit Management",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/nadav-katz.jpg",
+    linkedin: "https://www.linkedin.com/in/nadav-katz-7775251a/",
+  },
+  {
+    name: "Shai Lev",
+    role: "Qubit Management",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/shai-lev.jpeg",
+    linkedin: "https://www.linkedin.com/in/shai-lev-b420079/",
+  },
+  {
     name: "Idan Keynan",
-    role: "Qubit Community Manager",
-    img: "/assets/idan-keynan.png",
+    role: "Qubit Management",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/idan-keynan.png",
     linkedin: "https://www.linkedin.com/in/idan-keynan/",
   },
   {
     name: "Dror Pezo",
-    role: "Qubit Community Manager",
-    img: "/assets/dror-pezo.png",
+    role: "Leading Team Members",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/dror-pezo.png",
     linkedin: "https://www.linkedin.com/in/dror-pezo-b82b31138/",
   },
   {
-    name: "Roy Ben Avraham",
-    role: "Software Engineer",
-    img: "/assets/roy-ben-avraham.png",
-    linkedin: "https://www.linkedin.com/in/roybenavraham/",
+    name: "Tali Mayer-Chissick",
+    role: "Leading Team Members",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/tali-mayer-chissick.jpeg",
+    linkedin: "https://www.linkedin.com/in/talima/",
   },
   {
-    name: "Paz Shakroka",
-    role: "Quantum Technology Enthusiast | Qubit Community Manager",
-    img: "/assets/paz-shakroka.png",
-    linkedin: "https://www.linkedin.com/in/paz-shakroka-216283224/",
-  },
-
-  {
-    name: "Amit Mizrahi",
-    role: "Qubit Community Manager",
-    img: "/assets/amit-mizrahi.png",
-    linkedin: "https://www.linkedin.com/in/amizrahiz/",
+    name: "Avichay Ben Lulu",
+    role: "Leading Team Members",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/avichay-ben-lulu.png",
+    linkedin: "https://www.linkedin.com/in/avichaybenlulu/",
   },
   {
-    name: "Shir",
-    role: "Qubit Community Manager",
-    img: "/assets/shir.png",
-    linkedin: "/",
+    name: "Roy Lehana",
+    role: "Leading Team Members",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/roy-lehana.jpeg",
+    linkedin: "https://www.linkedin.com/in/roy-lehana/",
+  },
+  {
+    name: "Gilad Levi",
+    role: "Leading Team Members",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/gilad-levi.jpeg",
+    linkedin: "https://www.linkedin.com/in/gilad-levi-kickstart/",
+  },
+  {
+    name: "Dafna Meir",
+    role: "Leading Team Members",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/dafna-meir.jpeg",
+    linkedin: "https://www.linkedin.com/in/dafna-meir-557bb7266/",
   },
   {
     name: "Yahel Cohen",
-    role: "Software Engineer | Quantum Technology Enthusiast",
-    img: "/assets/yahel-cohen.jpeg",
+    role: "Website Manager",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/yahel-cohen.jpeg",
     linkedin: "https://www.linkedin.com/in/yahelcohen/",
   },
 ] as const;

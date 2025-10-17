@@ -13,7 +13,7 @@ export const InstitutesSection = () => {
       id="institutes"
     >
       <img
-        src="/assets/left-ins-background.png"
+        src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/left-ins-background.png"
         alt="Research Institutes"
         className={cn(
           "w-[40vw] absolute left-0 object-cover h-full -translate-y-24 -z-10",
@@ -35,7 +35,7 @@ export const InstitutesSection = () => {
 
       {isMobile && (
         <img
-          src="/assets/home-background.png"
+          src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/home-background.png"
           alt="Research Institutes"
           className={cn(
             "absolute top-0 w-full object-cover left-0 -translate-y-24 -z-10 h-1/2"

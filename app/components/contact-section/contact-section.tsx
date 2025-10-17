@@ -22,7 +22,7 @@ export const ContactSection = () => {
         )}
       >
         <img
-          src="/assets/contact-section-bg.png"
+          src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/contact-section-bg.png"
           alt="contact-section-bg"
           className="w-auto h-auto max-h-full object-cover"
           style={{

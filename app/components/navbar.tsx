@@ -36,14 +36,14 @@ export const Navbar = () => {
 
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/assets/navbar-logo.png"
+              src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/navbar-logo.png"
               alt="Logo"
               width={150}
               height={50}
               className="hidden navbar:block object-contain"
             />
             <Image
-              src="/assets/navbar-logo-mobile.png"
+              src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/navbar-logo-mobile.png"
               alt="Logo"
               width={100}
               height={40}

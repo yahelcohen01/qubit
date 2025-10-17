@@ -44,7 +44,7 @@ export const HeroSection = () => {
       )}
 
       <Image
-        src="/assets/home-background-crop.png"
+        src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/home-background-crop.png"
         alt="home-background-crop"
         width={1000}
         height={800}

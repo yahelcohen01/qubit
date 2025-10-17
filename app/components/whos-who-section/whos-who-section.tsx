@@ -26,17 +26,20 @@ export const WhosWhoSection = () => {
       {isMobile ? (
         <MobileGrid />
       ) : (
-        <div className="grid grid-cols-3 justify-center-safe gap-16 px-16">
+        <div className="grid grid-cols-3 lg:grid-cols-4 justify-center-safe gap-16 px-16">
           {people.map((person) => (
             <div
               key={person.name}
               className="flex flex-col flex-shrink-0 max-w-82 gap-6"
             >
-              <img
-                src={person.img}
-                alt={person.name}
-                className="max-w-82 max-h-82 rounded-2xl object-cover"
-              />
+              <div className="aspect-square w-full max-h-72 overflow-hidden rounded-2xl">
+                <img
+                  src={person.img}
+                  alt={person.name}
+                  className="object-center w-full h-full object-cover"
+                  // rounded-2xl
+                />
+              </div>
               <div className="grid grid-cols-3">
                 <div className="flex flex-col col-span-2">
                   <h3 className="text-lg font-medium">{person.name}</h3>
@@ -66,11 +69,13 @@ const MobileGrid = () => {
           className="flex w-full relative justify-between py-4"
         >
           <div className="flex gap-4">
-            <img
-              src={person.img}
-              alt={person.name}
-              className="max-w-16 max-h-16 rounded-lg object-cover"
-            />
+            <div className="aspect-square w-16 max-h-16 overflow-hidden rounded-2xl">
+              <img
+                src={person.img}
+                alt={person.name}
+                className="w-full h-full rounded-lg object-cover"
+              />
+            </div>
             <div className="flex flex-col self-center">
               <h3 className="text-base font-medium leading-8">{person.name}</h3>
               <p className="font-poppins text-sm text-white/50">

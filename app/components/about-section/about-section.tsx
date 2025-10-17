@@ -32,7 +32,7 @@ export const AboutSection = () => {
         )}
       >
         <Image
-          src="/assets/left-side-illustration.png"
+          src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/left-side-illustration.png"
           alt="bg"
           width={isMobile ? 150 : 220}
           height={isMobile ? 120 : 220}
@@ -48,7 +48,7 @@ export const AboutSection = () => {
         )}
       >
         <Image
-          src="/assets/right-side-illustration.png"
+          src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/right-side-illustration.png"
           alt="bg-2"
           width={isMobile ? 100 : 150}
           height={isMobile ? 100 : 150}

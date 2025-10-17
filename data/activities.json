@@ -3,7 +3,7 @@
     "id": "17efd1bd-33eb-4f26-9c1e-313505683f17",
     "title": "Energy Quantum Meetup",
     "description": "Join us for an engaging meetup exploring the latest developments in quantum computing and energy solutions. Network with innovators, researchers, and enthusiasts working at the intersection of quantum technology and sustainable energy.",
-    "img": "https://tr5zhbseiuht4ssi.public.blob.vercel-storage.com/qubit_il/energy_2025.jpg",
+    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/energy-quantum-meetup.jpeg",
     "date": "2025-06-19",
     "location": {
       "name": "Tel Aviv",
@@ -14,7 +14,7 @@
     "id": "305cb5b5-300a-45a4-bfca-d3e01284a728",
     "title": "Hakathon 2024",
     "description": "A collaborative hackathon bringing together developers, designers, and innovators to build creative solutions and breakthrough projects. Compete, learn, and connect with the tech community in an intensive coding event.",
-    "img": "https://tr5zhbseiuht4ssi.public.blob.vercel-storage.com/qubit_il/hackathon.jpg",
+    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/hakathon-2024 .jpeg",
     "date": "2024",
     "location": {
       "name": "Tel Aviv",
@@ -25,7 +25,7 @@
     "id": "5edfb93d-e337-490b-8dec-7f3c50239adc",
     "title": "Road2 Meetup",
     "description": "Connect with startups at the forefront of quantum computing innovation. This meetup brings together founders, investors, and tech enthusiasts to explore groundbreaking quantum technologies and discuss the future of the industry.",
-    "img": "https://tr5zhbseiuht4ssi.public.blob.vercel-storage.com/qubit_il/room2.jfif",
+    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/road2-meetup.jpeg",
     "date": "2025-09-24",
     "location": {
       "name": "Haifa",
@@ -36,7 +36,7 @@
     "id": "77870e6a-62f9-4368-afb5-af86c4db5ad0",
     "title": "Microsoft Meetup 2024",
     "description": "Meetup about quantum computing and quantum communication, featuring insights from Microsoft's quantum development team and exploring the latest advances in quantum technologies and secure communication protocols.",
-    "img": "https://tr5zhbseiuht4ssi.public.blob.vercel-storage.com/qubit_il/microsoft_2024.jiff",
+    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/microsoft-2024.jpeg",
     "date": "2024",
     "location": {
       "name": "Tel Aviv",
@@ -47,7 +47,7 @@
     "id": "f9ca679b-fda2-49fa-a1ee-b8295f38b2df",
     "title": "Microsoft Meetup 2023",
     "description": "Join Microsoft's quantum computing community meetup focusing on quantum communication technologies and their real-world applications. Discover cutting-edge research, network with quantum experts, and explore the future of secure quantum networks.",
-    "img": "https://tr5zhbseiuht4ssi.public.blob.vercel-storage.com/qubit_il/microsoft_2023.jpg",
+    "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/microsoft-2023.jpeg",
     "date": "2023",
     "location": {
       "name": "Tel Aviv",

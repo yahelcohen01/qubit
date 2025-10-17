@@ -28,6 +28,7 @@ Welcome to the official repository for Israel's Quantum Tech Association website
 Qubit is Israel's premier quantum technology community platform, designed to connect quantum researchers, scientists, engineers, and enthusiasts. Our mission is to foster collaboration, share knowledge, and advance quantum technology research and development across Israel's vibrant quantum ecosystem.
 
 ### Key Features:
+
 - **Community Hub**: Connect with quantum researchers from leading Israeli institutions
 - **Event Management**: Stay updated on quantum conferences, workshops, and meetups
 - **Resource Sharing**: Access to quantum research papers, educational materials, and tools
@@ -36,6 +37,7 @@ Qubit is Israel's premier quantum technology community platform, designed to con
 - **Interactive Experience**: Engaging animations and responsive design for optimal user experience
 
 ### Target Audience:
+
 - Quantum researchers and scientists
 - University students and professors
 - Industry professionals in quantum technologies
@@ -51,6 +53,7 @@ Qubit is Israel's premier quantum technology community platform, designed to con
 Explore the live quantum community platform here: [www.qubit-israel.com](https://www.qubit-israel.com)
 
 ### Key Sections:
+
 - **Hero Section**: Introduction to Israel's quantum revolution
 - **About Section**: Mission, vision, and community values
 - **Institutes Section**: Showcasing leading quantum research institutions
@@ -140,19 +143,22 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ## 5. Customization
 
 ### Content Management
+
 - **Community Information**: Update content in `app/components/` for different sections
 - **Institute Showcase**: Modify institution data in the institutes section component
 - **Event Management**: Update activities and events through the activities section
 - **Project Highlights**: Customize featured projects in the projects section
 
 ### Styling & Theming
+
 - **Global Styles**: Located in `app/globals.css`
 - **Theme Configuration**: Customize colors, fonts, and breakpoints via Tailwind config
 - **Component Styling**: Individual component styles using Tailwind utility classes
 - **Dark/Light Mode**: Theme toggle implementation in `app/context/ThemeContext.tsx`
 
 ### Assets & Media
-- **Images**: Store community photos, institution logos, and project images in `public/assets/`
+
+- **Images**: Store community photos, institution logos, and project images in `publichttps://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/`
 - **Icons**: Custom SVG icons located in `public/icons/`
 - **Quantum Visualizations**: 3D models and animations for quantum concepts
 
@@ -199,17 +205,18 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 ## 7. Troubleshooting & Tips
 
-| Issue | Solution |
-|-------|----------|
+| Issue                                  | Solution                                                                   |
+| -------------------------------------- | -------------------------------------------------------------------------- |
 | **Build fails with TypeScript errors** | Ensure all types are properly defined; check `tsconfig.json` configuration |
-| **3D visualizations not loading** | Verify Three.js dependencies; check browser WebGL support |
-| **ISS tracking data not updating** | Check TLE API endpoints; verify network connectivity and API keys |
-| **Tailwind styles not applying** | Run `npm run build`; check for CSS conflicts in global styles |
-| **Mobile responsiveness issues** | Test breakpoints; ensure mobile-first design principles |
-| **Performance issues** | Optimize images; implement lazy loading; check bundle size |
-| **Theme switching not working** | Verify ThemeContext provider setup; check localStorage persistence |
+| **3D visualizations not loading**      | Verify Three.js dependencies; check browser WebGL support                  |
+| **ISS tracking data not updating**     | Check TLE API endpoints; verify network connectivity and API keys          |
+| **Tailwind styles not applying**       | Run `npm run build`; check for CSS conflicts in global styles              |
+| **Mobile responsiveness issues**       | Test breakpoints; ensure mobile-first design principles                    |
+| **Performance issues**                 | Optimize images; implement lazy loading; check bundle size                 |
+| **Theme switching not working**        | Verify ThemeContext provider setup; check localStorage persistence         |
 
 ### Development Best Practices
+
 - Use semantic HTML for accessibility
 - Implement proper error boundaries
 - Optimize images and assets for web
@@ -229,13 +236,16 @@ Connect with Israel's Quantum Tech Association:
 - **Social Media**: Follow us on LinkedIn and Twitter for updates
 
 ### Contributing
+
 We welcome contributions from the quantum community! Please:
+
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
 4. Submit a pull request with detailed description
 
 ### Community Guidelines
+
 - Respect all community members
 - Share knowledge and resources
 - Collaborate on quantum research initiatives
@@ -248,7 +258,9 @@ We welcome contributions from the quantum community! Please:
 This project is distributed under the [MIT License](LICENSE). Feel free to use, modify, or adapt for your quantum community needs.
 
 ### Open Source Commitment
+
 We believe in open collaboration for advancing quantum science. This platform is open source to encourage:
+
 - Community contributions and improvements
 - Educational use in quantum computing courses
 - Adaptation for other regional quantum communities
@@ -269,6 +281,7 @@ Support Israel's Quantum Tech Community by:
 ### Acknowledgments
 
 Special thanks to:
+
 - Leading Israeli quantum research institutions
 - Quantum technology companies and startups
 - International collaborators and partners

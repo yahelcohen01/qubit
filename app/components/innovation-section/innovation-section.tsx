@@ -8,17 +8,16 @@ export const InnovationSection = () => {
     >
       <div className="w-full">
         <Image
-          src="/assets/innovation-text.png"
+          src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/innovation-text.png"
           alt="Innovation-text"
           width={1200}
           height={400}
           className="w-full h-auto object-contain"
-          priority
         />
       </div>
       <div className="w-full">
         <Image
-          src="/assets/innovation-processor.png"
+          src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/innovation-processor.png"
           alt="Innovation"
           width={1200}
           height={600}
