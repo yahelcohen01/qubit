@@ -88,7 +88,7 @@ export const ActivitiesSection = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="md:hidden relative">
-          <div className="mb-8 md:mb-12 justify-self-center">
+          <div className="flex flex-col mb-8 md:mb-12 justify-center items-center text-center">
             <h2 className="text-sm font-normal mb-4 flex items-center justify-center gap-x-2">
               <DotIcon color="white" /> STARTUPS
             </h2>
@@ -100,7 +100,7 @@ export const ActivitiesSection = () => {
             items={activities}
             variant="slides"
             navigation="dots"
-            autoplay
+            // autoplay
             pageInterval={5000}
             navigationClassName="bg-white hover:bg-white/20"
             renderItem={({ item, index }) => {
@@ -112,7 +112,7 @@ export const ActivitiesSection = () => {
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="w-full rounded-xl object-cover flex-shrink-0"
+                    className="w-full h-64 rounded-xl object-cover flex-shrink-0"
                   />
                   <div className="flex-1 min-w-0">
                     <div className="text-cyan-500 text-xs mb-1">
@@ -123,7 +123,7 @@ export const ActivitiesSection = () => {
                     <h3 className="text-white text-lg font-normal mb-2 group-hover:text-cyan-500 transition-colors line-clamp-1">
                       {item.title}
                     </h3>
-                    <p className="text-white/50 text-sm line-clamp-1">
+                    <p className="text-white/50 text-sm line-clamp-2">
                       {item.description}
                     </p>
                   </div>
@@ -132,7 +132,7 @@ export const ActivitiesSection = () => {
             }}
           />
           {activities.length > 3 && (
-            <FillingAnimatedButton className="flex mt-6 justify-self-center justify-center text-center w-1/2 min-w-fit">
+            <FillingAnimatedButton className="flex mt-6 mx-auto justify-center text-center w-1/2 min-w-fit">
               Explore all activities
             </FillingAnimatedButton>
           )}

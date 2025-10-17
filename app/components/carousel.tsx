@@ -78,6 +78,8 @@ function CardsVariant<T extends CarouselItem>({
 }: CarouselProps<T>) {
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = Math.max(1, Math.ceil(items.length / cardsPerPage));
+  const touchStartX = useRef<number | null>(null);
+  const touchCurrentX = useRef<number | null>(null);
 
   useEffect(() => {
     if (!autoplay || totalPages <= 1) return;
@@ -100,51 +102,82 @@ function CardsVariant<T extends CarouselItem>({
       <div className="relative">
         <div className="overflow-hidden">
           <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentPage * 100}%)` }}
+            className="overflow-hidden"
+            style={{ touchAction: "pan-y" }} // allow vertical scrolling
+            onTouchStart={(e) => {
+              touchStartX.current = e.touches[0].clientX;
+              touchCurrentX.current = e.touches[0].clientX;
+            }}
+            onTouchMove={(e) => {
+              touchCurrentX.current = e.touches[0].clientX;
+            }}
+            onTouchEnd={() => {
+              if (
+                touchStartX.current == null ||
+                touchCurrentX.current == null
+              ) {
+                touchStartX.current = touchCurrentX.current = null;
+                return;
+              }
+              const dx = touchCurrentX.current - touchStartX.current;
+              const threshold = 50; // px - tune this
+              if (dx > threshold) {
+                // swipe right -> prev page
+                setCurrentPage((p) => (p - 1 + totalPages) % totalPages);
+              } else if (dx < -threshold) {
+                // swipe left -> next page
+                setCurrentPage((p) => (p + 1) % totalPages);
+              }
+              touchStartX.current = touchCurrentX.current = null;
+            }}
           >
-            {Array.from({ length: totalPages }, (_, pageIndex) => (
-              <div key={pageIndex} className="w-full flex-shrink-0">
-                <div
-                  className={cn(
-                    "grid gap-6",
-                    cardsPerPage === 1
-                      ? "grid-cols-1"
-                      : cardsPerPage === 2
-                      ? "grid-cols-1 md:grid-cols-2"
-                      : cardsPerPage === 3
-                      ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-                      : cardsPerPage === 4
-                      ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
-                      : "grid-cols-3"
-                  )}
-                >
-                  {items
-                    .slice(
-                      pageIndex * cardsPerPage,
-                      (pageIndex + 1) * cardsPerPage
-                    )
-                    .map((item, idx) => (
-                      <div key={item.title ?? `card-${pageIndex}-${idx}`}>
-                        {renderItem ? (
-                          renderItem({
-                            item,
-                            index: pageIndex * cardsPerPage + idx,
-                          })
-                        ) : (
-                          <div className="mx-auto border-t border-t-white hover:bg-white transition-colors duration-500">
-                            <img
-                              src={item.img}
-                              alt={item.title ?? `item-${idx}`}
-                              className="max-h-full object-contain mx-auto"
-                            />
-                          </div>
-                        )}
-                      </div>
-                    ))}
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentPage * 100}%)` }}
+            >
+              {Array.from({ length: totalPages }, (_, pageIndex) => (
+                <div key={pageIndex} className="w-full flex-shrink-0">
+                  <div
+                    className={cn(
+                      "grid gap-6",
+                      cardsPerPage === 1
+                        ? "grid-cols-1"
+                        : cardsPerPage === 2
+                        ? "grid-cols-1 md:grid-cols-2"
+                        : cardsPerPage === 3
+                        ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                        : cardsPerPage === 4
+                        ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+                        : "grid-cols-3"
+                    )}
+                  >
+                    {items
+                      .slice(
+                        pageIndex * cardsPerPage,
+                        (pageIndex + 1) * cardsPerPage
+                      )
+                      .map((item, idx) => (
+                        <div key={item.title ?? `card-${pageIndex}-${idx}`}>
+                          {renderItem ? (
+                            renderItem({
+                              item,
+                              index: pageIndex * cardsPerPage + idx,
+                            })
+                          ) : (
+                            <div className="mx-auto border-t border-t-white hover:bg-white transition-colors duration-500">
+                              <img
+                                src={item.img}
+                                alt={item.title ?? `item-${idx}`}
+                                className="max-h-full object-contain mx-auto"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -228,9 +261,31 @@ function SlidesVariant<T extends CarouselItem>({
         <div ref={viewportRef} className="overflow-hidden">
           <motion.div
             className="flex items-center"
-            style={{ gap: gapPx }}
+            style={{ gap: gapPx, touchAction: "pan-y" }} // allow vertical native scroll
             animate={{ x: translateX }}
             transition={{ type: "spring", stiffness: 160, damping: 22 }}
+            drag="x"
+            dragElastic={0.25}
+            onDragEnd={(_, info) => {
+              // info.offset.x is how many px the user dragged (positive = to right)
+              // info.velocity.x is the release velocity (positive = to right)
+              if (!itemWidthPx) return;
+              const offset = info.offset.x;
+              const velocity = info.velocity.x;
+              const swipeThreshold = Math.min(itemWidthPx / 4, 80); // px
+              const velocityThreshold = 600; // px/s
+
+              if (offset < -swipeThreshold || velocity < -velocityThreshold) {
+                setIndex((i) => Math.min(items.length - 1, i + 1));
+              } else if (
+                offset > swipeThreshold ||
+                velocity > velocityThreshold
+              ) {
+                setIndex((i) => Math.max(0, i - 1));
+              } else {
+                setIndex((i) => i);
+              }
+            }}
           >
             {items.map((item, i) => (
               <div
