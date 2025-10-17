@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   motion,
   useMotionValue,
@@ -275,10 +275,9 @@ function SlidesVariant<T extends CarouselItem>({
             className="flex items-center"
             style={{ gap: gapPx, touchAction: "pan-y", x }}
             drag="x"
-            dragElastic={0.12} // small elasticity so it doesn't feel infinite
+            dragElastic={0.12}
             onDragEnd={(_, info) => {
               if (!itemWidthPx) {
-                // ensure snap-back even if we don't have measurements yet
                 motionAnimate(x, computeTranslateForIndex(index), {
                   type: "spring",
                   stiffness: 160,
@@ -287,10 +286,10 @@ function SlidesVariant<T extends CarouselItem>({
                 return;
               }
 
-              const offset = info.offset.x; // px: positive -> dragged right
-              const velocity = info.velocity.x; // px/s
-              const swipeThreshold = Math.min(itemWidthPx / 4, 80); // px
-              const velocityThreshold = 600; // px/s
+              const offset = info.offset.x;
+              const velocity = info.velocity.x;
+              const swipeThreshold = Math.min(itemWidthPx / 4, 80);
+              const velocityThreshold = 600;
 
               let newIndex = index;
               if (offset < -swipeThreshold || velocity < -velocityThreshold) {

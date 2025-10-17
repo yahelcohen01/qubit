@@ -20,9 +20,11 @@ export const HeroSection = () => {
       <p className="mt-4 text-base sm:text-lg md:text-2xl text-white/80">
         Israel&apos;s Quantum Tech Association
       </p>
-      <FillingAnimatedButton className="mt-8 bg-gray-700/50 sm:px-9 sm:py-5 text-base">
-        Learn About Us
-      </FillingAnimatedButton>
+      <Link href={"/#about"}>
+        <FillingAnimatedButton className="mt-8 bg-gray-700/50 sm:px-9 sm:py-5 text-base">
+          Learn About Us
+        </FillingAnimatedButton>
+      </Link>
 
       {!isMobile && (
         <div className="absolute bottom-0 mb-8 px-36 flex space-x-3 w-full justify-between">
