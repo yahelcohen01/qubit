@@ -1,5 +1,9 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  animate as motionAnimate,
+} from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "@shared/icons";
 import { cn } from "@shared/lib";
 import { CarouselItem, SetState } from "@shared/types";
@@ -103,7 +107,7 @@ function CardsVariant<T extends CarouselItem>({
         <div className="overflow-hidden">
           <div
             className="overflow-hidden"
-            style={{ touchAction: "pan-y" }} // allow vertical scrolling
+            style={{ touchAction: "pan-y" }}
             onTouchStart={(e) => {
               touchStartX.current = e.touches[0].clientX;
               touchCurrentX.current = e.touches[0].clientX;
@@ -120,12 +124,10 @@ function CardsVariant<T extends CarouselItem>({
                 return;
               }
               const dx = touchCurrentX.current - touchStartX.current;
-              const threshold = 50; // px - tune this
+              const threshold = 50;
               if (dx > threshold) {
-                // swipe right -> prev page
                 setCurrentPage((p) => (p - 1 + totalPages) % totalPages);
               } else if (dx < -threshold) {
-                // swipe left -> next page
                 setCurrentPage((p) => (p + 1) % totalPages);
               }
               touchStartX.current = touchCurrentX.current = null;
@@ -210,6 +212,9 @@ function SlidesVariant<T extends CarouselItem>({
   const [itemWidthPx, setItemWidthPx] = useState(0);
   const [containerWidth, setContainerWidth] = useState(0);
 
+  // motion value for x so we can animate it programmatically (snap-back even if index unchanged)
+  const x = useMotionValue(0);
+
   useLayoutEffect(() => {
     function measure() {
       const cw = viewportRef.current?.offsetWidth ?? 0;
@@ -223,6 +228,18 @@ function SlidesVariant<T extends CarouselItem>({
     if (firstItemRef.current) ro.observe(firstItemRef.current);
     return () => ro.disconnect();
   }, [visiblePercentage]);
+
+  // compute the "center" translateX for a given index (same formula you had)
+  const computeTranslateForIndex = (i: number) =>
+    containerWidth && itemWidthPx
+      ? containerWidth / 2 - itemWidthPx / 2 - i * (itemWidthPx + gapPx)
+      : 0;
+
+  // whenever measurements or index change, animate x to the correct position
+  useEffect(() => {
+    const to = computeTranslateForIndex(index);
+    motionAnimate(x, to, { type: "spring", stiffness: 160, damping: 22 });
+  }, [index, containerWidth, itemWidthPx, gapPx]); // eslint-disable-line
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -242,11 +259,6 @@ function SlidesVariant<T extends CarouselItem>({
     return () => clearInterval(interval);
   }, [autoplay, items.length, pageInterval]);
 
-  const translateX =
-    containerWidth && itemWidthPx
-      ? containerWidth / 2 - itemWidthPx / 2 - index * (itemWidthPx + gapPx)
-      : 0;
-
   if (!items || items.length === 0) {
     return (
       <div className="flex items-center justify-center p-8 text-gray-500">
@@ -261,30 +273,50 @@ function SlidesVariant<T extends CarouselItem>({
         <div ref={viewportRef} className="overflow-hidden">
           <motion.div
             className="flex items-center"
-            style={{ gap: gapPx, touchAction: "pan-y" }} // allow vertical native scroll
-            animate={{ x: translateX }}
-            transition={{ type: "spring", stiffness: 160, damping: 22 }}
+            style={{ gap: gapPx, touchAction: "pan-y", x }}
             drag="x"
-            dragElastic={0.25}
+            dragElastic={0.12} // small elasticity so it doesn't feel infinite
             onDragEnd={(_, info) => {
-              // info.offset.x is how many px the user dragged (positive = to right)
-              // info.velocity.x is the release velocity (positive = to right)
-              if (!itemWidthPx) return;
-              const offset = info.offset.x;
-              const velocity = info.velocity.x;
+              if (!itemWidthPx) {
+                // ensure snap-back even if we don't have measurements yet
+                motionAnimate(x, computeTranslateForIndex(index), {
+                  type: "spring",
+                  stiffness: 160,
+                  damping: 22,
+                });
+                return;
+              }
+
+              const offset = info.offset.x; // px: positive -> dragged right
+              const velocity = info.velocity.x; // px/s
               const swipeThreshold = Math.min(itemWidthPx / 4, 80); // px
               const velocityThreshold = 600; // px/s
 
+              let newIndex = index;
               if (offset < -swipeThreshold || velocity < -velocityThreshold) {
-                setIndex((i) => Math.min(items.length - 1, i + 1));
+                // swiped left -> next
+                newIndex = Math.min(items.length - 1, index + 1);
               } else if (
                 offset > swipeThreshold ||
                 velocity > velocityThreshold
               ) {
-                setIndex((i) => Math.max(0, i - 1));
+                // swiped right -> prev
+                newIndex = Math.max(0, index - 1);
               } else {
-                setIndex((i) => i);
+                // not a strong swipe -> stay on current index
+                newIndex = index;
               }
+
+              // clamp just in case
+              newIndex = Math.max(0, Math.min(items.length - 1, newIndex));
+              setIndex(newIndex);
+
+              // animate x to the computed translate (this ALWAYS runs, so we snap back at edges)
+              motionAnimate(x, computeTranslateForIndex(newIndex), {
+                type: "spring",
+                stiffness: 160,
+                damping: 22,
+              });
             }}
           >
             {items.map((item, i) => (
