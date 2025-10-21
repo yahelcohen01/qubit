@@ -1,5 +1,4 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
-import { logger } from "./logger";
 
 // Create a global axios instance with default configuration
 const axiosInstance: AxiosInstance = axios.create({
@@ -14,14 +13,14 @@ axiosInstance.interceptors.request.use(
   (config) => {
     // Log request in development
     if (process.env.NODE_ENV === "development") {
-      logger.info(
+      console.info(
         `Making ${config.method?.toUpperCase()} request to: ${config.url}`
       );
     }
     return config;
   },
   (error) => {
-    logger.error("Request interceptor error:", error);
+    console.error("Request interceptor error:", error);
     return Promise.reject(error);
   }
 );
@@ -31,7 +30,7 @@ axiosInstance.interceptors.response.use(
   (response: AxiosResponse) => {
     // Log response in development
     if (process.env.NODE_ENV === "development") {
-      logger.info(
+      console.info(
         { ...response },
         `Response from ${response.config.url}: ${response.status}`
       );
@@ -41,7 +40,7 @@ axiosInstance.interceptors.response.use(
   (error) => {
     // Log error details
     if (error.response) {
-      logger.error(
+      console.error(
         {
           url: error.config?.url,
           status: error.response.status,
@@ -51,7 +50,7 @@ axiosInstance.interceptors.response.use(
         `API Error ${error.response.status}:`
       );
     } else if (error.request) {
-      logger.error(
+      console.error(
         {
           url: error.config?.url,
           message: error.message,
@@ -59,7 +58,7 @@ axiosInstance.interceptors.response.use(
         "Network Error:"
       );
     } else {
-      logger.error("Request Setup Error:", error.message);
+      console.error("Request Setup Error:", error.message);
     }
     return Promise.reject(error);
   }

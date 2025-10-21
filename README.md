@@ -4,6 +4,14 @@ Welcome to the official repository for Israel's Quantum Tech Association website
 
 ---
 
+![qubit](https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/qubit-website.png)
+
+## Authors
+
+<a href="https://github.com/yahelcohen01/qubit/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=yahelcohen01/qubit" />
+</a>
+
 ## Table of Contents
 
 1. [About](#about)
@@ -50,7 +58,7 @@ Qubit is Israel's premier quantum technology community platform, designed to con
 ## 2. Demo
 
 **Live Site**:  
-Explore the live quantum community platform here: [www.qubit-israel.com](https://www.qubit-israel.com)
+Explore the live quantum community platform here: [www.qubit-tau.vercel.app](https://www.qubit-tau.vercel.app)
 
 ### Key Sections:
 
@@ -181,9 +189,6 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 │   │   └── ...                  # Other shared components
 │   ├── context/                 # React contexts (theme, etc.)
 │   ├── providers/               # Context providers setup
-│   ├── iss/                     # ISS tracking feature
-│   │   ├── components/          # ISS-specific components
-│   │   └── stores/              # ISS state management
 │   ├── secret/                  # Easter egg section
 │   ├── shared/                  # Shared utilities and types
 │   │   ├── hooks/               # Custom React hooks
@@ -231,7 +236,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 Connect with Israel's Quantum Tech Association:
 
 - **Email**: [info@qubit-israel.com](mailto:info@qubit-israel.com)
-- **Website**: [www.qubit-israel.com](https://www.qubit-israel.com)
+- **Website**: [www.qubit-israel.com](https://www.qubit-tau.vercel.app)
 - **Community Manager**: [Yahel Cohen](mailto:yahelcohen01@gmail.com)
 - **Social Media**: Follow us on LinkedIn and Twitter for updates
 

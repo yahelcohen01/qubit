@@ -7,6 +7,7 @@ import {
 import { ChevronLeftIcon, ChevronRightIcon } from "@shared/icons";
 import { cn } from "@shared/lib";
 import { CarouselItem, SetState } from "@shared/types";
+import { useKeyboardNavigation, useInterval } from "../shared/hooks";
 
 type Navigation = "arrows" | "dots" | "both" | "none";
 
@@ -85,13 +86,11 @@ function CardsVariant<T extends CarouselItem>({
   const touchStartX = useRef<number | null>(null);
   const touchCurrentX = useRef<number | null>(null);
 
-  useEffect(() => {
-    if (!autoplay || totalPages <= 1) return;
-    const interval = setInterval(() => {
-      setCurrentPage((prev) => (prev + 1) % totalPages);
-    }, pageInterval);
-    return () => clearInterval(interval);
-  }, [autoplay, totalPages, pageInterval]);
+  useInterval({
+    callback: () => setCurrentPage((prev) => (prev + 1) % totalPages),
+    delay: pageInterval,
+    enabled: autoplay && totalPages > 1,
+  });
 
   if (!items || items.length === 0) {
     return (
@@ -241,23 +240,16 @@ function SlidesVariant<T extends CarouselItem>({
     motionAnimate(x, to, { type: "spring", stiffness: 160, damping: 22 });
   }, [index, containerWidth, itemWidthPx, gapPx]); // eslint-disable-line
 
-  useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "ArrowLeft") setIndex((i) => Math.max(0, i - 1));
-      if (e.key === "ArrowRight")
-        setIndex((i) => Math.min(items.length - 1, i + 1));
-    }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [items.length]);
+  useKeyboardNavigation({
+    onLeft: () => setIndex((i) => Math.max(0, i - 1)),
+    onRight: () => setIndex((i) => Math.min(items.length - 1, i + 1)),
+  });
 
-  useEffect(() => {
-    if (!autoplay || items.length <= 1) return;
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % items.length);
-    }, pageInterval);
-    return () => clearInterval(interval);
-  }, [autoplay, items.length, pageInterval]);
+  useInterval({
+    callback: () => setIndex((prev) => (prev + 1) % items.length),
+    delay: pageInterval,
+    enabled: autoplay && items.length > 1,
+  });
 
   if (!items || items.length === 0) {
     return (
