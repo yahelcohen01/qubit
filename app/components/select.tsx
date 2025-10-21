@@ -50,6 +50,7 @@ export const Select = ({
   return (
     <div ref={selectRef} className="relative w-full max-w-2xl" onBlur={onBlur}>
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left p-2 rounded-full border border-white/20 focus:border-white/50 transition-colors flex items-center justify-between"
       >

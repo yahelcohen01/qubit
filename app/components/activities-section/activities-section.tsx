@@ -90,7 +90,7 @@ export const ActivitiesSection = () => {
         <div className="md:hidden relative">
           <div className="flex flex-col mb-8 md:mb-12 justify-center items-center text-center">
             <h2 className="text-sm font-normal mb-4 flex items-center justify-center gap-x-2">
-              <DotIcon color="white" /> STARTUPS
+              <DotIcon color="white" /> EVENTS
             </h2>
             <FadingText className="text-4xl sm:text-5xl font-normal">
               Qubit events
@@ -144,7 +144,7 @@ export const ActivitiesSection = () => {
           <div className="flex flex-col max-h-[80vh]">
             <div className="mb-8 md:mb-12">
               <h2 className="text-sm font-normal mb-4 flex justify-self-start items-center justify-center gap-x-2">
-                <DotIcon color="white" /> STARTUPS
+                <DotIcon color="white" /> EVENTS
               </h2>
               <FadingText className="text-3xl sm:text-3xl md:text-5xl xl:text-6xl font-normal">
                 Qubit events

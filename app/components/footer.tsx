@@ -5,7 +5,7 @@ import { navItems, socials } from "@shared/lib";
 
 export const Footer = () => {
   return (
-    <footer className="w-full flex flex-col px-6 md:px-16 lg:px-24 xl:px-32 py-16">
+    <footer className="w-full flex flex-col px-6 md:px-16 lg:px-24 xl:px-32 pt-16 pb-8">
       <div className="w-full py-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="flex flex-col space-y-2 justify-start md:justify-center items-center md:items-start text-center md:text-left">
           <h3 className="text-lg font-medium">Who we are</h3>
@@ -62,14 +62,14 @@ export const Footer = () => {
         <div className="relative">
           <Divider />
         </div>
-        <div className="flex items-center py-8 justify-between ">
+        <div className="flex flex-col items-center py-4 gap-2">
           <div className="flex items-start">
             <p className="text-xs text-white/50">
               © {new Date().getFullYear()} all rights reserved QUBIT IL
             </p>
-            <DotIcon color="white" className="size-1 my-auto mx-4" />
+            <DotIcon color="white" className="size-1 my-auto mx-2 md:mx-4" />
             <p className="text-xs text-white/50">Privacy Policy</p>
-            <DotIcon color="white" className="size-1 my-auto mx-4" />
+            <DotIcon color="white" className="size-1 my-auto mx-2 md:mx-4" />
             <p className="text-xs text-white/50">Terms of Use</p>
           </div>
           <div className="flex items-start gap-4">
