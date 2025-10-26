@@ -1,3 +1,3 @@
-export { useClickOutside } from "./useClickOutside";
-export { useKeyboardNavigation } from "./useKeyboardNavigation";
+export { useClickOutside } from "./use-click-outside";
+export { useKeyboardNavigation } from "./use-keyboard-navigation";
 export { useInterval } from "./useInterval";

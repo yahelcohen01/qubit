@@ -10,6 +10,7 @@ interface ResponsiveLayoutProps {
   className?: string;
   children?: React.ReactNode;
   as?: keyof JSX.IntrinsicElements;
+  id?: string;
 }
 
 const BREAKPOINTS: Breakpoint[] = [
@@ -60,11 +61,16 @@ export function ResponsiveLayout({
   className,
   children,
   as = "div",
+  id,
 }: ResponsiveLayoutProps) {
   const Comp: any = as;
   const colsClass = columnsToClasses(columns);
 
   const classes = cn("grid", colsClass, gap, className);
 
-  return <Comp className={classes}>{children}</Comp>;
+  return (
+    <Comp className={classes} id={id}>
+      {children}
+    </Comp>
+  );
 }

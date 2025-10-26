@@ -28,9 +28,11 @@ export const HeroSection = () => {
 
       {!isMobile && (
         <div className="absolute bottom-0 mb-8 px-36 flex space-x-3 w-full justify-between">
-          <button type="button" className="text-white/80 cursor-pointer">
-            SCROLL DOWN
-          </button>
+          <Link href="/#stats">
+            <button type="button" className="text-white/80 cursor-pointer">
+              SCROLL DOWN
+            </button>
+          </Link>
           <div className="flex space-x-3">
             {socials.map((item) => (
               <Link
