@@ -15,10 +15,10 @@ export default function MinimalistPortfolio() {
       <HeroSection />
       <AboutSection />
       <InstitutesSection />
+      <ContactSection />
       <ActivitiesSection />
       <EventHighlightsSection />
       <WhosWhoSection />
-      <ContactSection />
       <InnovationSection />
       <Footer />
     </main>

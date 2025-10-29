@@ -1,9 +1,7 @@
 "use client";
-import { cn, stats } from "@shared/lib";
+import { cn } from "@shared/lib";
 import Image from "next/image";
 import { useMedia } from "react-use";
-import { Card } from "../card";
-import { ResponsiveLayout } from "../responsive-layout";
 import { AboutTypography } from "./about-typography";
 import { Startups } from "./startups";
 import { Stats } from "./stats";

@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 
-@theme {
+@theme inline {
   --color-primary: #000;
   --text-primary: var(--color-white);
   --color-foreground: var(--foreground);
@@ -11,6 +11,17 @@
   --color-gray-bg: #d4d2da;
   --font-inter-tight: "Inter Tight", sans-serif;
   --font-poppins: "Poppins", sans-serif;
+  --animate-pulse: pulse var(--duration) ease-out infinite;
+
+  @keyframes pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 var(--pulse-color);
+    }
+    50% {
+      box-shadow: 0 0 0 6px var(--pulse-color);
+    }
+  }
 }
 
 html {

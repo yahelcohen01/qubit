@@ -20,9 +20,9 @@ export const HeroSection = () => {
       <p className="mt-4 text-base sm:text-lg md:text-2xl text-white/80">
         Israel&apos;s Quantum Tech Association
       </p>
-      <Link href={"/#about"}>
-        <FillingAnimatedButton className="mt-8 bg-gray-700/50 sm:px-9 sm:py-5 text-base">
-          Learn About Us
+      <Link href={"/#contact"} className="mt-8">
+        <FillingAnimatedButton className="bg-gray-700/50 sm:px-9 sm:py-5 text-base">
+          Join The Community
         </FillingAnimatedButton>
       </Link>
 

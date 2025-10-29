@@ -4,6 +4,7 @@ import { ResponsiveLayout } from "../responsive-layout";
 import { Carousel } from "../carousel";
 import { startups } from "@shared/lib";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Startups = () => {
   const isMobile = useMedia("(max-width: 1110px)");
@@ -40,7 +41,12 @@ export const Startups = () => {
           as="div"
         >
           {startups.map((startup) => (
-            <div
+            <Link
+              href={startup.url || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={startup.title}
+              aria-label={`Visit ${startup.title} website`}
               key={startup.title}
               className="border-t border-t-white hover:bg-white transition-colors duration-500 items-center flex justify-center"
             >
@@ -49,9 +55,9 @@ export const Startups = () => {
                 alt={startup.title}
                 width={224}
                 height={224}
-                className="max-h-full object-contain w-full"
+                className="max-h-[110] object-contain w-full p-2"
               />
-            </div>
+            </Link>
           ))}
         </ResponsiveLayout>
       )}

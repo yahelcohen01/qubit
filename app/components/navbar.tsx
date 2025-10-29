@@ -1,14 +1,14 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { FillingAnimatedButton } from "./filling-animated-button";
 import { useMedia } from "react-use";
 import { ConditionalDiv } from "./conditional-div";
 import { Sidebar } from "./mobile/sidebar";
 import Image from "next/image";
 import { navItems } from "@shared/lib";
-import { HeadsetIcon, MenuIcon } from "@shared/icons";
+import { MenuIcon } from "@shared/icons";
 import { usePathname } from "next/navigation";
+import { PulseButton } from "./pulse-button";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -51,16 +51,22 @@ export const Navbar = () => {
             />
           </Link>
 
-          <ConditionalDiv condition={isMobile}>
+          {/* <ConditionalDiv condition={isMobile}>
             <button
               className="p-2 cursor-pointer"
               onClick={() => (window.location.href = "#contact")}
             >
               <HeadsetIcon />
             </button>
-          </ConditionalDiv>
+            <PulseButton
+              childrenClassName="font-normal text-lg"
+              onClick={() => (window.location.href = "#contact")}
+            >
+              JOIN US
+            </PulseButton>
+          </ConditionalDiv> */}
 
-          <div className="hidden navbar:flex items-center space-x-8">
+          <div className="hidden navbar:flex items-center space-x-8 font-medium">
             {navItems.map((item) => (
               <button
                 key={item.href}
@@ -76,14 +82,13 @@ export const Navbar = () => {
             ))}
           </div>
 
-          <div className="hidden navbar:flex items-center space-x-4">
-            <FillingAnimatedButton
-              className="font-normal"
-              size="lg"
+          <div className="flex items-center space-x-4">
+            <PulseButton
+              childrenClassName="font-normal text-lg"
               onClick={() => (window.location.href = "#contact")}
             >
-              Contact Us
-            </FillingAnimatedButton>
+              JOIN US
+            </PulseButton>
           </div>
         </div>
 

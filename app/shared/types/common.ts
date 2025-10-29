@@ -14,6 +14,7 @@ export type NavItem = {
 export interface CarouselItem {
   readonly title: string;
   readonly img: string;
+  readonly url?: string;
   readonly [key: string]: any;
 }
 

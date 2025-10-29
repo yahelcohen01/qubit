@@ -75,78 +75,91 @@ export const startups: CarouselItem[] = [
   {
     title: "LightSolver",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/light-solver.png",
+    url: "https://lightsolver.com/",
   },
   {
     title: "IQCC",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/iqcc.png",
+    url: "https://i-qcc.com/",
   },
   {
     title: "Qarakal",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/qarakal.png",
+    url: "https://www.linkedin.com/company/qarakal-quantum/",
   },
   {
     title: "Quantum Source",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-source.png",
+    url: "https://www.qs-labs.com/",
   },
   {
     title: "TQS",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/tqs.png",
+    url: "https://taborquantumsolutions.com/",
   },
-  {
-    title: "Quantum Pulse",
-    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-pulse.png",
-  },
+  // {
+  //   title: "Quantum Pulse",
+  //   img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-pulse.png",
+  // },
   {
     title: "Qedma",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/qedma.png",
+    url: "https://www.qedma.com/",
   },
   {
     title: "QuamCore",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quamcore.png",
+    url: "https://www.quamcore.com/",
   },
   {
     title: "Raicol Crystals",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/raicol-crystals.png",
+    url: "https://raicol.com/",
   },
   {
     title: "Classiq",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/classiq.png",
+    url: "https://www.classiq.io/",
   },
   {
     title: "Quantum Art",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-art.png",
+    url: "https://www.quantum-art.tech/",
   },
   {
     title: "Quantum Transistors",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-transistors.png",
+    url: "https://quantumtransistors.com/",
   },
   {
     title: "HEQA",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/heqa.png",
+    url: "https://heqa-sec.com/",
   },
   {
     title: "Quantum Machines",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-machines.png",
+    url: "https://www.quantum-machines.co/",
   },
   {
-    title: "Wiz",
-    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/wiz.png",
+    title: "Qiz",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/qizz.png",
+    url: "https://qizsecurity.com/",
   },
   {
     title: "Triarii",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/triarii.png",
+    url: "https://www.triarii-research.com/",
   },
   {
     title: "Accubeat",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/accubeat.png",
+    url: "https://www.accubeat.com/",
   },
   {
-    title: "Quantimize",
-    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantimize.png",
-  },
-  {
-    title: "Spinflex",
-    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/spinflex.png",
+    title: "QDM",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/qdm.png",
+    url: "https://www.qdm-tech.com/",
   },
 ] as const;
 

@@ -1,6 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import NextAuth, { NextAuthOptions, DefaultSession } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
+
 import { getServerSession as nextGetServerSession } from "next-auth/next";
 
 // --- Module augmentation so we can add `role` to the session user ---
@@ -22,8 +24,14 @@ const ensureEnv = (name: string): string => {
   return v;
 };
 
+// GitHub OAuth credentials
 const GITHUB_ID = process.env.GITHUB_ID || "";
 const GITHUB_SECRET = process.env.GITHUB_SECRET || "";
+
+// Google credentials
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || "";
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || "";
+
 const NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET || "";
 // ADMIN_EMAILS should be a comma-separated list of admin emails, e.g. "admin@example.com,alice@org.com"
 const ADMIN_EMAILS_RAW = process.env.ADMIN_EMAILS || "";
@@ -42,6 +50,10 @@ export const authOptions: NextAuthOptions = {
     GitHubProvider({
       clientId: GITHUB_ID,
       clientSecret: GITHUB_SECRET,
+    }),
+    GoogleProvider({
+      clientId: GOOGLE_CLIENT_ID,
+      clientSecret: GOOGLE_CLIENT_SECRET,
     }),
   ],
 
