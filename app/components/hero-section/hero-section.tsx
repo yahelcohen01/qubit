@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { FillingAnimatedButton } from "../filling-animated-button";
 import Link from "next/link";
-import { socials } from "@shared/lib";
+import { cn, socials } from "@shared/lib";
 import { useMedia } from "react-use";
 import { FadingText } from "../fading-text";
 
@@ -11,7 +11,10 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-full flex flex-col justify-start items-center text-center relative overflow-hidden"
+      className={cn(
+        "min-h-full flex flex-col justify-start items-center text-center relative overflow-hidden",
+        isMobile ? "mt-12" : ""
+      )}
     >
       <FadingText className="mt-16 md:mt-36 tracking-tight text-4xl sm:text-5xl md:text-7xl line-clamp-3 md:line-clamp-2 max-w-xl sm:max-w-3xl md:max-w-5xl">
         Shaping the Global Quantum Revolution from Israel

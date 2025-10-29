@@ -12,3 +12,4 @@ export * from "./chevron-right";
 export * from "./external-link";
 export * from "./duplicate";
 export * from "./delete";
+export * from "./community";

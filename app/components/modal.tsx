@@ -6,6 +6,7 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 import { cn } from "@shared/lib";
+import { CloseIcon } from "../shared/icons";
 
 interface ModalProps {
   open: boolean;
@@ -50,7 +51,7 @@ export function Modal({
   };
 
   return (
-    <Dialog open={open} onClose={handleClose} className="relative z-10">
+    <Dialog open={open} onClose={handleClose} className="relative z-50">
       <DialogBackdrop
         transition
         className="fixed inset-0 bg-neutral-900/50 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"
@@ -61,11 +62,15 @@ export function Modal({
           <DialogPanel
             transition
             className={cn(
-              "relative transform overflow-hidden rounded-lg bg-neutral-800 text-left shadow-xl outline -outline-offset-1 outline-white/10 transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full data-closed:sm:translate-y-0 data-closed:sm:scale-95",
+              "relative transform overflow-hidden rounded-lg bg-black text-left shadow-xl outline -outline-offset-1 outline-white/10 transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full data-closed:sm:translate-y-0 data-closed:sm:scale-95",
               sizeClasses[size]
             )}
           >
-            <div className="bg-neutral-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <CloseIcon
+              className="cursor-pointer absolute top-4 right-4 text-gray-400 hover:text-gray-300"
+              onClick={() => handleClose(false)}
+            />
+            <div className="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <div className="sm:flex sm:items-start">
                 {icon && (
                   <div
@@ -101,7 +106,7 @@ export function Modal({
               </div>
             </div>
             {footer !== undefined ? (
-              <div className="bg-neutral-700/25 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+              <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                 {footer}
               </div>
             ) : showCloseButton ? (

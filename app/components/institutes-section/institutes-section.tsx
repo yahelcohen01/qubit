@@ -4,6 +4,7 @@ import { ResponsiveLayout } from "../responsive-layout";
 import { FadingText } from "../fading-text";
 import { cn, institutes } from "@shared/lib";
 import { useMedia } from "react-use";
+import Link from "next/link";
 
 export const InstitutesSection = () => {
   const isMobile = useMedia("(max-width: 768px)");
@@ -65,16 +66,18 @@ export const InstitutesSection = () => {
         </div>
         <div className="grid grid-cols-2 gap-2 md:col-span-2">
           {institutes.map((institute) => (
-            <div
+            <Link
               key={institute.name}
               className="grid bg-white/12 p-4 rounded-2xl w-auto items-center h-32"
+              href={institute.url}
+              target="_blank"
             >
               <img
                 src={institute.img}
                 alt={institute.name}
                 className="max-h-24 object-contain mx-auto"
               />
-            </div>
+            </Link>
           ))}
         </div>
       </ResponsiveLayout>

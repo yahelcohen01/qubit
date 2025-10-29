@@ -24,17 +24,11 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black ">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-4">
-        <div className="flex justify-between items-center h-[110px]">
-          <ConditionalDiv condition={isMobile}>
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 cursor-pointer"
-            >
-              <MenuIcon />
-            </button>
-          </ConditionalDiv>
-
-          <Link href="/" className="flex items-center space-x-2">
+        <div className="flex justify-between items-center h-[110px] relative">
+          <Link
+            href="/"
+            className="flex items-center space-x-2 absolute left-1/2 -translate-x-1/2"
+          >
             <Image
               src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/navbar-logo.png"
               alt="Logo"
@@ -50,6 +44,15 @@ export const Navbar = () => {
               className="block navbar:hidden object-contain"
             />
           </Link>
+
+          <ConditionalDiv condition={isMobile}>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 cursor-pointer"
+            >
+              <MenuIcon />
+            </button>
+          </ConditionalDiv>
 
           {/* <ConditionalDiv condition={isMobile}>
             <button

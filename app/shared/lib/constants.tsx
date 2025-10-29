@@ -19,7 +19,7 @@ export const socials = [
   },
   {
     label: "YouTube",
-    icon: <YoutubeIcon className="m-auto" />,
+    icon: <YoutubeIcon className="size-[22px]" />,
     href: "https://www.youtube.com/@qubit-il3967",
   },
   {
@@ -166,30 +166,37 @@ export const startups: CarouselItem[] = [
 export const institutes = [
   {
     name: "Hebrew University",
+    url: "https://qcent.huji.ac.il/",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/hebrew-university.png",
   },
   {
     name: "Weizmann Institute",
+    url: "https://centers.weizmann.ac.il/quantum-science-technology/research-highlights",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/weizmann-institute-of-science.png",
   },
   {
     name: "Tel Aviv University",
+    url: "https://quantum.tau.ac.il/about",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/tel-aviv-university.png",
   },
   {
     name: "Technion",
+    url: "https://quantum.technion.ac.il/",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/technion-university.png",
   },
   {
     name: "Ben Gurion University",
+    url: "https://in.bgu.ac.il/en/qi/Pages/default.aspx",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/ben-gurion-university.png",
   },
   {
     name: "Bar Ilan University",
+    url: "https://nano.biu.ac.il/taxonomy/term/8637",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/bar-ilan-university.png",
   },
   {
     name: "Ariel University",
+    url: "https://www.ariel.ac.il/wp/comiqs-lab/about-us/people/",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/ariel-university.png",
   },
 ] as const;
