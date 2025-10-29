@@ -13,7 +13,7 @@ import { PulseButton } from "./pulse-button";
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const isMobile = useMedia(`(max-width: 1110px)`);
+  const isMobile = useMedia(`(max-width: 1109px)`);
   const pathname = usePathname();
   const isAdminRoute = pathname.startsWith("/admin");
 
@@ -25,26 +25,6 @@ export const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black ">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-4">
         <div className="flex justify-between items-center h-[110px] relative">
-          <Link
-            href="/"
-            className="flex items-center space-x-2 absolute left-1/2 -translate-x-1/2"
-          >
-            <Image
-              src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/navbar-logo.png"
-              alt="Logo"
-              width={150}
-              height={50}
-              className="hidden navbar:block object-contain"
-            />
-            <Image
-              src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/navbar-logo-mobile.png"
-              alt="Logo"
-              width={100}
-              height={40}
-              className="block navbar:hidden object-contain"
-            />
-          </Link>
-
           <ConditionalDiv condition={isMobile}>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -54,20 +34,27 @@ export const Navbar = () => {
             </button>
           </ConditionalDiv>
 
-          {/* <ConditionalDiv condition={isMobile}>
-            <button
-              className="p-2 cursor-pointer"
-              onClick={() => (window.location.href = "#contact")}
-            >
-              <HeadsetIcon />
-            </button>
-            <PulseButton
-              childrenClassName="font-normal text-lg"
-              onClick={() => (window.location.href = "#contact")}
-            >
-              JOIN US
-            </PulseButton>
-          </ConditionalDiv> */}
+          <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/navbar-logo.png"
+              alt="Logo-navbar-desktop"
+              width={150}
+              height={50}
+              className="hidden navbar:block object-contain"
+            />
+          </Link>
+          <Link
+            href="/"
+            className="flex items-center space-x-2 absolute left-1/2 -translate-x-1/2"
+          >
+            <Image
+              src="https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/navbar-logo-mobile.png"
+              alt="Logo-navbar-mobile"
+              width={100}
+              height={40}
+              className="block navbar:hidden object-contain"
+            />
+          </Link>
 
           <div className="hidden navbar:flex items-center space-x-8 font-medium">
             {navItems.map((item) => (
@@ -85,14 +72,17 @@ export const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex items-center space-x-4">
-            <PulseButton
-              childrenClassName="font-normal text-lg"
-              onClick={() => (window.location.href = "#contact")}
-            >
+          <Link
+            className="flex items-center space-x-4"
+            target="_blank"
+            href={
+              "https://docs.google.com/forms/d/e/1FAIpQLSdTxRV03uhpIRm4KsXp3eQMGXrCCnyCiDPOpRlpdOihiYklog/viewform"
+            }
+          >
+            <PulseButton childrenClassName="font-normal text-lg" size="sm">
               JOIN US
             </PulseButton>
-          </div>
+          </Link>
         </div>
 
         <ConditionalDiv condition={isMobileMenuOpen}>

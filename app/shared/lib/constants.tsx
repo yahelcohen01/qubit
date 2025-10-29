@@ -11,21 +11,29 @@ export const socials = [
     label: "LinkedIn",
     icon: <LinkedinIcon />,
     href: "https://www.linkedin.com/company/qubit-community/",
+    active: true,
+    color: "#0277B5",
   },
   {
     label: "Facebook",
     icon: <FacebookIcon />,
     href: "https://www.facebook.com/groups/quantumcomputingisrael/",
+    active: false,
+    color: "#1877F2",
   },
   {
     label: "YouTube",
     icon: <YoutubeIcon className="size-[22px]" />,
     href: "https://www.youtube.com/@qubit-il3967",
+    active: false,
+    color: "#FF0000",
   },
   {
     label: "Whatsapp",
     icon: <WhatsappIcon className="w-5 h-5" />,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSdTxRV03uhpIRm4KsXp3eQMGXrCCnyCiDPOpRlpdOihiYklog/viewform",
+    active: true,
+    color: "#57F573",
   },
 ] as const;
 

@@ -8,6 +8,7 @@ import { ResponsiveLayout } from "../responsive-layout";
 import { FadingText } from "../fading-text";
 import { cn } from "@shared/lib";
 import { ContactForm } from "./contact-form";
+import { GlowingButton } from "../glowing-button";
 
 export const ContactSection = () => {
   return (
@@ -56,35 +57,23 @@ export const ContactSection = () => {
             Join Qubit Community
           </h3>
           <div className="flex gap-12">
-            <div className="flex font-poppins items-center gap-2">
-              <a
-                href="https://www.linkedin.com/company/qubit-community"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex underline items-center gap-1"
-              >
-                <div className="my-auto justify-self-end bg-[#0277B5] p-3 rounded-full shadow-[0_0_15px_#0277B5]">
-                  <LinkedinIcon className="size-4" />
-                </div>
-                LinkedIn
-                <ExternalLinkIcon className="size-3" />
-              </a>
-            </div>
+            <GlowingButton
+              color="#0277B5"
+              icon={<LinkedinIcon className="size-4" />}
+              link="https://www.linkedin.com/company/qubit-community"
+            >
+              LinkedIn
+              <ExternalLinkIcon className="size-3" />
+            </GlowingButton>
 
-            <div className="flex font-poppins items-center gap-2">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdTxRV03uhpIRm4KsXp3eQMGXrCCnyCiDPOpRlpdOihiYklog/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex underline items-center gap-1"
-              >
-                <div className="my-auto justify-self-end bg-[#57F573] p-3 rounded-full relative shadow-[0_0_15px_#57F573]">
-                  <WhatsappIcon className="size-4 text-black" />
-                </div>
-                WhatsApp
-                <ExternalLinkIcon className="size-3" />
-              </a>
-            </div>
+            <GlowingButton
+              color="#57F573"
+              icon={<WhatsappIcon className="size-4" />}
+              link="https://docs.google.com/forms/d/e/1FAIpQLSdTxRV03uhpIRm4KsXp3eQMGXrCCnyCiDPOpRlpdOihiYklog/viewform"
+            >
+              WhatsApp
+              <ExternalLinkIcon className="size-3" />
+            </GlowingButton>
           </div>
         </div>
         <ContactForm />

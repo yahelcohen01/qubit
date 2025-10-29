@@ -7,6 +7,7 @@ interface PulseButtonProps
   pulseColor?: string;
   duration?: string;
   childrenClassName?: string;
+  size?: "sm" | "md" | "lg";
 }
 
 export const PulseButton = React.forwardRef<
@@ -20,15 +21,23 @@ export const PulseButton = React.forwardRef<
       pulseColor = "#a1a1a1",
       duration = "1.5s",
       childrenClassName,
+      size = "md",
       ...props
     },
     ref
   ) => {
+    const sizeClasses = {
+      sm: "px-3 py-1.5 text-sm",
+      md: "px-4 py-2 text-base",
+      lg: "px-6 py-3 text-lg",
+    };
+
     return (
       <button
         ref={ref}
         className={cn(
-          "bg-neutral-200 border-1 border-white text-black relative flex cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-center",
+          "bg-neutral-200 border-1 border-white text-black relative flex cursor-pointer items-center justify-center rounded-lg text-center",
+          sizeClasses[size],
           className
         )}
         style={
