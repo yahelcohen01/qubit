@@ -79,7 +79,10 @@ export const Navbar = () => {
               "https://docs.google.com/forms/d/e/1FAIpQLSdTxRV03uhpIRm4KsXp3eQMGXrCCnyCiDPOpRlpdOihiYklog/viewform"
             }
           >
-            <PulseButton childrenClassName="font-normal text-lg" size="sm">
+            <PulseButton
+              childrenClassName="font-normal text-[clamp(.5rem,3vw,1.2rem)]"
+              size="sm"
+            >
               JOIN US
             </PulseButton>
           </Link>

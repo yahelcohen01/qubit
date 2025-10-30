@@ -13,3 +13,5 @@ export * from "./external-link";
 export * from "./duplicate";
 export * from "./delete";
 export * from "./community";
+export * from "./info";
+export * from "./link";

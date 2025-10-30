@@ -39,13 +39,13 @@ export const HeroSection = () => {
       <div className="absolute bottom-8 grid gap-6 w-[80vw] justify-center items-center grid-cols-1 sm:grid-cols-2 ">
         <Link
           href="/#stats"
-          className="flex items-center justify-center navbar:justify-start order-2 sm:order-2"
+          className="flex items-center justify-center sm:justify-start order-2 sm:order-2"
         >
           <button type="button" className="text-white/80 cursor-pointer">
             SCROLL DOWN
           </button>
         </Link>
-        <div className="flex space-x-8 justify-center navbar:justify-end order-1 sm:order-2">
+        <div className="flex space-x-8 justify-center sm:justify-end order-1 sm:order-2">
           {socials
             .filter((item) => item.active)
             .map((item) => (

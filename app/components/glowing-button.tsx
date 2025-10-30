@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { cn } from "@shared/lib";
 
@@ -25,10 +26,11 @@ export const GlowingButton = ({
       )}
     >
       <div
-        className={cn(
-          "my-auto justify-self-end p-3 rounded-full relative",
-          `bg-[${color}] shadow-[0_0_15px_${color}]`
-        )}
+        className="my-auto justify-self-end p-3 rounded-full relative"
+        style={{
+          backgroundColor: color,
+          boxShadow: `0 0 15px ${color}`,
+        }}
       >
         {icon}
       </div>
@@ -36,9 +38,3 @@ export const GlowingButton = ({
     </Link>
   );
 };
-
-/*
-WhatsApp
-        <ExternalLinkIcon className="size-3" />
-        <WhatsappIcon className="size-4 text-black" />
-*/

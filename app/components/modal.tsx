@@ -18,12 +18,13 @@ interface ModalProps {
   iconClassName?: string;
   iconBgClassName?: string;
   footer?: ReactNode;
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   showCloseButton?: boolean;
   closeOnBackdrop?: boolean;
 }
 
 const sizeClasses = {
+  xs: "sm:max-w-xs",
   sm: "sm:max-w-sm",
   md: "sm:max-w-md",
   lg: "sm:max-w-lg",

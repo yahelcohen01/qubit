@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { Modal } from "./modal";
 import { socials } from "@shared/lib";
-import { CommunityIcon } from "../shared/icons";
+import { CommunityIcon, InfoIcon, LinkIcon } from "@shared/icons";
+import { JoinToNewsletter } from "./join-to-newsletter";
 
 interface CommunityWelcomeModalProps {
   isOpen: boolean;
@@ -27,7 +28,7 @@ export function CommunityWelcomeModal({
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex w-full justify-center rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-400 sm:w-auto transition-colors"
+            className="inline-flex w-full justify-center rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-400 sm:w-auto transition-colors cursor-pointer"
           >
             Got it!
           </button>
@@ -48,19 +49,7 @@ export function CommunityWelcomeModal({
 
         <div className="bg-black border border-white/15 rounded-lg p-4">
           <h4 className="text-base font-semibold text-white mb-3 flex items-center gap-2">
-            <svg
-              className="size-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
-              />
-            </svg>
+            <LinkIcon className="size-5" />
             Join Our Community
           </h4>
           <div className="grid grid-cols-2 gap-3">
@@ -81,22 +70,12 @@ export function CommunityWelcomeModal({
           </div>
         </div>
 
+        <JoinToNewsletter />
+
         <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-4 border border-blue-500/20">
           <div className="flex items-start gap-3">
             <div className="flex-shrink-0 mt-0.5">
-              <svg
-                className="size-5 text-blue-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                />
-              </svg>
+              <InfoIcon className="size-5 text-blue-400" />
             </div>
             <div>
               <p className="text-sm font-medium text-white mb-1">

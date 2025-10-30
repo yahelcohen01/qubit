@@ -2,12 +2,13 @@ import Link from "next/link";
 import { DotIcon } from "../shared/icons";
 import { Divider } from "./divider";
 import { navItems, socials } from "@shared/lib";
+import { JoinToNewsletter } from "./join-to-newsletter";
 
 export const Footer = () => {
   return (
     <footer className="w-full flex flex-col px-6 md:px-16 lg:px-24 xl:px-32 pt-16 pb-8">
       <div className="w-full py-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="flex flex-col space-y-2 justify-start md:justify-center items-center md:items-start text-center md:text-left">
+        <div className="flex flex-col space-y-4 justify-start md:justify-center items-center md:items-start text-center md:text-left">
           <h3 className="text-lg font-medium">Who we are</h3>
           <p className="text-sm text-white/50 font-poppins">
             Qubit IL is Israel’s quantum community, connecting researchers,
@@ -20,13 +21,14 @@ export const Footer = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block rounded-full text-base font-medium bg-gray-700/50 p-3 items-center cursor-pointer"
+                  className="block rounded-full text-base font-medium bg-neutral-800 p-3 items-center cursor-pointer"
                 >
                   {item.icon}
                 </Link>
               ))}
             </div>
           </div>
+          <JoinToNewsletter showTitle={false} />
         </div>
 
         <div className="flex gap-4 justify-around md:justify-center">
