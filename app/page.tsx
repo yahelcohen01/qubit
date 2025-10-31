@@ -6,7 +6,6 @@ import { EventHighlightsSection } from "./components/events-highlights-section/e
 import { WhosWhoSection } from "./components/whos-who-section/whos-who-section";
 import { ContactSection } from "./components/contact-section/contact-section";
 import { InnovationSection } from "./components/innovation-section/innovation-section";
-import { Footer } from "./components/footer";
 import { ActivitiesSection } from "./components/activities-section/activities-section";
 
 export default function MinimalistPortfolio() {
@@ -20,7 +19,6 @@ export default function MinimalistPortfolio() {
       <EventHighlightsSection />
       <WhosWhoSection />
       <InnovationSection />
-      <Footer />
     </main>
   );
 }

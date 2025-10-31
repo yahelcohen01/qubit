@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import {} from "next/navigation";
 
 export function useFirstVisit() {
   const [isFirstVisit, setIsFirstVisit] = useState(false);

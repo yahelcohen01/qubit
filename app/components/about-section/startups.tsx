@@ -25,8 +25,28 @@ export const Startups = () => {
         <Carousel
           items={startups}
           cardsPerPage={6}
-          autoplay
           navigation="dots"
+          renderItem={({ item }) => {
+            return (
+              <Link
+                href={item.url || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={item.title}
+                aria-label={`Visit ${item.title} website`}
+                key={item.title}
+                className="border-t border-t-white hover:bg-white transition-colors duration-500 items-center flex justify-center"
+              >
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  width={224}
+                  height={224}
+                  className="h-28 max-w-64 object-contain w-full p-2"
+                />
+              </Link>
+            );
+          }}
         />
       ) : (
         <ResponsiveLayout

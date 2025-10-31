@@ -5,19 +5,40 @@ import { Modal } from "./modal";
 import { socials } from "@shared/lib";
 import { CommunityIcon, InfoIcon, LinkIcon } from "@shared/icons";
 import { JoinToNewsletter } from "./join-to-newsletter";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 interface CommunityWelcomeModalProps {
   isOpen: boolean;
   onClose: () => void;
+  forbiddenUrls?: string[];
+  forbiddenUrlGroups?: string[];
 }
 
 export function CommunityWelcomeModal({
   isOpen,
   onClose,
+  forbiddenUrls = [],
+  forbiddenUrlGroups = [],
 }: CommunityWelcomeModalProps) {
+  const pathname = usePathname();
+  const [openState, setOpenState] = useState(false);
+
+  useEffect(() => {
+    const isUrlForbidden = (currentPath: string) => {
+      if (forbiddenUrls.includes(currentPath)) {
+        return true;
+      }
+
+      return forbiddenUrlGroups.some((group) => currentPath.startsWith(group));
+    };
+    const isForbidden = isUrlForbidden(pathname);
+    setOpenState(isOpen && !isForbidden);
+  }, [pathname, forbiddenUrls, forbiddenUrlGroups, isOpen]);
+
   return (
     <Modal
-      open={isOpen}
+      open={openState}
       onClose={onClose}
       title="Welcome to Qubit IL!"
       size="lg"

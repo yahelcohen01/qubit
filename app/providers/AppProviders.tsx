@@ -19,6 +19,7 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
         <CommunityWelcomeModal
           isOpen={isFirstVisit}
           onClose={handleCloseWelcomeModal}
+          forbiddenUrlGroups={["/legal"]}
         />
       )}
     </ThemeProvider>

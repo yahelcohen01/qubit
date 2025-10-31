@@ -3,6 +3,7 @@ import "./globals.css";
 import { AppProviders } from "./providers/AppProviders";
 import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "./components/navbar";
+import { Footer } from "./components/footer";
 
 export const metadata: Metadata = {
   title: "Qubit IL",
@@ -65,6 +66,7 @@ export default function RootLayout({
         <AppProviders>
           <Navbar />
           {children}
+          <Footer />
         </AppProviders>
       </body>
     </html>

@@ -7,6 +7,7 @@ import { FillingAnimatedButton } from "../filling-animated-button";
 import { Divider } from "../divider";
 import { DateUtils } from "@shared/lib";
 import { useMemo } from "react";
+import { sortBy } from "lodash";
 
 const getLocationText = (activity: Activity) => {
   if (activity.location?.name === "Online") return "Online";
@@ -77,7 +78,7 @@ export const ActivitiesSection = () => {
         date: activity.date || "TBA",
         img:
           activity.img.length === 0 ? "assets/activities-bg.jpg" : activity.img,
-      })),
+      })).sort((a, b) => b.date.localeCompare(a.date)),
     []
   );
 

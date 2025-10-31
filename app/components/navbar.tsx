@@ -52,7 +52,7 @@ export const Navbar = () => {
               alt="Logo-navbar-mobile"
               width={100}
               height={40}
-              className="block navbar:hidden object-contain"
+              className="block navbar:hidden object-contain py-2"
             />
           </Link>
 

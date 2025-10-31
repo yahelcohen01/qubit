@@ -1,10 +1,18 @@
+"use client";
 import Link from "next/link";
 import { DotIcon } from "../shared/icons";
 import { Divider } from "./divider";
 import { navItems, socials } from "@shared/lib";
 import { JoinToNewsletter } from "./join-to-newsletter";
+import { usePathname } from "next/navigation";
 
 export const Footer = () => {
+  const pathname = usePathname();
+  const isAdminRoute = pathname.startsWith("/admin");
+
+  if (isAdminRoute) {
+    return null; // Do not render the footer on admin routes
+  }
   return (
     <footer className="w-full flex flex-col px-6 md:px-16 lg:px-24 xl:px-32 pt-16 pb-8">
       <div className="w-full py-8 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -70,9 +78,17 @@ export const Footer = () => {
               © {new Date().getFullYear()} all rights reserved QUBIT IL
             </p>
             <DotIcon color="white" className="size-1 my-auto mx-2 md:mx-4" />
-            <p className="text-xs text-white/50">Privacy Policy</p>
+            <Link href="/legal/privacy-policy">
+              <p className="text-xs text-white/50 hover:underline">
+                Privacy Policy
+              </p>
+            </Link>
             <DotIcon color="white" className="size-1 my-auto mx-2 md:mx-4" />
-            <p className="text-xs text-white/50">Terms of Use</p>
+            <Link href="/legal/terms-of-use">
+              <p className="text-xs text-white/50 hover:underline">
+                Terms of Use
+              </p>
+            </Link>
           </div>
           <div className="flex items-start gap-4">
             <p className="text-xs text-white/50">
