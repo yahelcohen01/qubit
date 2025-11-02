@@ -13,7 +13,7 @@ export const HeroSection = () => {
     <section
       id="hero"
       className={cn(
-        "min-h-full flex flex-col justify-start items-center text-center relative overflow-hidden",
+        "h-[calc(100vh-110px)] flex flex-col justify-start items-center text-center relative overflow-hidden",
         isMobile ? "pt-12" : ""
       )}
     >

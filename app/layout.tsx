@@ -4,6 +4,7 @@ import { AppProviders } from "./providers/AppProviders";
 import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Qubit IL",
@@ -65,7 +66,7 @@ export default function RootLayout({
         <Analytics />
         <AppProviders>
           <Navbar />
-          {children}
+          <main className="flex flex-col mt-[110px]">{children}</main>
           <Footer />
         </AppProviders>
       </body>

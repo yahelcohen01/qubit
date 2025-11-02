@@ -75,7 +75,7 @@ export const Startups = () => {
                 alt={startup.title}
                 width={224}
                 height={224}
-                className="max-h-[110] object-contain w-full p-2"
+                className="h-28 object-contain w-full p-2"
               />
             </Link>
           ))}

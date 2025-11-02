@@ -10,7 +10,7 @@ import { ActivitiesSection } from "./components/activities-section/activities-se
 
 export default function MinimalistPortfolio() {
   return (
-    <main className="h-[calc(100vh-110px)] flex flex-col mt-[110px]">
+    <>
       <HeroSection />
       <AboutSection />
       <InstitutesSection />
@@ -19,6 +19,6 @@ export default function MinimalistPortfolio() {
       <EventHighlightsSection />
       <WhosWhoSection />
       <InnovationSection />
-    </main>
+    </>
   );
 }

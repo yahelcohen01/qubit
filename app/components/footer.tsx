@@ -10,9 +10,9 @@ export const Footer = () => {
   const pathname = usePathname();
   const isAdminRoute = pathname.startsWith("/admin");
 
-  if (isAdminRoute) {
-    return null; // Do not render the footer on admin routes
-  }
+  // if (isAdminRoute) {
+  //   return null; // Do not render the footer on admin routes
+  // }
   return (
     <footer className="w-full flex flex-col px-6 md:px-16 lg:px-24 xl:px-32 pt-16 pb-8">
       <div className="w-full py-8 grid grid-cols-1 md:grid-cols-2 gap-4">

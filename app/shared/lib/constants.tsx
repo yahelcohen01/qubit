@@ -131,7 +131,7 @@ export const startups: CarouselItem[] = [
   },
   {
     title: "Quantum Art",
-    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-art.png",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/quantum-art-logo-img.png",
     url: "https://www.quantum-art.tech/",
   },
   {
