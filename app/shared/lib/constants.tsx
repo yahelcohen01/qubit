@@ -1,9 +1,4 @@
-import {
-  FacebookIcon,
-  LinkedinIcon,
-  WhatsappIcon,
-  YoutubeIcon,
-} from "../icons";
+import { FacebookIcon, LinkedinIcon, YoutubeIcon } from "../icons";
 import { CarouselItem, NavItem } from "../types";
 
 export const socials = [
@@ -14,26 +9,26 @@ export const socials = [
     active: true,
     color: "#0277B5",
   },
+  // {
+  //   label: "Facebook",
+  //   icon: <FacebookIcon />,
+  //   href: "https://www.facebook.com/groups/quantumcomputingisrael/",
+  //   active: false,
+  //   color: "#1877F2",
+  // },
+  // {
+  //   label: "YouTube",
+  //   icon: <YoutubeIcon className="size-[22px]" />,
+  //   href: "https://www.youtube.com/@qubit-il3967",
+  //   active: false,
+  //   color: "#FF0000",
+  // },
   {
     label: "Facebook",
-    icon: <FacebookIcon />,
-    href: "https://www.facebook.com/groups/quantumcomputingisrael/",
-    active: false,
-    color: "#1877F2",
-  },
-  {
-    label: "YouTube",
-    icon: <YoutubeIcon className="size-[22px]" />,
-    href: "https://www.youtube.com/@qubit-il3967",
-    active: false,
-    color: "#FF0000",
-  },
-  {
-    label: "Whatsapp",
-    icon: <WhatsappIcon className="w-5 h-5" />,
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSdTxRV03uhpIRm4KsXp3eQMGXrCCnyCiDPOpRlpdOihiYklog/viewform",
+    icon: <FacebookIcon className="w-5 h-5" />,
+    href: "https://www.facebook.com/groups/qubitil",
     active: true,
-    color: "#57F573",
+    color: "#1877F2",
   },
 ] as const;
 
@@ -228,6 +223,12 @@ export const eventsHighlights: CarouselItem[] = [
 
 export const people = [
   {
+    name: "Tami Mazel Shachar",
+    role: "CEO",
+    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/tami.jpeg",
+    linkedin: "https://www.linkedin.com/in/tami-mazel-shachar-348b491a/",
+  },
+  {
     name: "Shir Peri Lichtig",
     role: "Board Member",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/shir-peri.jpeg",
@@ -238,12 +239,6 @@ export const people = [
     role: "Board Member",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/gal-bar-dea.png",
     linkedin: "https://www.linkedin.com/in/galbardea/",
-  },
-  {
-    name: "Miriam Shtilman Lavsovski",
-    role: "Board Member",
-    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/miriam-shtilman-lavsovski .jpeg",
-    linkedin: "https://www.linkedin.com/in/miriamshtilman/",
   },
   {
     name: "Tomer Diari",
@@ -262,12 +257,6 @@ export const people = [
     role: "Board Member",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/dorit-dor.jpeg",
     linkedin: "https://www.linkedin.com/in/dorit-dor-b1149/",
-  },
-  {
-    name: "Nadav Katz",
-    role: "Board Member",
-    img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/nadav-katz.jpg",
-    linkedin: "https://www.linkedin.com/in/nadav-katz-7775251a/",
   },
   {
     name: "Shai Lev",
@@ -319,7 +308,7 @@ export const people = [
   },
   {
     name: "Yahel Cohen",
-    role: "Website Manager",
+    role: "Team Member",
     img: "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/yahel-cohen.jpeg",
     linkedin: "https://www.linkedin.com/in/yahelcohen/",
   },

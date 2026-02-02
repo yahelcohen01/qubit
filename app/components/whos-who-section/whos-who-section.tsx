@@ -4,8 +4,7 @@ import { LinkedinIcon } from "@shared/icons";
 import { useMedia } from "react-use";
 import { Divider } from "../divider";
 
-const boardMembers = people.filter((person) => person.role === "Board Member");
-const members = people.filter((person) => person.role !== "Board Member");
+const boardMembers = people.filter((person) => person.role != "Team Member");
 
 export const WhosWhoSection = () => {
   const isMobile = useMedia("(max-width: 768px)");
@@ -14,7 +13,7 @@ export const WhosWhoSection = () => {
     <section
       className={cn(
         "grid py-16 items-center gap-8 px-4 scroll-mt-30",
-        isMobile ? "" : "justify-center"
+        isMobile ? "" : "justify-center",
       )}
       id="whos-who"
     >
@@ -31,43 +30,7 @@ export const WhosWhoSection = () => {
         <MobileGrid />
       ) : (
         <div className="grid grid-cols-3 lg:grid-cols-4 justify-center-safe gap-16 px-16">
-          <h1 className="text-4xl text-center text-white/80 col-span-full">
-            Board
-          </h1>
-
           {boardMembers.map((person) => (
-            <div
-              key={person.name}
-              className="flex flex-col flex-shrink-0 max-w-82 gap-6"
-            >
-              <div className="aspect-square w-full max-h-72 overflow-hidden rounded-2xl">
-                <img
-                  src={person.img}
-                  alt={person.name}
-                  className="object-center w-full h-full object-cover"
-                  // rounded-2xl
-                />
-              </div>
-              <div className="grid grid-cols-3">
-                <div className="flex flex-col col-span-2">
-                  <h3 className="text-lg font-medium">{person.name}</h3>
-                  <p className="text-sm text-white/50">{person.role}</p>
-                </div>
-                <button
-                  onClick={() => window.open(person.linkedin, "_blank")}
-                  className="my-auto justify-self-end mr-4 bg-white/15 p-2 rounded-full hover:bg-white/25 transition-colors cursor-pointer"
-                >
-                  <LinkedinIcon className="size-5" />
-                </button>
-              </div>
-            </div>
-          ))}
-
-          <h1 className="text-4xl text-center text-white/80 col-span-full">
-            Members
-          </h1>
-
-          {members.map((person) => (
             <div
               key={person.name}
               className="flex flex-col flex-shrink-0 max-w-82 gap-6"
@@ -133,39 +96,6 @@ const MobileGrid = () => {
             <LinkedinIcon className="size-3" />
           </button>
           {index !== boardMembers.length - 1 && <Divider />}
-        </div>
-      ))}
-
-      <h1 className="text-4xl text-center text-white/80 col-span-full mb-8">
-        Members
-      </h1>
-      {members.map((person, index) => (
-        <div
-          key={person.name}
-          className="flex w-full relative justify-between py-4"
-        >
-          <div className="flex gap-4">
-            <div className="aspect-square w-16 max-h-16 overflow-hidden rounded-2xl">
-              <img
-                src={person.img}
-                alt={person.name}
-                className="w-full h-full rounded-lg object-cover"
-              />
-            </div>
-            <div className="flex flex-col self-center">
-              <h3 className="text-base font-medium leading-8">{person.name}</h3>
-              <p className="font-poppins text-sm text-white/50">
-                {person.role}
-              </p>
-            </div>
-          </div>
-          <button
-            onClick={() => window.open(person.linkedin, "_blank")}
-            className="my-auto justify-self-end mr-4 bg-white/15 p-3 rounded-full hover:bg-white/25 transition-colors cursor-pointer"
-          >
-            <LinkedinIcon className="size-3" />
-          </button>
-          {index !== members.length - 1 && <Divider />}
         </div>
       ))}
     </div>

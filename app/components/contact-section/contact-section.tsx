@@ -1,8 +1,8 @@
 import {
   DotIcon,
   ExternalLinkIcon,
+  FacebookIcon,
   LinkedinIcon,
-  WhatsappIcon,
 } from "@shared/icons";
 import { ResponsiveLayout } from "../responsive-layout";
 import { FadingText } from "../fading-text";
@@ -67,11 +67,11 @@ export const ContactSection = () => {
             </GlowingButton>
 
             <GlowingButton
-              color="#57F573"
-              icon={<WhatsappIcon className="size-4" />}
-              link="https://docs.google.com/forms/d/e/1FAIpQLSdTxRV03uhpIRm4KsXp3eQMGXrCCnyCiDPOpRlpdOihiYklog/viewform"
+              color="#1877F2"
+              icon={<FacebookIcon className="size-4" />}
+              link="https://www.facebook.com/groups/qubitil"
             >
-              WhatsApp
+              Facebook
               <ExternalLinkIcon className="size-3" />
             </GlowingButton>
           </div>
