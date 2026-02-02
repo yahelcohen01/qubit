@@ -7,7 +7,7 @@ import { FillingAnimatedButton } from "../filling-animated-button";
 import { Divider } from "../divider";
 import { DateUtils } from "@shared/lib";
 import { useMemo } from "react";
-import { sortBy } from "lodash";
+import Link from "next/link";
 
 const getLocationText = (activity: Activity) => {
   if (activity.location?.name === "Online") return "Online";
@@ -22,7 +22,10 @@ const ActivityCard = ({
 }) => {
   if (featured) {
     return (
-      <div className="relative rounded-3xl overflow-hidden flex flex-col items-end justify-end">
+      <Link
+        href={`/events/${activity.id}`}
+        className="relative rounded-3xl overflow-hidden flex flex-col items-end justify-end block"
+      >
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -43,12 +46,15 @@ const ActivityCard = ({
             More details
           </FillingAnimatedButton>
         </div>
-      </div>
+      </Link>
     );
   }
 
   return (
-    <div className="flex gap-4 p-4 cursor-pointer group">
+    <Link
+      href={`/events/${activity.id}`}
+      className="flex gap-4 p-4 cursor-pointer group"
+    >
       <img
         src={activity.img}
         alt={activity.title}
@@ -66,7 +72,7 @@ const ActivityCard = ({
           {activity.description}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -79,7 +85,7 @@ export const ActivitiesSection = () => {
         img:
           activity.img.length === 0 ? "assets/activities-bg.jpg" : activity.img,
       })).sort((a, b) => b.date.localeCompare(a.date)),
-    []
+    [],
   );
 
   return (
@@ -106,7 +112,8 @@ export const ActivitiesSection = () => {
             navigationClassName="bg-white hover:bg-white/20"
             renderItem={({ item, index }) => {
               return (
-                <div
+                <Link
+                  href={`/events/${item.id}`}
                   className="flex flex-col gap-4 p-4 cursor-pointer group"
                   key={index}
                 >
@@ -128,14 +135,16 @@ export const ActivitiesSection = () => {
                       {item.description}
                     </p>
                   </div>
-                </div>
+                </Link>
               );
             }}
           />
           {activities.length > 3 && (
-            <FillingAnimatedButton className="flex mt-6 mx-auto justify-center text-center w-1/2 min-w-fit">
-              Explore all activities
-            </FillingAnimatedButton>
+            <Link href="/events">
+              <FillingAnimatedButton className="flex mt-6 mx-auto justify-center text-center w-1/2 min-w-fit">
+                Explore all events
+              </FillingAnimatedButton>
+            </Link>
           )}
         </div>
 
@@ -162,9 +171,11 @@ export const ActivitiesSection = () => {
               })}
             </div>
             {activities.length > 3 && (
-              <FillingAnimatedButton className="mt-6">
-                Explore all activities
-              </FillingAnimatedButton>
+              <Link href="/events">
+                <FillingAnimatedButton className="mt-6 w-full">
+                  Explore all events
+                </FillingAnimatedButton>
+              </Link>
             )}
           </div>
         </div>

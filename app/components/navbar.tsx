@@ -8,7 +8,7 @@ import Image from "next/image";
 import { navItems } from "@shared/lib";
 import { MenuIcon } from "@shared/icons";
 import { usePathname } from "next/navigation";
-import { PulseButton } from "./pulse-button";
+import { FillingAnimatedButton } from "./filling-animated-button";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -72,19 +72,10 @@ export const Navbar = () => {
             ))}
           </div>
 
-          <Link
-            className="flex items-center space-x-4"
-            target="_blank"
-            href={
-              "https://docs.google.com/forms/d/e/1FAIpQLSdTxRV03uhpIRm4KsXp3eQMGXrCCnyCiDPOpRlpdOihiYklog/viewform"
-            }
-          >
-            <PulseButton
-              childrenClassName="font-normal text-[clamp(.5rem,3vw,1.2rem)]"
-              size="sm"
-            >
-              JOIN US
-            </PulseButton>
+          <Link href={"#contact"}>
+            <FillingAnimatedButton className="bg-neutral-700/50 sm:px-6 sm:py-4 text-base">
+              Contact Us
+            </FillingAnimatedButton>
           </Link>
         </div>
 

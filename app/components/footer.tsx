@@ -39,7 +39,7 @@ export const Footer = () => {
           <JoinToNewsletter />
         </div>
 
-        <div className="flex gap-4 justify-around md:justify-center">
+        <div className="flex gap-6 justify-around md:justify-center">
           <div className="flex flex-col space-y-2">
             <h3 className="text-lg font-medium">General</h3>
             {navItems.map((item) => (
@@ -58,12 +58,11 @@ export const Footer = () => {
           </div>
           <div className="flex flex-col space-y-2">
             <h3 className="text-lg font-medium line-clamp-1">Contact Us</h3>
-            <p className="text-sm text-white/50 font-poppins underline cursor-pointer">
-              Email Us
-            </p>
-            <p className="text-sm text-white/50 font-poppins underline cursor-pointer">
-              Message Us
-            </p>
+            <Link href="mailto:contact@qubit-il.com">
+              <p className="text-sm text-white/50 font-poppins underline cursor-pointer">
+                Email Us
+              </p>
+            </Link>
           </div>
         </div>
       </div>

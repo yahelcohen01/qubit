@@ -3,55 +3,220 @@
     "id": "17efd1bd-33eb-4f26-9c1e-313505683f17",
     "title": "Energy Quantum Meetup",
     "date": "2025-09-16",
+    "startTime": "18:00",
+    "endTime": "21:00",
     "description": "Join us for an engaging meetup exploring the latest developments in quantum computing and energy solutions. Network with innovators, researchers, and enthusiasts working at the intersection of quantum technology and sustainable energy.",
     "location": {
       "name": "Tel Aviv",
-      "address": ""
+      "address": "[MOCK] WeWork Sarona, Azrieli Sarona Tower, Tel Aviv"
     },
+    "tags": [
+      "[MOCK] Quantum Computing",
+      "[MOCK] Energy",
+      "[MOCK] Sustainability"
+    ],
+    "organizer": {
+      "name": "[MOCK] Qubit Community",
+      "email": "[MOCK] events@qubit-il.com"
+    },
+    "capacity": 120,
+    "url": "",
+    "speakers": [
+      {
+        "name": "[MOCK] Dr. Sarah Cohen",
+        "role": "[MOCK] Quantum Researcher",
+        "company": "[MOCK] Technion"
+      },
+      {
+        "name": "[MOCK] Amit Levy",
+        "role": "[MOCK] CEO",
+        "company": "[MOCK] QuantumEnergy Ltd"
+      }
+    ],
+    "agenda": [
+      { "time": "18:00", "title": "[MOCK] Registration & Networking" },
+      {
+        "time": "18:30",
+        "title": "[MOCK] Opening Remarks",
+        "speaker": "[MOCK] Qubit Team"
+      },
+      {
+        "time": "18:45",
+        "title": "[MOCK] Quantum Computing for Energy Optimization",
+        "speaker": "[MOCK] Dr. Sarah Cohen"
+      },
+      { "time": "19:30", "title": "[MOCK] Coffee Break" },
+      {
+        "time": "19:45",
+        "title": "[MOCK] Panel Discussion: The Future of Quantum Energy"
+      },
+      { "time": "20:30", "title": "[MOCK] Networking & Drinks" }
+    ],
     "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/energy-quantum-meetup.jpeg"
   },
   {
     "id": "305cb5b5-300a-45a4-bfca-d3e01284a728",
     "title": "Hakathon 2024",
     "date": "2024",
+    "startTime": "09:00",
+    "endTime": "21:00",
     "description": "A collaborative hackathon bringing together developers, designers, and innovators to build creative solutions and breakthrough projects. Compete, learn, and connect with the tech community in an intensive coding event.",
     "location": {
       "name": "Tel Aviv",
-      "address": ""
+      "address": "[MOCK] Google Campus Tel Aviv, Electra Tower"
     },
+    "tags": ["[MOCK] Hackathon", "[MOCK] Innovation", "[MOCK] Quantum"],
+    "organizer": {
+      "name": "[MOCK] Qubit Community",
+      "email": "[MOCK] hackathon@qubit-il.com"
+    },
+    "capacity": 200,
+    "url": "",
+    "speakers": [
+      {
+        "name": "[MOCK] Yonatan Stern",
+        "role": "[MOCK] Head of Innovation",
+        "company": "[MOCK] Microsoft Israel"
+      }
+    ],
+    "agenda": [
+      { "time": "09:00", "title": "[MOCK] Registration & Team Formation" },
+      { "time": "10:00", "title": "[MOCK] Challenge Announcement & Kickoff" },
+      { "time": "12:00", "title": "[MOCK] Lunch Break" },
+      { "time": "13:00", "title": "[MOCK] Hacking Continues" },
+      { "time": "18:00", "title": "[MOCK] Project Submissions" },
+      { "time": "19:00", "title": "[MOCK] Presentations & Judging" },
+      { "time": "20:30", "title": "[MOCK] Awards Ceremony" }
+    ],
     "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/hakathon-2024 .jpeg"
   },
   {
     "id": "5edfb93d-e337-490b-8dec-7f3c50239adc",
     "title": "Road2 Meetup",
     "date": "2025-09-24",
+    "startTime": "17:30",
+    "endTime": "20:30",
     "description": "Connect with startups at the forefront of quantum computing innovation. This meetup brings together founders, investors, and tech enthusiasts to explore groundbreaking quantum technologies and discuss the future of the industry.",
     "location": {
       "name": "Haifa",
-      "address": ""
+      "address": "[MOCK] Technion, Computer Science Building, Haifa"
     },
+    "tags": ["[MOCK] Startups", "[MOCK] Quantum Tech", "[MOCK] Networking"],
+    "organizer": {
+      "name": "[MOCK] Qubit Community",
+      "email": "[MOCK] events@qubit-il.com"
+    },
+    "capacity": 80,
+    "url": "",
+    "speakers": [
+      {
+        "name": "[MOCK] Prof. David Katz",
+        "role": "[MOCK] Professor of Physics",
+        "company": "[MOCK] Technion"
+      },
+      {
+        "name": "[MOCK] Maya Goldstein",
+        "role": "[MOCK] Founder",
+        "company": "[MOCK] QubitStartup"
+      }
+    ],
+    "agenda": [
+      { "time": "17:30", "title": "[MOCK] Welcome & Registration" },
+      {
+        "time": "18:00",
+        "title": "[MOCK] Keynote: Quantum Startups Landscape",
+        "speaker": "[MOCK] Prof. David Katz"
+      },
+      { "time": "18:45", "title": "[MOCK] Startup Pitches" },
+      { "time": "19:30", "title": "[MOCK] Investor Panel" },
+      { "time": "20:00", "title": "[MOCK] Networking Session" }
+    ],
     "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/road2-meetup.jpeg"
   },
   {
     "id": "77870e6a-62f9-4368-afb5-af86c4db5ad0",
     "title": "Microsoft Meetup 2024",
     "date": "2024",
+    "startTime": "18:00",
+    "endTime": "21:00",
     "description": "Meetup about quantum computing and quantum communication, featuring insights from Microsoft's quantum development team and exploring the latest advances in quantum technologies and secure communication protocols.",
     "location": {
       "name": "Tel Aviv",
-      "address": ""
+      "address": "[MOCK] Microsoft Israel, Gav-Yam Negev, Be'er Sheva"
     },
+    "tags": ["[MOCK] Microsoft", "[MOCK] Quantum", "[MOCK] Azure Quantum"],
+    "organizer": {
+      "name": "[MOCK] Microsoft Israel & Qubit",
+      "email": "[MOCK] quantum@microsoft.com"
+    },
+    "capacity": 150,
+    "url": "",
+    "speakers": [
+      {
+        "name": "[MOCK] Dr. Chen Arad",
+        "role": "[MOCK] Principal Researcher",
+        "company": "[MOCK] Microsoft Quantum"
+      },
+      {
+        "name": "[MOCK] Noa Fishman",
+        "role": "[MOCK] Azure Quantum Lead",
+        "company": "[MOCK] Microsoft Israel"
+      }
+    ],
+    "agenda": [
+      { "time": "18:00", "title": "[MOCK] Welcome & Introduction" },
+      {
+        "time": "18:15",
+        "title": "[MOCK] Azure Quantum: Latest Updates",
+        "speaker": "[MOCK] Noa Fishman"
+      },
+      {
+        "time": "19:00",
+        "title": "[MOCK] Quantum Communication Protocols",
+        "speaker": "[MOCK] Dr. Chen Arad"
+      },
+      { "time": "19:45", "title": "[MOCK] Break" },
+      { "time": "20:00", "title": "[MOCK] Hands-on Demo: Q# Programming" },
+      { "time": "20:45", "title": "[MOCK] Networking" }
+    ],
     "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/microsoft-2024.jpeg"
   },
   {
     "id": "f9ca679b-fda2-49fa-a1ee-b8295f38b2df",
     "title": "Microsoft Meetup 2023",
     "date": "2023",
+    "startTime": "18:00",
+    "endTime": "20:30",
     "description": "Join Microsoft's quantum computing community meetup focusing on quantum communication technologies and their real-world applications. Discover cutting-edge research, network with quantum experts, and explore the future of secure quantum networks.",
     "location": {
       "name": "Tel Aviv",
-      "address": ""
+      "address": "[MOCK] Microsoft Herzliya Campus"
     },
+    "tags": ["[MOCK] Microsoft", "[MOCK] Quantum Networks", "[MOCK] Security"],
+    "organizer": {
+      "name": "[MOCK] Microsoft Israel",
+      "email": "[MOCK] events@microsoft.com"
+    },
+    "capacity": 100,
+    "url": "",
+    "speakers": [
+      {
+        "name": "[MOCK] Dr. Ilan Ben-Zvi",
+        "role": "[MOCK] Quantum Security Expert",
+        "company": "[MOCK] Microsoft Research"
+      }
+    ],
+    "agenda": [
+      { "time": "18:00", "title": "[MOCK] Registration & Light Refreshments" },
+      { "time": "18:30", "title": "[MOCK] Introduction to Quantum Networks" },
+      {
+        "time": "19:15",
+        "title": "[MOCK] Secure Quantum Communication",
+        "speaker": "[MOCK] Dr. Ilan Ben-Zvi"
+      },
+      { "time": "20:00", "title": "[MOCK] Q&A and Discussion" },
+      { "time": "20:30", "title": "[MOCK] Networking" }
+    ],
     "img": "https://t9rksicsjw7jr1ld.public.blob.vercel-storage.com/qubit-images/microsoft-2023.jpeg"
   }
 ]

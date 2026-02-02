@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import z from "zod";
-import sgMail from "@sendgrid/mail";
+import { Resend } from "resend";
 
 function escapeHtml(str = "") {
   return str
@@ -10,6 +10,8 @@ function escapeHtml(str = "") {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendContactEmail = async ({
   fullName,
@@ -25,15 +27,13 @@ export const sendContactEmail = async ({
   message: string;
 }) => {
   try {
-    if (!process.env.SENDGRID_API_KEY) {
-      console.error("Missing SENDGRID_API_KEY");
+    if (!process.env.RESEND_API_KEY) {
+      console.error("Missing RESEND_API_KEY");
       return NextResponse.json(
         { error: "Server configuration error" },
-        { status: 500 }
+        { status: 500 },
       );
     }
-
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
     const to = process.env.CONTACT_EMAIL_TO;
     const from = process.env.CONTACT_EMAIL_FROM;
@@ -42,44 +42,45 @@ export const sendContactEmail = async ({
       console.error("CONTACT_EMAIL_TO or CONTACT_EMAIL_FROM missing");
       return NextResponse.json(
         { error: "Server configuration error" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
-    // Build safe HTML and plain text bodies
-    const safeMessageHtml = `<p><strong>Name:</strong> ${escapeHtml(
-      fullName
-    )}</p>
-  <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-  <p><strong>Phone:</strong> ${escapeHtml(phone || "-")}</p>
-  <p><strong>Subject:</strong> ${escapeHtml(subject || "General")}</p>
-  <p><strong>Message:</strong></p>
-  <pre style="white-space: pre-wrap;">${escapeHtml(message)}</pre>`;
+    const esc = escapeHtml;
 
-    const safeText = `New contact form submission
+    const html = `
+    <h2>New Contact Form Submission</h2>
+    <p><strong>Name:</strong> ${esc(fullName)}</p>
+    <p><strong>Email:</strong> ${esc(email)}</p>
+    <p><strong>Phone:</strong> ${esc(phone) || "Not provided"}</p>
+    <p><strong>Subject:</strong> ${esc(subject) || "Not specified"}</p>
+    <p><strong>Message:</strong></p>
+    <pre style="white-space: pre-wrap;">${esc(message)}</pre>
+  `;
+
+    const text = `
+New Contact Form Submission
 
 Name: ${fullName}
 Email: ${email}
-Phone: ${phone || "-"}
-Subject: ${subject || "General"}
-
+Phone: ${phone || "Not provided"}
+Subject: ${subject || "Not specified"}
 Message:
 ${message}
-`;
+  `.trim();
 
-    await sgMail.send({
-      to,
+    await resend.emails.send({
       from,
-      subject: `Contact form: ${subject}`,
-      text: safeText,
-      html: safeMessageHtml,
-      // replies to the submitter in your inbox UI
+      to,
       replyTo: email,
+      subject: `Contact form: ${subject || "General Inquiry"}`,
+      html,
+      text,
     });
 
     return NextResponse.json({ ok: true });
-  } catch (err: any) {
-    console.log("SendGrid send error:", err?.response?.body ?? err);
+  } catch (err: unknown) {
+    console.error("Resend error:", err);
     if (err instanceof z.ZodError) {
       return NextResponse.json(
         {
@@ -90,13 +91,13 @@ ${message}
             message: e.message,
           })),
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     return NextResponse.json(
       { error: "Failed to send email" },
-      { status: 502 }
+      { status: 502 },
     );
   }
 };

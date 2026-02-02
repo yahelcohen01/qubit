@@ -1,8 +1,6 @@
 import { validateEndpoint } from "@shared/lib";
 import z from "zod";
 import { NextResponse } from "next/server";
-
-import sgMail from "@sendgrid/mail";
 import { sendContactEmail } from "./handlers";
 
 const ContactBodySchema = z.object({
