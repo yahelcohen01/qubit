@@ -11,8 +11,6 @@ function escapeHtml(str = "") {
     .replaceAll("'", "&#039;");
 }
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export const sendContactEmail = async ({
   fullName,
   email,
@@ -34,6 +32,8 @@ export const sendContactEmail = async ({
         { status: 500 },
       );
     }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const to = process.env.CONTACT_EMAIL_TO;
     const from = process.env.CONTACT_EMAIL_FROM;
